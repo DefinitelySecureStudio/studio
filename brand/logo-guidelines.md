@@ -1,6 +1,6 @@
 # Definitely Secure logo guidelines
 
-Status: Proposed
+Status: Approved
 
 Owner: Definitely Secure Studio
 

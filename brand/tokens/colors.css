@@ -1,0 +1,65 @@
+/** Definitely Secure color tokens v1.0.0. Generated; do not edit directly. */
+:root {
+  --ds-brand-primary-assurance-ink: #101828;
+  --ds-brand-primary-console-paper: #F8FAFC;
+  --ds-brand-secondary-meeting-coral: #D95D52;
+  --ds-brand-secondary-protocol-violet: #6E62A6;
+  --ds-brand-accent-status-gold: #F4B942;
+  --ds-brand-accent-signal-teal: #2F7F79;
+  --ds-neutral-50: #F8FAFC;
+  --ds-neutral-100: #F2F4F7;
+  --ds-neutral-200: #E4E7EC;
+  --ds-neutral-300: #D0D5DD;
+  --ds-neutral-400: #98A2B3;
+  --ds-neutral-500: #667085;
+  --ds-neutral-600: #475467;
+  --ds-neutral-700: #344054;
+  --ds-neutral-800: #1D2939;
+  --ds-neutral-900: #101828;
+  --ds-status-info-base: #2F6FAD;
+  --ds-status-info-surface: #EAF2FA;
+  --ds-status-info-text: #1D4E79;
+  --ds-status-success-base: #2F7D61;
+  --ds-status-success-surface: #E8F4EE;
+  --ds-status-success-text: #205642;
+  --ds-status-warning-base: #B36B00;
+  --ds-status-warning-surface: #FFF2D6;
+  --ds-status-warning-text: #704200;
+  --ds-status-danger-base: #B5474F;
+  --ds-status-danger-surface: #FBEAEC;
+  --ds-status-danger-text: #7A2730;
+  --ds-comic-panel-background: #E8EEEF;
+  --ds-comic-panel-alternate: #F3E9DC;
+  --ds-comic-border: #101828;
+  --ds-comic-speech-bubble: #FFFFFF;
+  --ds-comic-caption: #F5E6B8;
+  --ds-comic-gutter: #D0D5DD;
+  --ds-environment-wall: #DCE5E8;
+  --ds-environment-glass: #BFD9D7;
+  --ds-environment-desk: #AABAC0;
+  --ds-environment-carpet: #596274;
+  --ds-environment-screen: #26384A;
+  --ds-color-background: #F8FAFC;
+  --ds-color-foreground: #101828;
+  --ds-color-surface: #FFFFFF;
+  --ds-color-surface-subtle: #F2F4F7;
+  --ds-color-border: #D0D5DD;
+  --ds-color-text-muted: #475467;
+  --ds-color-interactive: #101828;
+  --ds-color-interactive-foreground: #F8FAFC;
+  --ds-color-link: #1D4E79;
+  --ds-color-focus: #6E62A6;
+}
+
+[data-theme="dark"] {
+  --ds-color-background: #101828;
+  --ds-color-foreground: #F8FAFC;
+  --ds-color-surface: #1D2939;
+  --ds-color-surface-subtle: #344054;
+  --ds-color-border: #475467;
+  --ds-color-text-muted: #E4E7EC;
+  --ds-color-interactive: #F4B942;
+  --ds-color-interactive-foreground: #101828;
+  --ds-color-link: #BFD9D7;
+  --ds-color-focus: #F4B942;
+}

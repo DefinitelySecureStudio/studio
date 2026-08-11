@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 1600 900">
+  <title id="title">Definitely Secure color palette</title>
+  <desc id="desc">Definitely Secure color system example, version 1.0.0.</desc>
+  <metadata>Copyright 2026 Definitely Secure Studio. All rights reserved.</metadata>
+  <rect width="1600" height="900" fill="#FFFFFF"/>
+  <g transform="translate(80 60) scale(1.0)">
+    <path fill="#101828" d="M22 12h76c7.73 0 14 6.27 14 14v48c0 7.73-6.27 14-14 14H63l-23 20V88H22C14.27 88 8 81.73 8 74V26c0-7.73 6.27-14 14-14Z"/>
+    <path fill="none" stroke="#F8FAFC" stroke-linecap="round" stroke-linejoin="round" stroke-width="8" d="m35 36 16 16-16 16M62 68h22"/>
+    <circle cx="84" cy="35" r="7" fill="#F4B942"/>
+  </g>
+  <text x="230" y="118" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="800" fill="#101828">DEFINITELY SECURE</text>
+  <text x="230" y="162" font-family="Arial, Helvetica, sans-serif" font-size="25" fill="#475467">CORE COLOR SYSTEM • VERSION 1.0.0</text>
+  <rect x="80" y="240" width="420" height="150" rx="24" fill="#101828"/>
+  <text x="80" y="430" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#101828">ASSURANCE INK</text>
+  <text x="80" y="464" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#475467">#101828</text>  <rect x="560" y="240" width="420" height="150" rx="24" fill="#F8FAFC" stroke="#D0D5DD"/>
+  <text x="560" y="430" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#101828">CONSOLE PAPER</text>
+  <text x="560" y="464" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#475467">#F8FAFC</text>  <rect x="1040" y="240" width="420" height="150" rx="24" fill="#D95D52"/>
+  <text x="1040" y="430" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#101828">MEETING CORAL</text>
+  <text x="1040" y="464" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#475467">#D95D52</text>  <rect x="80" y="490" width="420" height="150" rx="24" fill="#6E62A6"/>
+  <text x="80" y="680" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#101828">PROTOCOL VIOLET</text>
+  <text x="80" y="714" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#475467">#6E62A6</text>  <rect x="560" y="490" width="420" height="150" rx="24" fill="#F4B942"/>
+  <text x="560" y="680" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#101828">STATUS GOLD</text>
+  <text x="560" y="714" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#475467">#F4B942</text>  <rect x="1040" y="490" width="420" height="150" rx="24" fill="#2F7F79"/>
+  <text x="1040" y="680" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#101828">SIGNAL TEAL</text>
+  <text x="1040" y="714" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#475467">#2F7F79</text>
+</svg>

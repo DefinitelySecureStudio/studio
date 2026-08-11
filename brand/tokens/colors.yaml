@@ -1,0 +1,934 @@
+"$schema": "https://design-tokens.github.io/community-group/format/"
+brand:
+  primary:
+    "assurance-ink":
+      "$type": "color"
+      "$value": "#101828"
+      "$description": "Primary logo, headings, key text, dark surfaces"
+      "$extensions":
+        "studio.definitelysecure":
+          name: "Assurance Ink"
+          rgb:
+            r: 16
+            g: 24
+            b: 40
+          hsl:
+            h: 220
+            s: 43
+            l: 11
+          cmykApproximation:
+            c: 60
+            m: 40
+            y: 0
+            k: 84
+          pantoneApproximation: "Pantone 296 C approx."
+          accessibility: "Use with Console Paper or Neutral 50 for text."
+    "console-paper":
+      "$type": "color"
+      "$value": "#F8FAFC"
+      "$description": "Reverse logo, light surface, dark-mode foreground"
+      "$extensions":
+        "studio.definitelysecure":
+          name: "Console Paper"
+          rgb:
+            r: 248
+            g: 250
+            b: 252
+          hsl:
+            h: 210
+            s: 40
+            l: 98
+          cmykApproximation:
+            c: 2
+            m: 1
+            y: 0
+            k: 1
+          pantoneApproximation: "No controlled match"
+          accessibility: "Use with Assurance Ink or Neutral 800–900."
+  secondary:
+    "meeting-coral":
+      "$type": "color"
+      "$value": "#D95D52"
+      "$description": "Warm editorial accent, social graphics, callouts"
+      "$extensions":
+        "studio.definitelysecure":
+          name: "Meeting Coral"
+          rgb:
+            r: 217
+            g: 93
+            b: 82
+          hsl:
+            h: 5
+            s: 64
+            l: 59
+          cmykApproximation:
+            c: 0
+            m: 57
+            y: 62
+            k: 15
+          pantoneApproximation: "Pantone 7416 C approx."
+          accessibility: "Decorative on light surfaces; use Assurance Ink for overlaid text."
+    "protocol-violet":
+      "$type": "color"
+      "$value": "#6E62A6"
+      "$description": "Secondary editorial accent, links on pale surfaces, focus"
+      "$extensions":
+        "studio.definitelysecure":
+          name: "Protocol Violet"
+          rgb:
+            r: 110
+            g: 98
+            b: 166
+          hsl:
+            h: 251
+            s: 28
+            l: 52
+          cmykApproximation:
+            c: 34
+            m: 41
+            y: 0
+            k: 35
+          pantoneApproximation: "Pantone 7676 C approx."
+          accessibility: "Console Paper text passes AA but not AAA; prefer Assurance Ink when maximum contrast is needed."
+  accent:
+    "status-gold":
+      "$type": "color"
+      "$value": "#F4B942"
+      "$description": "Logo status light, highlights, emphasis, focus on dark"
+      "$extensions":
+        "studio.definitelysecure":
+          name: "Status Gold"
+          rgb:
+            r: 244
+            g: 185
+            b: 66
+          hsl:
+            h: 40
+            s: 89
+            l: 61
+          cmykApproximation:
+            c: 0
+            m: 24
+            y: 73
+            k: 4
+          pantoneApproximation: "Pantone 7408 C approx."
+          accessibility: "Use Assurance Ink for text; never use gold text on white."
+    "signal-teal":
+      "$type": "color"
+      "$value": "#2F7F79"
+      "$description": "Charts, secondary emphasis, environmental detail"
+      "$extensions":
+        "studio.definitelysecure":
+          name: "Signal Teal"
+          rgb:
+            r: 47
+            g: 127
+            b: 121
+          hsl:
+            h: 176
+            s: 46
+            l: 34
+          cmykApproximation:
+            c: 63
+            m: 0
+            y: 5
+            k: 50
+          pantoneApproximation: "Pantone 7475 C approx."
+          accessibility: "Console Paper text passes AA; do not use as a success signal without a label."
+neutral:
+  50:
+    "$type": "color"
+    "$value": "#F8FAFC"
+    "$description": "Light-mode page background"
+    "$extensions":
+      "studio.definitelysecure":
+        name: "Neutral 50"
+        rgb:
+          r: 248
+          g: 250
+          b: 252
+        hsl:
+          h: 210
+          s: 40
+          l: 98
+        cmykApproximation:
+          c: 2
+          m: 1
+          y: 0
+          k: 1
+        pantoneApproximation: "—"
+        accessibility: "Use Neutral 700–900 for text."
+  100:
+    "$type": "color"
+    "$value": "#F2F4F7"
+    "$description": "Subtle surface and table stripe"
+    "$extensions":
+      "studio.definitelysecure":
+        name: "Neutral 100"
+        rgb:
+          r: 242
+          g: 244
+          b: 247
+        hsl:
+          h: 216
+          s: 24
+          l: 96
+        cmykApproximation:
+          c: 2
+          m: 1
+          y: 0
+          k: 3
+        pantoneApproximation: "—"
+        accessibility: "Use Neutral 700–900 for text."
+  200:
+    "$type": "color"
+    "$value": "#E4E7EC"
+    "$description": "Divider on dark surfaces and disabled fill"
+    "$extensions":
+      "studio.definitelysecure":
+        name: "Neutral 200"
+        rgb:
+          r: 228
+          g: 231
+          b: 236
+        hsl:
+          h: 218
+          s: 17
+          l: 91
+        cmykApproximation:
+          c: 3
+          m: 2
+          y: 0
+          k: 7
+        pantoneApproximation: "—"
+        accessibility: "Not a text color on light backgrounds."
+  300:
+    "$type": "color"
+    "$value": "#D0D5DD"
+    "$description": "Light-mode borders and controls"
+    "$extensions":
+      "studio.definitelysecure":
+        name: "Neutral 300"
+        rgb:
+          r: 208
+          g: 213
+          b: 221
+        hsl:
+          h: 217
+          s: 16
+          l: 84
+        cmykApproximation:
+          c: 6
+          m: 4
+          y: 0
+          k: 13
+        pantoneApproximation: "—"
+        accessibility: "Not a text color on white."
+  400:
+    "$type": "color"
+    "$value": "#98A2B3"
+    "$description": "Placeholder and disabled content"
+    "$extensions":
+      "studio.definitelysecure":
+        name: "Neutral 400"
+        rgb:
+          r: 152
+          g: 162
+          b: 179
+        hsl:
+          h: 218
+          s: 15
+          l: 65
+        cmykApproximation:
+          c: 15
+          m: 9
+          y: 0
+          k: 30
+        pantoneApproximation: "—"
+        accessibility: "Not approved for normal text on light surfaces."
+  500:
+    "$type": "color"
+    "$value": "#667085"
+    "$description": "Secondary iconography and large muted text"
+    "$extensions":
+      "studio.definitelysecure":
+        name: "Neutral 500"
+        rgb:
+          r: 102
+          g: 112
+          b: 133
+        hsl:
+          h: 221
+          s: 13
+          l: 46
+        cmykApproximation:
+          c: 23
+          m: 16
+          y: 0
+          k: 48
+        pantoneApproximation: "—"
+        accessibility: "Use only for large text on Neutral 50 or lighter."
+  600:
+    "$type": "color"
+    "$value": "#475467"
+    "$description": "Secondary body text"
+    "$extensions":
+      "studio.definitelysecure":
+        name: "Neutral 600"
+        rgb:
+          r: 71
+          g: 84
+          b: 103
+        hsl:
+          h: 216
+          s: 18
+          l: 34
+        cmykApproximation:
+          c: 31
+          m: 18
+          y: 0
+          k: 60
+        pantoneApproximation: "—"
+        accessibility: "Passes AA on Neutral 50 and white."
+  700:
+    "$type": "color"
+    "$value": "#344054"
+    "$description": "Strong secondary text"
+    "$extensions":
+      "studio.definitelysecure":
+        name: "Neutral 700"
+        rgb:
+          r: 52
+          g: 64
+          b: 84
+        hsl:
+          h: 218
+          s: 24
+          l: 27
+        cmykApproximation:
+          c: 38
+          m: 24
+          y: 0
+          k: 67
+        pantoneApproximation: "—"
+        accessibility: "Passes AAA on Neutral 50."
+  800:
+    "$type": "color"
+    "$value": "#1D2939"
+    "$description": "Dark-mode surface and light-mode heading"
+    "$extensions":
+      "studio.definitelysecure":
+        name: "Neutral 800"
+        rgb:
+          r: 29
+          g: 41
+          b: 57
+        hsl:
+          h: 214
+          s: 33
+          l: 17
+        cmykApproximation:
+          c: 49
+          m: 28
+          y: 0
+          k: 78
+        pantoneApproximation: "—"
+        accessibility: "Use Neutral 50–200 for text when used as a surface."
+  900:
+    "$type": "color"
+    "$value": "#101828"
+    "$description": "Primary text and deepest surface"
+    "$extensions":
+      "studio.definitelysecure":
+        name: "Neutral 900"
+        rgb:
+          r: 16
+          g: 24
+          b: 40
+        hsl:
+          h: 220
+          s: 43
+          l: 11
+        cmykApproximation:
+          c: 60
+          m: 40
+          y: 0
+          k: 84
+        pantoneApproximation: "—"
+        accessibility: "Use Console Paper or Neutral 50 for reverse text."
+status:
+  info:
+    base:
+      "$type": "color"
+      "$value": "#2F6FAD"
+      "$description": "Info icon, border, and chart mark"
+      "$extensions":
+        "studio.definitelysecure":
+          name: "Info"
+          rgb:
+            r: 47
+            g: 111
+            b: 173
+          hsl:
+            h: 210
+            s: 57
+            l: 43
+          cmykApproximation:
+            c: 73
+            m: 36
+            y: 0
+            k: 32
+          pantoneApproximation: "—"
+          accessibility: "Pair with a text label; not approved as small text on its surface."
+    surface:
+      "$type": "color"
+      "$value": "#EAF2FA"
+      "$description": "Info message background"
+      "$extensions":
+        "studio.definitelysecure":
+          name: "Info Surface"
+          rgb:
+            r: 234
+            g: 242
+            b: 250
+          hsl:
+            h: 210
+            s: 62
+            l: 95
+          cmykApproximation:
+            c: 6
+            m: 3
+            y: 0
+            k: 2
+          pantoneApproximation: "—"
+          accessibility: "Use Info Text for body copy."
+    text:
+      "$type": "color"
+      "$value": "#1D4E79"
+      "$description": "Info message text"
+      "$extensions":
+        "studio.definitelysecure":
+          name: "Info Text"
+          rgb:
+            r: 29
+            g: 78
+            b: 121
+          hsl:
+            h: 208
+            s: 61
+            l: 29
+          cmykApproximation:
+            c: 76
+            m: 36
+            y: 0
+            k: 53
+          pantoneApproximation: "—"
+          accessibility: "Passes AAA on Info Surface."
+  success:
+    base:
+      "$type": "color"
+      "$value": "#2F7D61"
+      "$description": "Success icon and border"
+      "$extensions":
+        "studio.definitelysecure":
+          name: "Success"
+          rgb:
+            r: 47
+            g: 125
+            b: 97
+          hsl:
+            h: 158
+            s: 45
+            l: 34
+          cmykApproximation:
+            c: 62
+            m: 0
+            y: 22
+            k: 51
+          pantoneApproximation: "—"
+          accessibility: "Pair with icon or text; do not encode success by color alone."
+    surface:
+      "$type": "color"
+      "$value": "#E8F4EE"
+      "$description": "Success message background"
+      "$extensions":
+        "studio.definitelysecure":
+          name: "Success Surface"
+          rgb:
+            r: 232
+            g: 244
+            b: 238
+          hsl:
+            h: 150
+            s: 35
+            l: 93
+          cmykApproximation:
+            c: 5
+            m: 0
+            y: 2
+            k: 4
+          pantoneApproximation: "—"
+          accessibility: "Use Success Text for body copy."
+    text:
+      "$type": "color"
+      "$value": "#205642"
+      "$description": "Success message text"
+      "$extensions":
+        "studio.definitelysecure":
+          name: "Success Text"
+          rgb:
+            r: 32
+            g: 86
+            b: 66
+          hsl:
+            h: 158
+            s: 46
+            l: 23
+          cmykApproximation:
+            c: 63
+            m: 0
+            y: 23
+            k: 66
+          pantoneApproximation: "—"
+          accessibility: "Passes AAA on Success Surface."
+  warning:
+    base:
+      "$type": "color"
+      "$value": "#B36B00"
+      "$description": "Warning icon and border"
+      "$extensions":
+        "studio.definitelysecure":
+          name: "Warning"
+          rgb:
+            r: 179
+            g: 107
+            b: 0
+          hsl:
+            h: 36
+            s: 100
+            l: 35
+          cmykApproximation:
+            c: 0
+            m: 40
+            y: 100
+            k: 30
+          pantoneApproximation: "—"
+          accessibility: "Use Assurance Ink or Warning Text for nearby copy."
+    surface:
+      "$type": "color"
+      "$value": "#FFF2D6"
+      "$description": "Warning message background"
+      "$extensions":
+        "studio.definitelysecure":
+          name: "Warning Surface"
+          rgb:
+            r: 255
+            g: 242
+            b: 214
+          hsl:
+            h: 41
+            s: 100
+            l: 92
+          cmykApproximation:
+            c: 0
+            m: 5
+            y: 16
+            k: 0
+          pantoneApproximation: "—"
+          accessibility: "Use Warning Text for body copy."
+    text:
+      "$type": "color"
+      "$value": "#704200"
+      "$description": "Warning message text"
+      "$extensions":
+        "studio.definitelysecure":
+          name: "Warning Text"
+          rgb:
+            r: 112
+            g: 66
+            b: 0
+          hsl:
+            h: 35
+            s: 100
+            l: 22
+          cmykApproximation:
+            c: 0
+            m: 41
+            y: 100
+            k: 56
+          pantoneApproximation: "—"
+          accessibility: "Passes AAA on Warning Surface."
+  danger:
+    base:
+      "$type": "color"
+      "$value": "#B5474F"
+      "$description": "Danger icon, border, and destructive control"
+      "$extensions":
+        "studio.definitelysecure":
+          name: "Danger"
+          rgb:
+            r: 181
+            g: 71
+            b: 79
+          hsl:
+            h: 356
+            s: 44
+            l: 49
+          cmykApproximation:
+            c: 0
+            m: 61
+            y: 56
+            k: 29
+          pantoneApproximation: "—"
+          accessibility: "Console Paper is reserved for large or bold control text; use Danger Text on pale surfaces."
+    surface:
+      "$type": "color"
+      "$value": "#FBEAEC"
+      "$description": "Danger message background"
+      "$extensions":
+        "studio.definitelysecure":
+          name: "Danger Surface"
+          rgb:
+            r: 251
+            g: 234
+            b: 236
+          hsl:
+            h: 353
+            s: 68
+            l: 95
+          cmykApproximation:
+            c: 0
+            m: 7
+            y: 6
+            k: 2
+          pantoneApproximation: "—"
+          accessibility: "Use Danger Text for body copy."
+    text:
+      "$type": "color"
+      "$value": "#7A2730"
+      "$description": "Danger message text"
+      "$extensions":
+        "studio.definitelysecure":
+          name: "Danger Text"
+          rgb:
+            r: 122
+            g: 39
+            b: 48
+          hsl:
+            h: 353
+            s: 52
+            l: 32
+          cmykApproximation:
+            c: 0
+            m: 68
+            y: 61
+            k: 52
+          pantoneApproximation: "—"
+          accessibility: "Passes AAA on Danger Surface."
+comic:
+  "panel-background":
+    "$type": "color"
+    "$value": "#E8EEEF"
+    "$description": "Default comic panel field"
+    "$extensions":
+      "studio.definitelysecure":
+        name: "Panel Mist"
+        rgb:
+          r: 232
+          g: 238
+          b: 239
+        hsl:
+          h: 189
+          s: 18
+          l: 92
+        cmykApproximation:
+          c: 3
+          m: 0
+          y: 0
+          k: 6
+        pantoneApproximation: "—"
+        accessibility: "Use Comic Ink for dialogue and line work."
+  "panel-alternate":
+    "$type": "color"
+    "$value": "#F3E9DC"
+    "$description": "Warm alternate panel or flashback field"
+    "$extensions":
+      "studio.definitelysecure":
+        name: "Breakroom Paper"
+        rgb:
+          r: 243
+          g: 233
+          b: 220
+        hsl:
+          h: 34
+          s: 49
+          l: 91
+        cmykApproximation:
+          c: 0
+          m: 4
+          y: 9
+          k: 5
+        pantoneApproximation: "—"
+        accessibility: "Use Comic Ink for text; do not use as Cavapoo fur."
+  border:
+    "$type": "color"
+    "$value": "#101828"
+    "$description": "Panel borders, line work, and primary lettering"
+    "$extensions":
+      "studio.definitelysecure":
+        name: "Comic Ink"
+        rgb:
+          r: 16
+          g: 24
+          b: 40
+        hsl:
+          h: 220
+          s: 43
+          l: 11
+        cmykApproximation:
+          c: 60
+          m: 40
+          y: 0
+          k: 84
+        pantoneApproximation: "—"
+        accessibility: "Passes AAA on all approved comic fields."
+  "speech-bubble":
+    "$type": "color"
+    "$value": "#FFFFFF"
+    "$description": "Speech balloons and clean negative space"
+    "$extensions":
+      "studio.definitelysecure":
+        name: "Speech White"
+        rgb:
+          r: 255
+          g: 255
+          b: 255
+        hsl:
+          h: 0
+          s: 0
+          l: 100
+        cmykApproximation:
+          c: 0
+          m: 0
+          y: 0
+          k: 0
+        pantoneApproximation: "—"
+        accessibility: "Use Comic Ink; outline balloons on pale panels."
+  caption:
+    "$type": "color"
+    "$value": "#F5E6B8"
+    "$description": "Narration and caption boxes"
+    "$extensions":
+      "studio.definitelysecure":
+        name: "Caption Cream"
+        rgb:
+          r: 245
+          g: 230
+          b: 184
+        hsl:
+          h: 45
+          s: 75
+          l: 84
+        cmykApproximation:
+          c: 0
+          m: 6
+          y: 25
+          k: 4
+        pantoneApproximation: "—"
+        accessibility: "Use Comic Ink; not approved for white text."
+  gutter:
+    "$type": "color"
+    "$value": "#D0D5DD"
+    "$description": "Panel gutters and quiet separators"
+    "$extensions":
+      "studio.definitelysecure":
+        name: "Gutter Gray"
+        rgb:
+          r: 208
+          g: 213
+          b: 221
+        hsl:
+          h: 217
+          s: 16
+          l: 84
+        cmykApproximation:
+          c: 6
+          m: 4
+          y: 0
+          k: 13
+        pantoneApproximation: "—"
+        accessibility: "Not approved for body text."
+environment:
+  wall:
+    "$type": "color"
+    "$value": "#DCE5E8"
+    "$description": "Office walls and broad background planes"
+    "$extensions":
+      "studio.definitelysecure":
+        name: "Cubicle Mist"
+        rgb:
+          r: 220
+          g: 229
+          b: 232
+        hsl:
+          h: 195
+          s: 21
+          l: 89
+        cmykApproximation:
+          c: 5
+          m: 1
+          y: 0
+          k: 9
+        pantoneApproximation: "—"
+        accessibility: "Keep character silhouettes outlined in Comic Ink."
+  glass:
+    "$type": "color"
+    "$value": "#BFD9D7"
+    "$description": "Glass, windows, and reflective dividers"
+    "$extensions":
+      "studio.definitelysecure":
+        name: "Conference Glass"
+        rgb:
+          r: 191
+          g: 217
+          b: 215
+        hsl:
+          h: 175
+          s: 25
+          l: 80
+        cmykApproximation:
+          c: 12
+          m: 0
+          y: 1
+          k: 15
+        pantoneApproximation: "—"
+        accessibility: "Do not use as text or a status signal."
+  desk:
+    "$type": "color"
+    "$value": "#AABAC0"
+    "$description": "Desks, cabinets, and office fixtures"
+    "$extensions":
+      "studio.definitelysecure":
+        name: "Desk Bluegray"
+        rgb:
+          r: 170
+          g: 186
+          b: 192
+        hsl:
+          h: 196
+          s: 15
+          l: 71
+        cmykApproximation:
+          c: 11
+          m: 3
+          y: 0
+          k: 25
+        pantoneApproximation: "—"
+        accessibility: "Use Comic Ink for detail lines."
+  carpet:
+    "$type": "color"
+    "$value": "#596274"
+    "$description": "Carpet and deep environmental planes"
+    "$extensions":
+      "studio.definitelysecure":
+        name: "Carpet Slate"
+        rgb:
+          r: 89
+          g: 98
+          b: 116
+        hsl:
+          h: 220
+          s: 13
+          l: 40
+        cmykApproximation:
+          c: 23
+          m: 16
+          y: 0
+          k: 55
+        pantoneApproximation: "—"
+        accessibility: "Console Paper passes AA for text when necessary."
+  screen:
+    "$type": "color"
+    "$value": "#26384A"
+    "$description": "Inactive monitors and dark equipment"
+    "$extensions":
+      "studio.definitelysecure":
+        name: "Monitor Blue"
+        rgb:
+          r: 38
+          g: 56
+          b: 74
+        hsl:
+          h: 210
+          s: 32
+          l: 22
+        cmykApproximation:
+          c: 49
+          m: 24
+          y: 0
+          k: 71
+        pantoneApproximation: "—"
+        accessibility: "Use Console Paper or Status Gold for readable content."
+semantic:
+  light:
+    background:
+      "$type": "color"
+      "$value": "#F8FAFC"
+    foreground:
+      "$type": "color"
+      "$value": "#101828"
+    surface:
+      "$type": "color"
+      "$value": "#FFFFFF"
+    "surface-subtle":
+      "$type": "color"
+      "$value": "#F2F4F7"
+    border:
+      "$type": "color"
+      "$value": "#D0D5DD"
+    "text-muted":
+      "$type": "color"
+      "$value": "#475467"
+    interactive:
+      "$type": "color"
+      "$value": "#101828"
+    "interactive-foreground":
+      "$type": "color"
+      "$value": "#F8FAFC"
+    link:
+      "$type": "color"
+      "$value": "#1D4E79"
+    focus:
+      "$type": "color"
+      "$value": "#6E62A6"
+  dark:
+    background:
+      "$type": "color"
+      "$value": "#101828"
+    foreground:
+      "$type": "color"
+      "$value": "#F8FAFC"
+    surface:
+      "$type": "color"
+      "$value": "#1D2939"
+    "surface-subtle":
+      "$type": "color"
+      "$value": "#344054"
+    border:
+      "$type": "color"
+      "$value": "#475467"
+    "text-muted":
+      "$type": "color"
+      "$value": "#E4E7EC"
+    interactive:
+      "$type": "color"
+      "$value": "#F4B942"
+    "interactive-foreground":
+      "$type": "color"
+      "$value": "#101828"
+    link:
+      "$type": "color"
+      "$value": "#BFD9D7"
+    focus:
+      "$type": "color"
+      "$value": "#F4B942"

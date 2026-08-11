@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 1400 820">
+  <title id="title">Definitely Secure comic panel color example</title>
+  <desc id="desc">Definitely Secure color system example, version 1.0.0.</desc>
+  <metadata>Copyright 2026 Definitely Secure Studio. All rights reserved.</metadata>
+  <rect width="1400" height="820" fill="#D0D5DD"/>
+  <rect x="50" y="50" width="620" height="720" fill="#E8EEEF" stroke="#101828" stroke-width="12"/>
+  <rect x="730" y="50" width="620" height="720" fill="#F3E9DC" stroke="#101828" stroke-width="12"/>
+  <rect x="120" y="120" width="270" height="140" rx="60" fill="#FFFFFF" stroke="#101828" stroke-width="7"/>
+  <path d="M300 250 330 295 260 260Z" fill="#FFFFFF" stroke="#101828" stroke-width="7"/>
+  <text x="165" y="175" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#101828">IS IT FIXED?</text>
+  <text x="165" y="214" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#344054">The dashboard is green.</text>
+  <rect x="155" y="410" width="420" height="170" rx="24" fill="#AABAC0" stroke="#101828" stroke-width="8"/>
+  <rect x="220" y="335" width="290" height="120" rx="18" fill="#26384A" stroke="#101828" stroke-width="8"/>
+  <circle cx="465" cy="370" r="14" fill="#F4B942"/>
+  <path d="M270 380h110" stroke="#BFD9D7" stroke-width="12" stroke-linecap="round"/>
+  <rect x="800" y="115" width="475" height="120" rx="20" fill="#F5E6B8" stroke="#101828" stroke-width="7"/>
+  <text x="840" y="168" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#101828">CAPTION: TEN MINUTES LATER</text>
+  <text x="840" y="207" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#344054">Confidence remained operational.</text>
+  <rect x="850" y="390" width="390" height="220" rx="24" fill="#BFD9D7" stroke="#101828" stroke-width="8"/>
+  <rect x="900" y="435" width="290" height="105" rx="14" fill="#26384A"/>
+  <path d="M945 487h145" stroke="#F8FAFC" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="1145" cy="487" r="15" fill="#B5474F"/>
+  <text x="820" y="670" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#101828">Cool environment colors</text>
+  <text x="820" y="706" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#101828">preserve room for characters.</text>
+</svg>

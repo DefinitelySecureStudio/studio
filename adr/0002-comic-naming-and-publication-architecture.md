@@ -1,6 +1,6 @@
 # ADR 0002: Comic naming and publication architecture
 
-- Status: Proposed
+- Status: Accepted
 - Date: 2026-08-11
 - Decision owners: Definitely Secure Studio
 - Related issue: [#9 — Finalize comic branding](https://github.com/DefinitelySecureStudio/studio/issues/9)

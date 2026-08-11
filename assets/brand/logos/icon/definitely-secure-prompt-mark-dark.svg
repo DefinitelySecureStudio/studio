@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 120 120">
+  <title id="title">Definitely Secure prompt mark</title>
+  <desc id="desc">A speech bubble containing a terminal prompt and status light.</desc>
+  <metadata>Definitely Secure Studio logo system v1.0.0. Copyright 2026 Definitely Secure Studio. All rights reserved.</metadata>
+  <g transform="translate(0 0) scale(1.0)">
+    <path fill="#F8FAFC" d="M22 12h76c7.73 0 14 6.27 14 14v48c0 7.73-6.27 14-14 14H63l-23 20V88H22C14.27 88 8 81.73 8 74V26c0-7.73 6.27-14 14-14Z"/>
+    <path fill="none" stroke="#101828" stroke-linecap="round" stroke-linejoin="round" stroke-width="8" d="m35 36 16 16-16 16M62 68h22"/>
+    <circle cx="84" cy="35" r="7" fill="#F4B942"/>
+  </g>
+</svg>

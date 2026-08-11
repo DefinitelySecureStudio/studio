@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 1000 92">
+  <title id="title">Definitely Secure comic footer mark</title>
+  <desc id="desc">Compact Definitely Secure comic wordmark with episode number and website placeholder.</desc>
+  <metadata>Definitely Secure Studio logo system v1.0.0. Copyright 2026 Definitely Secure Studio. All rights reserved.</metadata>
+  <g transform="translate(8 8) scale(0.6333333333333333)">
+    <path fill="#F8FAFC" d="M22 12h76c7.73 0 14 6.27 14 14v48c0 7.73-6.27 14-14 14H63l-23 20V88H22C14.27 88 8 81.73 8 74V26c0-7.73 6.27-14 14-14Z"/>
+    <path fill="none" stroke="#101828" stroke-linecap="round" stroke-linejoin="round" stroke-width="8" d="m35 36 16 16-16 16M62 68h22"/>
+    <circle cx="84" cy="35" r="7" fill="#F4B942"/>
+  </g>
+  <g fill="#F8FAFC" font-family="Arial, Helvetica, sans-serif" font-weight="800">
+    <text x="104" y="57" font-size="35" letter-spacing=".5">DEFINITELY SECURE</text>
+    <text x="500" y="57" font-size="28" font-weight="700">• #NNNN • DEFINITELYSECURE.COM</text>
+  </g>
+</svg>

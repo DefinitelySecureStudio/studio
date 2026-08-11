@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 480 440">
+  <title id="title">Definitely Secure Studio vertical logo</title>
+  <desc id="desc">The terminal prompt speech-bubble mark above the words Definitely Secure Studio.</desc>
+  <metadata>Definitely Secure Studio logo system v1.0.0. Copyright 2026 Definitely Secure Studio. All rights reserved.</metadata>
+  <g transform="translate(150 34) scale(1.5)">
+    <path fill="#F8FAFC" d="M22 12h76c7.73 0 14 6.27 14 14v48c0 7.73-6.27 14-14 14H63l-23 20V88H22C14.27 88 8 81.73 8 74V26c0-7.73 6.27-14 14-14Z"/>
+    <path fill="none" stroke="#101828" stroke-linecap="round" stroke-linejoin="round" stroke-width="8" d="m35 36 16 16-16 16M62 68h22"/>
+    <circle cx="84" cy="35" r="7" fill="#F4B942"/>
+  </g>
+  <g fill="#F8FAFC" font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+    <text x="240" y="286" font-size="42" font-weight="800" letter-spacing="-1">DEFINITELY SECURE</text>
+    <text x="240" y="334" fill="#F8FAFC" font-size="24" font-weight="700" letter-spacing="8">STUDIO</text>
+  </g>
+</svg>

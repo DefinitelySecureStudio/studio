@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 120 120">
+  <title id="title">Definitely Secure small prompt mark</title>
+  <desc id="desc">A simplified speech-bubble terminal prompt optimized for very small display sizes.</desc>
+  <metadata>Definitely Secure Studio logo system v1.0.0. Copyright 2026 Definitely Secure Studio. All rights reserved.</metadata>
+  <path fill="#101828" d="M22 12h76c7.73 0 14 6.27 14 14v48c0 7.73-6.27 14-14 14H63l-23 20V88H22C14.27 88 8 81.73 8 74V26c0-7.73 6.27-14 14-14Z"/>
+  <path fill="none" stroke="#F8FAFC" stroke-linecap="round" stroke-linejoin="round" stroke-width="10" d="m35 35 17 17-17 17M63 69h22"/>
+  <circle cx="84" cy="34" r="8" fill="#F4B942"/>
+</svg>

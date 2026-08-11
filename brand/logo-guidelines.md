@@ -159,7 +159,7 @@ Run the build script from any directory with `rsvg-convert` and macOS `sips` ava
 python3 assets/brand/logos/source/build_logo_assets.py
 ```
 
-The script regenerates SVG, standard PNG, high-resolution PNG, PDF, favicon, and `manifest.json` outputs. The manifest records asset version, byte size, and SHA-256 digest for every distributed file. Commit the source and generated outputs together. Version 1.0.0 is the first proposed public system; increment the major version for incompatible geometry or naming changes, the minor version for new approved lockups, and the patch version for export-only corrections.
+The script regenerates SVG, standard PNG, high-resolution PNG, PDF, favicon, and `manifest.json` outputs. The manifest records asset version, byte size, and SHA-256 digest for every distributed file. Commit the source and generated outputs together. Version 1.0.0 is the first approved public system; increment the major version for incompatible geometry or naming changes, the minor version for new approved lockups, and the patch version for export-only corrections.
 
 ## Ownership and licensing
 

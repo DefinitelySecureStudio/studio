@@ -1,0 +1,121 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
+  "$extensions": {
+    "studio.definitelysecure": {
+      "version": "1.0.0",
+      "status": "approved",
+      "source": "../typography.md"
+    }
+  },
+  "font": {
+    "family": {
+      "display": {
+        "$type": "fontFamily",
+        "$value": ["Barlow Condensed", "Arial Narrow", "Roboto Condensed", "sans-serif"]
+      },
+      "body": {
+        "$type": "fontFamily",
+        "$value": ["Atkinson Hyperlegible", "Segoe UI", "Arial", "sans-serif"]
+      },
+      "dialogue": {
+        "$type": "fontFamily",
+        "$value": ["Atkinson Hyperlegible", "Segoe UI", "Arial", "sans-serif"]
+      },
+      "mono": {
+        "$type": "fontFamily",
+        "$value": ["IBM Plex Mono", "SFMono-Regular", "Consolas", "Liberation Mono", "monospace"]
+      },
+      "sfx": {
+        "$type": "fontFamily",
+        "$value": ["Barlow Condensed", "Arial Narrow", "Impact", "sans-serif"]
+      }
+    },
+    "weight": {
+      "regular": { "$type": "fontWeight", "$value": 400 },
+      "medium": { "$type": "fontWeight", "$value": 500 },
+      "semibold": { "$type": "fontWeight", "$value": 600 },
+      "bold": { "$type": "fontWeight", "$value": 700 },
+      "extrabold": { "$type": "fontWeight", "$value": 800 },
+      "black": { "$type": "fontWeight", "$value": 900 }
+    }
+  },
+  "type": {
+    "size": {
+      "h3": { "$type": "dimension", "$value": { "value": 24, "unit": "px" } },
+      "body": { "$type": "dimension", "$value": { "value": 16, "unit": "px" } },
+      "body-large": { "$type": "dimension", "$value": { "value": 18, "unit": "px" } },
+      "caption": { "$type": "dimension", "$value": { "value": 15, "unit": "px" } },
+      "dialogue": { "$type": "dimension", "$value": { "value": 18, "unit": "px" } },
+      "code": { "$type": "dimension", "$value": { "value": 15, "unit": "px" } }
+    },
+    "lineHeight": {
+      "display": { "$type": "number", "$value": 0.92 },
+      "h1": { "$type": "number", "$value": 0.98 },
+      "h2": { "$type": "number", "$value": 1.08 },
+      "h3": { "$type": "number", "$value": 1.15 },
+      "body": { "$type": "number", "$value": 1.55 },
+      "caption": { "$type": "number", "$value": 1.45 },
+      "dialogue": { "$type": "number", "$value": 1.32 },
+      "code": { "$type": "number", "$value": 1.55 }
+    },
+    "tracking": {
+      "display-max": {
+        "$type": "dimension",
+        "$value": { "value": -0.88, "unit": "px" },
+        "$description": "-0.01em resolved at the 88px maximum display size; web implementations use the responsive CSS token."
+      },
+      "heading": { "$type": "dimension", "$value": { "value": 0, "unit": "px" } },
+      "uppercase-16": {
+        "$type": "dimension",
+        "$value": { "value": 0.4, "unit": "px" },
+        "$description": "0.025em resolved at the 16px label size."
+      },
+      "body": { "$type": "dimension", "$value": { "value": 0, "unit": "px" } },
+      "dialogue": { "$type": "dimension", "$value": { "value": 0, "unit": "px" } },
+      "mono": { "$type": "dimension", "$value": { "value": 0, "unit": "px" } }
+    }
+  },
+  "role": {
+    "display": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.display}",
+        "fontSize": { "value": 88, "unit": "px" },
+        "fontWeight": "{font.weight.extrabold}",
+        "letterSpacing": "{type.tracking.display-max}",
+        "lineHeight": "{type.lineHeight.display}"
+      },
+      "$description": "Maximum desktop display; use the responsive CSS token in web layouts."
+    },
+    "body": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.body}",
+        "fontSize": "{type.size.body}",
+        "fontWeight": "{font.weight.regular}",
+        "letterSpacing": "{type.tracking.body}",
+        "lineHeight": "{type.lineHeight.body}"
+      }
+    },
+    "dialogue": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.dialogue}",
+        "fontSize": "{type.size.dialogue}",
+        "fontWeight": "{font.weight.regular}",
+        "letterSpacing": "{type.tracking.dialogue}",
+        "lineHeight": "{type.lineHeight.dialogue}"
+      }
+    },
+    "code": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.mono}",
+        "fontSize": "{type.size.code}",
+        "fontWeight": "{font.weight.regular}",
+        "letterSpacing": "{type.tracking.mono}",
+        "lineHeight": "{type.lineHeight.code}"
+      }
+    }
+  }
+}

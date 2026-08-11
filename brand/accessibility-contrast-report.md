@@ -1,6 +1,6 @@
 # Definitely Secure accessibility contrast report
 
-Status: Proposed
+Status: Approved
 
 Generated: 2026-08-11
 

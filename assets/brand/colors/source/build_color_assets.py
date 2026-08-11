@@ -281,7 +281,7 @@ def write_color_system() -> None:
     sections = [
         "# Definitely Secure color system",
         "",
-        "Status: Proposed",
+        "Status: Approved",
         "",
         "Owner: Definitely Secure Studio",
         "",
@@ -390,7 +390,7 @@ def write_contrast_report() -> None:
     rows = [
         "# Definitely Secure accessibility contrast report",
         "",
-        "Status: Proposed",
+        "Status: Approved",
         "",
         f"Generated: {date.today().isoformat()}",
         "",

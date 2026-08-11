@@ -7,7 +7,7 @@
     <path fill="none" stroke="#101828" stroke-linecap="round" stroke-linejoin="round" stroke-width="8" d="m35 36 16 16-16 16M62 68h22"/>
     <circle cx="84" cy="35" r="7" fill="#F4B942"/>
   </g>
-  <g fill="#F8FAFC" font-family="Arial, Helvetica, sans-serif" font-weight="800">
+  <g fill="#F8FAFC" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800">
     <text x="104" y="57" font-size="35" letter-spacing=".5">DEFINITELY SECURE</text>
     <text x="500" y="57" font-size="28" font-weight="700">• #NNNN • DEFINITELYSECURE.COM</text>
   </g>

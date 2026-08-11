@@ -5,19 +5,23 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import shutil
 import subprocess
+import tempfile
 from datetime import date
 from pathlib import Path
 
 
 VERSION = "1.0.0"
 ROOT = Path(__file__).resolve().parents[1]
+TYPOGRAPHY_FONTS = ROOT.parent / "typography/fonts"
 INK = "#101828"
 PAPER = "#F8FAFC"
 SIGNAL = "#F4B942"
 SLATE = "#475467"
-FONT = "Arial, Helvetica, sans-serif"
+FONT = "Barlow Condensed, Arial Narrow, Arial, sans-serif"
+RENDER_ENV: dict[str, str] | None = None
 
 
 def svg_document(width: int, height: int, title: str, description: str, body: str) -> str:
@@ -212,7 +216,7 @@ def source_sheet() -> str:
     <text x="780" y="570" font-size="28" font-weight="800">WORDMARK CONSTRUCTION</text>
     <text x="780" y="645" font-size="58" font-weight="900" font-style="italic">DEFINITELY SECURE</text>
     <rect x="1118" y="666" width="190" height="10" rx="5" fill="{SIGNAL}"/>
-    <text x="780" y="744" font-size="21" fill="{SLATE}">Arial/Helvetica heavy italic fallback stack</text>
+    <text x="780" y="744" font-size="21" fill="{SLATE}">Barlow Condensed Black Italic</text>
     <text x="780" y="778" font-size="21" fill="{SLATE}">Never substitute the fictional company for the Studio credit.</text>
   </g>''',
     )
@@ -245,7 +249,27 @@ ASSETS = {
 
 
 def run(*args: str) -> None:
-    subprocess.run(args, check=True)
+    subprocess.run(args, check=True, env=RENDER_ENV)
+
+
+def font_environment(tmpdir: Path) -> dict[str, str]:
+    cache = tmpdir / "cache"
+    cache.mkdir()
+    config = tmpdir / "fonts.conf"
+    config.write_text(
+        f'''<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
+<fontconfig>
+  <dir>{TYPOGRAPHY_FONTS}</dir>
+  <cachedir>{cache}</cachedir>
+  <config></config>
+</fontconfig>
+''',
+        encoding="utf-8",
+    )
+    env = os.environ.copy()
+    env["FONTCONFIG_FILE"] = str(config)
+    return env
 
 
 def render_svg(svg_path: Path) -> None:
@@ -315,17 +339,23 @@ def write_manifest() -> None:
 
 
 def main() -> None:
+    global RENDER_ENV
     if not shutil.which("rsvg-convert"):
         raise SystemExit("rsvg-convert is required to build logo exports")
     if not shutil.which("sips"):
         raise SystemExit("sips is required to build favicon.ico")
-    for relative, content in ASSETS.items():
-        target = ROOT / relative
-        target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_text(content, encoding="utf-8")
-    for svg_path in sorted(ROOT.rglob("*.svg")):
-        render_svg(svg_path)
-    build_favicons()
+    if not TYPOGRAPHY_FONTS.exists():
+        raise SystemExit("Bundled typography fonts are required to build logo exports")
+    with tempfile.TemporaryDirectory(prefix="ds-logo-fontconfig-") as tmp:
+        RENDER_ENV = font_environment(Path(tmp))
+        for relative, content in ASSETS.items():
+            target = ROOT / relative
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_text(content, encoding="utf-8")
+        for svg_path in sorted(ROOT.rglob("*.svg")):
+            render_svg(svg_path)
+        build_favicons()
+    RENDER_ENV = None
     write_manifest()
     print(f"Built {len(ASSETS)} SVG assets and raster/PDF exports for logo system v{VERSION}.")
 

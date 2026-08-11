@@ -1,6 +1,6 @@
 # Definitely Secure color system
 
-Status: Proposed
+Status: Approved
 
 Owner: Definitely Secure Studio
 

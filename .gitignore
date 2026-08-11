@@ -1,0 +1,99 @@
+# ==========================================
+# macOS / OS X System Artifacts
+# ==========================================
+# General OS X files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon headers inside folder
+Icon?
+
+# Thumbnails & Metadata
+._*
+
+# Files that may be created on an external drive
+.Spotlight-V100
+.Trashes
+
+# Directory custom attributes
+.DocumentRevisions-V100
+.fseventsd
+
+# NetMerge and SMB temporary files
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# ==========================================
+# Editors & IDEs
+# ==========================================
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# JetBrains (IntelliJ, WebStorm, PyCharm, etc.)
+.idea/
+*.iml
+*.iws
+
+# Xcode / Apple Dev
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+*.xcworkspace/xcuserdata/
+*.moved-aside
+*.xccheckout
+*.mover-boot-stage
+
+# Sublime Text / Vim / Emacs
+*.sublime-workspace
+*.swp
+*.swo
+*~
+\#*\#
+.#*
+
+# ==========================================
+# Environment & Secrets (NEVER COMMIT!)
+# ==========================================
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.cert
+
+# ==========================================
+# Logs & Databases
+# ==========================================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+*.sqlite
+*.sqlite3
+
+# ==========================================
+# Common Dependencies & Build Artifacts
+# ==========================================
+node_modules/
+dist/
+build/
+out/
+.next/
+.nuxt/
+

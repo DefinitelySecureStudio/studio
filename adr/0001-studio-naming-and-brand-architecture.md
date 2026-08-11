@@ -1,6 +1,6 @@
 # ADR 0001: Studio naming and brand architecture
 
-- Status: Proposed
+- Status: Accepted
 - Date: 2026-08-11
 - Decision owners: Definitely Secure Studio
 - Related issue: [#8 — Finalize studio branding](https://github.com/DefinitelySecureStudio/studio/issues/8)

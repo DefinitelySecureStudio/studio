@@ -1,6 +1,6 @@
 # Definitely Secure Studio identity
 
-Status: Proposed
+Status: Approved
 
 Owner: Definitely Secure Studio
 

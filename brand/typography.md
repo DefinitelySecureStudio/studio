@@ -1,6 +1,6 @@
 # Definitely Secure typography system
 
-Status: Proposed
+Status: Approved
 
 Owner: Definitely Secure Studio
 

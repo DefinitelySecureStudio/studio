@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 1200 900">
+  <title id="title">Definitely Secure mobile typography test</title>
+  <desc id="desc">Definitely Secure typography system proof, version 1.0.0.</desc>
+  <metadata>Copyright 2026 Definitely Secure Studio. Font software licensed under SIL OFL 1.1.</metadata>
+  <rect width="1200" height="900" fill="#D0D5DD"/>
+  <rect x="80" y="55" width="430" height="790" rx="48" fill="#F8FAFC" stroke="#101828" stroke-width="8"/>
+  <text x="125" y="125" font-family="Barlow Condensed" font-size="34" font-weight="800" fill="#101828">DEFINITELY SECURE</text>
+  <text x="125" y="170" font-family="Atkinson Hyperlegible" font-size="18" fill="#475467">Simulated 390px mobile reading width</text>
+  <text x="125" y="250" font-family="Barlow Condensed" font-size="37" font-weight="800" fill="#101828">THE STATUS</text>
+  <text x="125" y="292" font-family="Barlow Condensed" font-size="37" font-weight="800" fill="#101828">REPORT</text>
+  <text x="125" y="360" font-family="Atkinson Hyperlegible" font-size="18" fill="#101828">Body copy stays at or above 16px, with</text>
+  <text x="125" y="390" font-family="Atkinson Hyperlegible" font-size="18" fill="#101828">comfortable line height and deliberate measure.</text>
+  <rect x="125" y="445" width="340" height="175" rx="52" fill="#FFFFFF" stroke="#101828" stroke-width="5"/>
+  <text x="165" y="510" font-family="Atkinson Hyperlegible" font-size="22" font-weight="700" fill="#101828">Still readable?</text>
+  <text x="165" y="550" font-family="Atkinson Hyperlegible" font-size="20" fill="#101828">At the final crop, yes.</text>
+  <text x="125" y="700" font-family="IBM Plex Mono" font-size="16" fill="#1D4E79">0O 1lI |/\ {}[]()</text>
+  <text x="125" y="770" font-family="Atkinson Hyperlegible" font-size="15" fill="#475467">Caption minimum: 15px / 1.45 line height</text>
+  <rect x="590" y="55" width="530" height="790" rx="36" fill="#101828"/>
+  <text x="650" y="125" font-family="Barlow Condensed" font-size="46" font-weight="800" fill="#F8FAFC">FINAL-SIZE CHECKS</text>
+  <text x="650" y="220" font-family="Atkinson Hyperlegible" font-size="24" font-weight="700" fill="#F4B942">BODY</text>
+  <text x="650" y="262" font-family="Atkinson Hyperlegible" font-size="22" fill="#F8FAFC">16px minimum • 1.55 line height</text>
+  <text x="650" y="345" font-family="Atkinson Hyperlegible" font-size="24" font-weight="700" fill="#F4B942">DIALOGUE</text>
+  <text x="650" y="387" font-family="Atkinson Hyperlegible" font-size="22" fill="#F8FAFC">16px minimum • 18–22px preferred</text>
+  <text x="650" y="470" font-family="Atkinson Hyperlegible" font-size="24" font-weight="700" fill="#F4B942">CODE</text>
+  <text x="650" y="512" font-family="IBM Plex Mono" font-size="22" fill="#F8FAFC">14px minimum • ligatures off</text>
+  <text x="650" y="595" font-family="Atkinson Hyperlegible" font-size="24" font-weight="700" fill="#F4B942">SOCIAL</text>
+  <text x="650" y="637" font-family="Atkinson Hyperlegible" font-size="22" fill="#F8FAFC">Inspect exports at 360px wide</text>
+  <text x="650" y="720" font-family="Atkinson Hyperlegible" font-size="24" font-weight="700" fill="#F4B942">RULE</text>
+  <text x="650" y="762" font-family="Atkinson Hyperlegible" font-size="22" fill="#F8FAFC">Edit copy before shrinking type.</text>
+</svg>

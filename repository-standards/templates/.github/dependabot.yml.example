@@ -1,0 +1,34 @@
+version: 2
+
+# Rename this file to .github/dependabot.yml and keep only ecosystems that
+# actually exist. Duplicate an entry for additional manifest directories.
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "America/New_York"
+    open-pull-requests-limit: 5
+    labels:
+      - "type:maintenance"
+      - "area:dependencies"
+    groups:
+      development-minor-and-patch:
+        dependency-type: "development"
+        update-types:
+          - "minor"
+          - "patch"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "America/New_York"
+    open-pull-requests-limit: 5
+    labels:
+      - "type:maintenance"
+      - "area:dependencies"

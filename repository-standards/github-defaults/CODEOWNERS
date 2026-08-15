@@ -1,0 +1,9 @@
+# Organization-wide defaults and policy require owner review.
+* @andrewperis
+
+/.github/ @andrewperis
+/CODE_OF_CONDUCT.md @andrewperis
+/GOVERNANCE.md @andrewperis
+/LICENSE @andrewperis
+/NOTICE @andrewperis
+/SECURITY.md @andrewperis

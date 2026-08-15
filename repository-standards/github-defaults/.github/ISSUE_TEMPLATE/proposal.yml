@@ -1,0 +1,51 @@
+name: Feature or change proposal
+description: Propose a scoped capability, policy, or maintained improvement
+title: "[Proposal]: "
+labels:
+  - "type:feature"
+  - "status:triage"
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What concrete need or limitation should be addressed?
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome
+      description: Describe observable success without prescribing unnecessary implementation details.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope and boundaries
+      description: Why does this belong in this repository, and what is explicitly out of scope?
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Include current workarounds or reasons not to make the change.
+    validations:
+      required: false
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact
+      description: Note compatibility, security, licensing, data, accessibility, creative-IP, or cross-repository effects.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Submission checks
+      options:
+        - label: I searched for an existing issue or proposal.
+          required: true
+        - label: This proposal contains no secrets, private data, vulnerability details, or unreleased creative material.
+          required: true

@@ -151,9 +151,10 @@ Repository names under `DefinitelySecureStudio` use lowercase ASCII kebab-case:
 - Do not encode implementation language, deployment environment, visibility,
   team name, or temporary status in the name.
 - Do not use catch-all suffixes such as `misc`, `shared`, `common`, or `utils`.
-- Reserve `.github` for organization-wide community health files if issue #32
-  adopts that repository. Reserve the six v1 names for the responsibilities in
-  this document.
+- Reserve the public `.github` repository for organization-wide community health
+  defaults adopted by
+  [ADR 0005](adr/0005-organization-repository-standards.md). Reserve the six v1
+  names for the responsibilities in this document.
 - Never reuse the name of an archived repository for a different responsibility.
 
 A future repository is justified only when it has an independent responsibility,

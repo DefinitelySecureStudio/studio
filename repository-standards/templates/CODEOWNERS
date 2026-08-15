@@ -1,0 +1,12 @@
+# Replace @OWNER with a real GitHub user or organization team.
+* @OWNER
+
+# Repository governance and security-sensitive surfaces.
+/.github/ @OWNER
+/CODEOWNERS @OWNER
+/LICENSE @OWNER
+/NOTICE @OWNER
+/SECURITY.md @OWNER
+
+# Add repository-specific authoritative paths below.
+/path/ @OWNER

@@ -27,8 +27,17 @@ The authoritative repository topology, visibility classifications, ownership
 boundaries, and dependency directions are documented in
 [Repository architecture](ARCHITECTURE.md).
 
+The authoritative repository-by-repository license classifications, creative-IP
+boundaries, templates, and third-party rules are documented in the
+[repository licensing policy](licensing/POLICY.md).
+
 Brand assets have their own terms. The Prompt Mark, wordmarks, and lockups are proprietary and all rights are reserved; repository access does not grant trademark, endorsement, merchandising, or adaptation rights. Bundled font files use the SIL Open Font License 1.1. Consult the license file beside each asset family before redistribution.
 
 Open-source projects from Definitely Secure Studio identify their applicable software license independently. A software license does not override the brand-asset terms.
+
+This repository is publicly readable but is not open source as a whole. Except
+where a file or directory states otherwise, original governance, documentation,
+brand material, and assets are proprietary. See [LICENSE](LICENSE) and
+[NOTICE](NOTICE).
 
 © 2026 Definitely Secure Studio. All rights reserved.

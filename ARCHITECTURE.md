@@ -58,8 +58,9 @@ compatibility guarantees, and pinning rules are deferred to
 
 Visibility is part of the boundary, not the licensing decision. Public does not
 mean every file is open source: brand and creative assets retain their stated
-terms. The repository-by-repository license choice is handled by
-[issue #31](https://github.com/DefinitelySecureStudio/studio/issues/31).
+terms. The repository-by-repository classifications and operational rules are
+defined by [ADR 0004](adr/0004-repository-licensing-and-ip-boundaries.md) and
+the [repository licensing policy](licensing/POLICY.md).
 
 ## Authoritative homes by content type
 

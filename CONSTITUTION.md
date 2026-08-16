@@ -1,11 +1,12 @@
 # Definitely Secure Studio Constitution
 
 - Status: Adopted foundation; pre-v1.0
-- Version: 0.2.0
+- Version: 0.3.0
 - Date: 2026-08-16
 - Authority: Definitely Secure Studio
 - Constitutional model: [ADR 0007](adr/0007-studio-constitution-model.md)
 - Human/AI authority model: [ADR 0008](adr/0008-human-ai-authority-boundaries.md)
+- Canon/Lore governance model: [ADR 0009](adr/0009-canon-lore-continuity-governance.md)
 
 ## Preamble
 
@@ -32,12 +33,14 @@ implementation manual:
    decision test.
 5. **Human and AI authority boundaries** define delegation levels, approval
    gates, escalation, and accountability.
-6. **Conflict resolution** defines how competing obligations are handled.
-7. **Definitions** provide a shared constitutional vocabulary.
-8. **Authority, storage, and references** identify the canonical document and
+6. **Canon, Lore, and continuity governance** defines creative truth, content
+   states, promotion, retcons, and confidentiality.
+7. **Conflict resolution** defines how competing obligations are handled.
+8. **Definitions** provide a shared constitutional vocabulary.
+9. **Authority, storage, and references** identify the canonical document and
    how downstream work pins it.
-9. **Roadmap** delimits the remaining constitutional work.
-10. **Conformance** states the basis for claiming compliance.
+10. **Roadmap** delimits the remaining constitutional work.
+11. **Conformance** states the basis for claiming compliance.
 
 Later articles MAY add precise requirements within this structure. They MUST
 NOT turn the Constitution into a schema, procedure, prompt, or implementation
@@ -154,7 +157,7 @@ constitutional process.
 ## 4. Foundational principles
 
 These principles establish the decision frame. Articles developed under issues
-#42–#47 MAY add precise requirements, but MUST preserve this foundation.
+#43–#47 MAY add precise requirements, but MUST preserve this foundation.
 
 ### Principle 1: Human authority carries human accountability
 
@@ -342,7 +345,7 @@ irreversibility raises the required level.
 | Technical/governance — merge, stable specification, constitutional policy, or other authoritative change | A3 | A human must review the exact change, evidence, impact, and recovery plan before effect. |
 | Operational — deployment or production configuration change | A3 | A human must approve the exact target, change, validation, risk, and rollback plan. |
 | Creative/editorial — selection or rejection of material creative direction | A3 | The accountable editor must review the actual alternatives and intended effect. |
-| Editorial — canon acceptance, rejection, retcon, or continuity exception | A4 | The editorial judgment must be explicitly human; issue #42 will add domain-specific rules. |
+| Editorial — canon acceptance, rejection, retcon, or continuity exception | A4 | The editorial judgment must be explicitly human and follow the canon governance in Section 6. |
 | Publishing — public release or representation that work is approved, official, or final | A4 | A human publisher must decide that the exact artifact and public context are fit to release. |
 | Public interaction — external message, issue, pull request, or other public-facing write | A3 | An authorized human must approve the content and destination unless a narrower routine class is explicitly delegated at A2. |
 | Security/privacy — analysis of already authorized evidence | A1 | The agent may identify concerns and options but must not expand access or expose protected detail. |
@@ -460,7 +463,210 @@ agent's summary when the underlying artifact or consequence can reasonably be
 examined. Use of an agent does not reduce the Studio's responsibility for the
 decision, action, or released result.
 
-## 6. Resolving conflicts
+## 6. Canon, Lore, and continuity governance
+
+Creative truth requires both an editorial state and a release state. Canon
+status answers what the Studio currently treats as reader-safe story truth;
+publication status answers what exact material an audience received. The two
+MUST be recorded separately. Publication alone does not make every statement
+canonical, and a private plan does not become public canon through use,
+inference, repetition, or implementation.
+
+### 6.1 Ownership and authorities
+
+The following ownership boundaries are singular:
+
+- **Universe** owns active and deprecated public canon, canon decisions,
+  reader-safe continuity records, released canon snapshots, and the public
+  publication record.
+- **Lore** owns private unrevealed continuity, established private facts,
+  explicitly labeled possibilities and alternatives, and approved private
+  context packages. Lore authority is private and does not itself grant public
+  canon status.
+- **Published artifacts** are immutable evidence of what an audience received
+  under a particular release identity. Universe records their declared canon
+  scope and relationship to current canon.
+- **Humans authorized as canon editors** make A4 canon, continuity-exception,
+  and retcon decisions. Humans authorized as publishers make the separate A4
+  release decision.
+- **Agents, Platform, prompts, validators, and generated outputs** MAY propose,
+  compare, flag, or transform material within delegation, but MUST NOT declare,
+  promote, deprecate, retcon, or publish canon.
+
+Copies, caches, context packages, scripts, production dependencies, and model
+outputs are consumers of creative authority. They MUST NOT become competing
+sources merely because they are newer, more detailed, or necessary to a build.
+
+### 6.2 Content states
+
+| State | Meaning | Authority and allowed transition |
+| --- | --- | --- |
+| **Proposal** | A discrete candidate idea, fact, change, or resolution submitted for consideration. | Non-authoritative. A human or agent MAY create or revise it within delegation; doing so does not advance its canon status. |
+| **Draft** | An assembled work in progress that may combine proposals and approved sources. | Non-authoritative and non-canonical. It remains reviewable working state until an explicit decision changes its status. |
+| **Lore** | Private planning material in the Lore authority, with each item labeled as established private continuity, possibility, alternative, question, or retired plan. | Authoritative only for its labeled private planning role. Promotion requires a sanitized proposal and an A4 canon decision; direct copying is not promotion. |
+| **Active canon** | Reader-safe story truth explicitly accepted by an authorized canon editor and recorded in Universe. | Governs current public continuity from its stated effective point until explicitly superseded or deprecated. |
+| **Deprecated canon** | Material that was canonical but has been explicitly superseded, limited, or retired. | Retained with its prior status, affected scope, replacement or resolution, effective point, rationale, and decision provenance; it is not active authority for new work. |
+| **Published artifact** | Exact material intentionally released to an audience under a stable identity. | Immutable evidence of that release. Its record MUST declare which content is canonical, non-canonical, promotional, hypothetical, or otherwise scoped. Publication does not silently promote content. |
+
+These states are not a single automatic lifecycle. A draft MAY become a
+published non-canonical artifact; a canon record MAY exist before its associated
+artifact is released; and a published artifact remains historical evidence if
+some of its canon is later deprecated. Every material creative item MUST have
+an explicit state. Unknown or missing state is non-canonical.
+
+### 6.3 Canon promotion and change
+
+Canon promotion is an A4 editorial decision distinct from the A4 publication
+decision. One human review MAY record both only when it explicitly identifies
+and separately approves the exact canon scope and exact release artifact.
+
+Before promotion, the canon editor MUST receive:
+
+1. the exact proposal or draft and its current state;
+2. the pinned active Universe canon snapshot used for review;
+3. the minimum authorized Lore context needed for the decision, if any;
+4. a continuity comparison identifying contradictions, unresolved ambiguity,
+   private implications, and affected canon;
+5. source and generation provenance sufficient to understand material creative
+   influence, subject to the detailed requirements of issue #43; and
+6. the proposed effective point, public wording, canon scope, and disposition
+   of superseded or rejected alternatives.
+
+The recorded decision MUST identify the authorized canon editor, exact accepted
+material, prior and new states, effective point, rationale, affected records and
+artifacts, unresolved limitations, and immutable source references. Universe
+MUST update its canon status and decision record before consumers treat the
+material as canon.
+
+An agent inference, generated continuation, validator result, production use,
+publication, repeated reference, audience assumption, or absence of a contrary
+record MUST NOT substitute for promotion. Content omitted from a canon snapshot
+is unknown unless an explicit record marks it false, deprecated, or outside the
+snapshot's scope.
+
+### 6.4 Corrections, deprecation, and retcons
+
+A correction that changes presentation without changing story meaning MAY be
+handled as an A3 publication or record correction, but it MUST preserve the
+original artifact or record and explain the correction. If reasonable readers
+could understand the story differently, the change is a canon decision at A4.
+
+A retcon is an intentional A4 decision that contradicts, replaces, narrows, or
+reinterprets previously active canon. A retcon MUST NOT erase history or silently
+rewrite a prior release. Its record MUST:
+
+- identify the exact prior canon and affected published artifacts;
+- state the contradiction or change, rationale, and accountable canon editor;
+- mark the prior material deprecated with its prior status and publication
+  history preserved;
+- identify the replacement, new interpretation, or deliberately unresolved
+  state and its effective point;
+- record source, decision, and release provenance with immutable references;
+  and
+- identify known downstream continuity, publication, and consumer updates.
+
+Generated material MUST NOT initiate a retcon by being more convenient,
+coherent, recent, or repeatedly used. A continuity exception limited to one
+work or framing device is still an A4 decision and MUST state its exact scope so
+it cannot silently become a general retcon.
+
+### 6.5 Deterministic continuity conflict resolution
+
+When a proposed or active statement appears to contradict another creative
+source, promotion and publication MUST pause for the disputed scope. The canon
+editor and assisting systems MUST:
+
+1. pin the exact records, snapshots, artifacts, and effective dates involved;
+2. identify whether the question concerns historical publication, current
+   canon, private planning, or a proposed future change;
+3. test whether time, viewpoint, narrator reliability, scope, or explicit
+   ambiguity allows the statements to coexist;
+4. apply the precedence rules below without rewriting a source in place;
+5. record the resolution, affected states, rationale, and decision owner; and
+6. update the authoritative records before downstream work resumes.
+
+Precedence is determined by the question being answered:
+
+- For **what an audience received**, the exact published artifact and its
+  immutable release record control.
+- For **current public continuity**, the latest applicable explicit Universe
+  canon decision controls. A Universe record may differ from an earlier
+  published artifact only when an explicit correction, deprecation, or retcon
+  accounts for that difference.
+- If no later explicit decision exists, an approved canonical published
+  artifact controls over contradictory unpublished internal documentation. The
+  internal record MUST be corrected; it cannot silently negate publication.
+- Lore controls private planning only where it does not claim to override
+  public canon. Conflicting Lore MUST be reconciled, scoped as an alternative,
+  or marked retired before use.
+- Proposals, drafts, generated outputs, implementation behavior, and memories
+  have no precedence over an authoritative record.
+
+Timestamps, file order, branch position, repetition, and last-write-wins MUST
+NOT resolve equal-authority conflicts. If the rules do not yield one outcome,
+the conflict is explicitly unresolved until an authorized canon editor records
+an A4 decision. Agents MAY detect and explain the conflict but MUST NOT choose a
+preferred truth.
+
+### 6.6 Lore confidentiality and non-leakage
+
+Lore is protected private material. Access to Lore does not authorize
+disclosure, publication, canon promotion, or reuse in a different system or
+purpose. Lore MUST NOT enter a public or less-protected repository, issue, pull
+request, prompt, log, fixture, cache, model-training corpus, artifact, manifest,
+or release unless the exact reader-safe material has an A4 human disclosure
+decision and explicit canon scope. A release additionally requires its A4
+publication decision.
+
+Production systems MUST consume the minimum approved, purpose-bound Lore
+context package rather than the Lore repository or a broad export. Each package
+MUST identify its authorized purpose, recipient or environment, included
+material, source revision, handling constraints, retention or expiry, and A4
+human disclosure approval. Access MUST be least-privileged, time-bounded where
+practical, and unavailable to public tooling that does not require the content.
+
+Non-leakage applies to derived and indirect information, including summaries,
+negative confirmations, filenames, paths, commit identifiers, content-derived
+hashes, embeddings, prompts, logs, timing, and correlation metadata. Public
+provenance MUST use a non-derivable opaque attestation when it needs to refer to
+private influence; the restricted mapping remains in an approved private
+authority.
+
+Before public review or release, an authorized check MUST compare the candidate
+against its approved public inputs and, in a restricted environment, the private
+material available to the production run. The check MUST identify unapproved
+facts, implications, quotations, metadata, and transformations. It MUST expose
+only the minimum finding needed for public correction, not the Lore content that
+caused the finding.
+
+On suspected leakage, the workflow MUST stop publication and further
+disclosure, preserve evidence in a restricted destination, contain accessible
+copies where authorized, and escalate to the accountable human. Deletion or
+redaction alone MUST NOT be treated as proof that disclosure did not occur.
+
+### 6.7 Generated-content continuity checks
+
+Generated comic content MUST be evaluated against:
+
+- the exact active Universe canon snapshot pinned for the work;
+- only the approved minimum Lore context package, when private context is
+  necessary;
+- the intended content state and declared canon scope;
+- the relevant chronology, identities, relationships, setting, prior events,
+  and explicit continuity constraints; and
+- a restricted non-leakage review when Lore influenced generation.
+
+The check MUST produce a reviewable report of sources, conflicts, unknowns, and
+private-risk findings without exposing protected detail. Unresolved conflict,
+unknown authority, missing state, or suspected Lore leakage blocks canon
+promotion and publication of the affected material.
+
+Automated checks are advisory evidence. Passing a validator proves only that
+its encoded checks passed against its supplied inputs; it does not establish
+canon completeness, creative fitness, safe disclosure, or human approval. The
+authorized canon editor and publisher remain accountable for the exact result.
+
+## 7. Resolving conflicts
 
 Principles are intended to constrain one another, not to provide slogans that
 justify bypassing one another. A claimed benefit under one principle does not
@@ -494,7 +700,7 @@ immediate safety or security incident MAY take the narrowest protective action,
 but MUST preserve evidence, name an accountable Studio owner, and enter review
 as soon as the immediate risk is controlled.
 
-## 7. Definitions
+## 8. Definitions
 
 - **Accountable human:** A named person with authority to approve, stop, explain,
   and accept responsibility for a decision and its consequences.
@@ -504,35 +710,54 @@ as soon as the immediate risk is controlled.
   selects, evaluates, or directs content, code, metadata, or decisions.
 - **Authority:** The recognized source entitled to establish truth, rules, or
   maintained behavior within a defined domain.
-- **Canon:** Reader-safe story truth explicitly accepted in Universe or a
-  published work under canon governance.
+- **Canon:** Material whose public story-truth status was explicitly decided by
+  an authorized canon editor and recorded in Universe. Active canon governs
+  current continuity; deprecated canon records former status.
+- **Continuity:** The coherent relationship among story facts, events,
+  chronology, identities, perspectives, and declared ambiguities across works.
+- **Content state:** The explicit governance status that determines whether
+  creative material is a proposal, draft, Lore, active canon, or deprecated
+  canon; publication is recorded as a separate release state.
 - **Constitutional conformance:** Satisfaction of every applicable MUST and MUST
   NOT, with documented treatment of applicable SHOULD and SHOULD NOT terms.
 - **Delegation:** A bounded grant from an accountable human permitting an agent
   to perform specified actions under stated limits, evidence, and escalation
   requirements.
+- **Deprecated canon:** Formerly active canon retained as a historical record of
+  prior canon status but no longer controlling new continuity within its stated
+  deprecated scope.
+- **Draft:** Assembled, non-authoritative creative work that has not received an
+  applicable canon decision.
 - **Generated artifact:** Any content, code, data, media, manifest, or build
   output produced materially by software, automation, or AI assistance.
 - **Irreversible decision:** An action that is public, canonical, destructive,
   legally or commercially committed, security-sensitive, or costly to undo.
-- **Lore:** Private planning truth, possibilities, continuity, and unrevealed
-  context held in the restricted Lore authority.
+- **Lore:** Private planning material held in the restricted Lore authority,
+  including explicitly labeled established facts, possibilities, alternatives,
+  questions, retired plans, continuity, and unrevealed context.
 - **Mechanism:** A prompt, model, agent, workflow, validator, manifest, context
   package, service, or code path used to perform work; a mechanism is not policy
   merely because it is executable.
 - **Principle:** A durable constitutional rule and rationale used to judge
   decisions across changing implementations.
+- **Proposal:** A non-authoritative candidate idea, fact, change, or resolution
+  submitted for consideration.
 - **Provenance:** Evidence connecting an artifact or decision to its sources,
   rights, tools, versions, transformations, approvals, and exact output.
 - **Release:** An intentionally approved artifact or collection made available
   to its intended audience under a stable identity and recorded terms.
+- **Published artifact:** The exact, immutable evidence of material released to
+  an audience, with its canon scope recorded separately.
 - **Reserved human decision:** A judgment that an authorized human must
   personally make and record, even when an agent supplies analysis or performs
   subsequent mechanical execution.
+- **Retcon:** An intentional human decision that contradicts, replaces, narrows,
+  or reinterprets previously active canon while preserving its history and
+  provenance.
 - **Specification:** A stable, implementation-neutral contract owned by Codex
   after its required acceptance process.
 
-## 8. Authority, storage, and references
+## 9. Authority, storage, and references
 
 The authoritative Constitution is the root file
 [`CONSTITUTION.md`](CONSTITUTION.md) in the public
@@ -551,13 +776,12 @@ and release governance SHOULD state the Constitution version or commit they were
 reviewed against. They MAY link the human-readable root file for convenience,
 but compliance records MUST retain the immutable reference.
 
-## 9. Constitutional roadmap
+## 10. Constitutional roadmap
 
-This version establishes the shared frame and the human/AI authority model. The
-remaining Epic #3 work will elaborate it without moving implementation detail
-into the Constitution:
+This version establishes the shared frame, human/AI authority model, and
+canon/Lore governance. The remaining Epic #3 work will elaborate it without
+moving implementation detail into the Constitution:
 
-- issue #42: canon, Lore, and continuity governance;
 - issue #43: provenance, reproducibility, and audit requirements;
 - issue #44: security, privacy, and intellectual-property principles;
 - issue #45: quality, validation, and release governance;
@@ -565,10 +789,15 @@ into the Constitution:
 - issue #47: amendment and exception process; and
 - issue #48: Constitution v1.0 publication and compliance checklist.
 
-## 10. Conformance statement
+## 11. Conformance statement
 
 A proposal, mechanism, or release MUST NOT claim constitutional conformance
 unless its accountable owner can identify the applicable constitutional rules,
 domain authorities, authority level, delegation, evidence, approval gates, and
 unresolved risks. Detailed checklists and versioned publication requirements are
 reserved for issue #48.
+
+A creative proposal, canon decision, or release MUST additionally identify its
+content state, applicable Universe snapshot, Lore handling and disclosure
+authority, continuity findings, and any correction, deprecation, or retcon on
+which it depends.

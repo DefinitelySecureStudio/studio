@@ -1,12 +1,13 @@
 # Definitely Secure Studio Constitution
 
 - Status: Adopted foundation; pre-v1.0
-- Version: 0.3.0
+- Version: 0.4.0
 - Date: 2026-08-16
 - Authority: Definitely Secure Studio
 - Constitutional model: [ADR 0007](adr/0007-studio-constitution-model.md)
 - Human/AI authority model: [ADR 0008](adr/0008-human-ai-authority-boundaries.md)
 - Canon/Lore governance model: [ADR 0009](adr/0009-canon-lore-continuity-governance.md)
+- Provenance and audit model: [ADR 0010](adr/0010-provenance-reproducibility-audit.md)
 
 ## Preamble
 
@@ -35,12 +36,14 @@ implementation manual:
    gates, escalation, and accountability.
 6. **Canon, Lore, and continuity governance** defines creative truth, content
    states, promotion, retcons, and confidentiality.
-7. **Conflict resolution** defines how competing obligations are handled.
-8. **Definitions** provide a shared constitutional vocabulary.
-9. **Authority, storage, and references** identify the canonical document and
+7. **Provenance, reproducibility, and audit** defines lineage, evidence,
+   deterministic rebuilds, nondeterministic generation, and retention.
+8. **Conflict resolution** defines how competing obligations are handled.
+9. **Definitions** provide a shared constitutional vocabulary.
+10. **Authority, storage, and references** identify the canonical document and
    how downstream work pins it.
-10. **Roadmap** delimits the remaining constitutional work.
-11. **Conformance** states the basis for claiming compliance.
+11. **Roadmap** delimits the remaining constitutional work.
+12. **Conformance** states the basis for claiming compliance.
 
 Later articles MAY add precise requirements within this structure. They MUST
 NOT turn the Constitution into a schema, procedure, prompt, or implementation
@@ -157,7 +160,7 @@ constitutional process.
 ## 4. Foundational principles
 
 These principles establish the decision frame. Articles developed under issues
-#43–#47 MAY add precise requirements, but MUST preserve this foundation.
+#44–#47 MAY add precise requirements, but MUST preserve this foundation.
 
 ### Principle 1: Human authority carries human accountability
 
@@ -408,7 +411,7 @@ reviewer to identify:
 Evidence MUST be durable and proportionate to the consequence before the action
 is treated as complete. Audit records MUST preserve accountability without
 placing secrets, private Lore, personal data, or sensitive security detail in a
-less protected destination. Issue #43 will define the detailed provenance,
+less protected destination. Section 7 defines the detailed provenance,
 retention, and reproducibility requirements.
 
 ### 5.6 Uncertainty, conflict, and escalation
@@ -528,7 +531,7 @@ Before promotion, the canon editor MUST receive:
 4. a continuity comparison identifying contradictions, unresolved ambiguity,
    private implications, and affected canon;
 5. source and generation provenance sufficient to understand material creative
-   influence, subject to the detailed requirements of issue #43; and
+   influence under Section 7; and
 6. the proposed effective point, public wording, canon scope, and disposition
    of superseded or rejected alternatives.
 
@@ -666,7 +669,219 @@ its encoded checks passed against its supplied inputs; it does not establish
 canon completeness, creative fitness, safe disclosure, or human approval. The
 authorized canon editor and publisher remain accountable for the exact result.
 
-## 7. Resolving conflicts
+## 7. Provenance, reproducibility, and audit
+
+Provenance MUST travel with every material artifact from authoritative inputs
+through transformations, selection, approval, and release. A record is
+sufficient only when an authorized reviewer can follow the lineage in both
+directions: from an output to what produced and approved it, and from an input
+or decision to every affected output.
+
+### 7.1 Traceability, reproducibility, and auditability
+
+These are distinct claims:
+
+- **Traceability** means the Studio can identify an artifact's authoritative
+  inputs, instructions and specifications, mechanisms, transformations,
+  responsible actors, decisions, approvals, and exact output.
+- **Exact reproducibility** means an authorized party can follow the recorded
+  procedure with the pinned inputs and controlled environment to produce
+  byte-identical output. A digest match demonstrates identity; visual,
+  semantic, or functional similarity does not.
+- **Auditability** means an authorized reviewer can verify what happened, why,
+  under whose authority, with which evidence and controls, and with what result,
+  even when the original generation cannot be repeated exactly.
+
+Every material artifact MUST be traceable and auditable. Deterministic release
+assembly, packaging, manifests, and derived transformations MUST be exactly
+reproducible. Nondeterministic generated candidates need not be exactly
+reproducible, but their exact selected outputs MUST be preserved and every
+subsequent deterministic transformation MUST be reproducible.
+
+A workflow MUST classify its reproducibility as **exact**, **partial**, or
+**audit-only**, state the boundary of that claim, and identify known gaps. It
+MUST NOT claim reproducibility merely because it recorded a seed, can send a
+similar request again, or produced a perceptually similar result.
+
+- **Exact** applies when the complete claimed artifact can be regenerated with
+  a byte-identical result.
+- **Partial** names the specific deterministic stages or components that can be
+  regenerated exactly and treats the remainder as audit-only.
+- **Audit-only** makes no exact-regeneration claim but still requires preserved
+  outputs and sufficient evidence for meaningful review.
+
+### 7.2 Common provenance record
+
+Every material artifact record MUST identify, as applicable:
+
+- a permanent artifact identifier, artifact class, content state, media type,
+  creation time, owning authority, and sensitivity classification;
+- every authoritative input by stable identifier, logical version, immutable
+  revision or object version, media type, byte size, and cryptographic digest;
+- the applicable Constitution, policy, specification, schema, prompt or
+  instruction-set, and workflow versions by immutable reference;
+- the agent, human, service, tool, model, and provider identities and versions
+  involved, including unavailable or provider-opaque fields explicitly marked
+  as such;
+- material parameters, random seeds, sampling controls, environment,
+  dependencies, fonts, toolchain, locale, clock or time source, and other
+  influences needed to understand or repeat the work;
+- an ordered transformation and tool-action history linking intermediate and
+  final artifacts without silently collapsing human edits;
+- validation results, warnings, failures, retries, uncertainty, exceptions,
+  and the final disposition of the run;
+- selection, rejection, edit, canon, and publication decisions, including the
+  authority level, accountable humans, approval scope, and time; and
+- the exact output identifier, storage reference, media type, byte size,
+  cryptographic digest, and relationship to any release.
+
+The record MUST distinguish facts observed from the system from explanations
+or reconstructions added later. Unknown, unavailable, inapplicable, and
+intentionally withheld fields MUST remain distinguishable; an empty field MUST
+NOT silently represent all four.
+
+Detailed schemas belong to Codex. A schema MAY organize these fields but MUST
+NOT reduce the constitutional evidence or turn an embedded copy into the
+authoritative input.
+
+### 7.3 Provenance requirements by artifact class
+
+The common record applies to all classes. The matrix adds minimum class-specific
+evidence and the required reproducibility target.
+
+| Artifact class | Additional minimum provenance | Reproducibility requirement |
+| --- | --- | --- |
+| **Generated text, code, or structured draft** | Exact input and output identities; prompt/instruction specification; model/provider identifier where available; parameters and seed; tool calls; candidate selection; human edits and approvals. | Traceable and auditable. Preserve the exact selected candidate; reproduce deterministic edits and formatting. |
+| **Generated image, comic or comic component, audio, animation, or video** | Source-asset references; model and generation controls; candidate identifiers; selected source bytes; crop, composite, color, typography, audio, and other post-processing lineage; rights and approval references. | Traceable and auditable. Preserve selected source and final bytes; reproduce deterministic composition and post-processing. |
+| **Authored text, image, or creative source** | Author/editor identity; authoritative source revision; referenced canon snapshot; material source assets; edit history; content state; approval and rights references. | Version history and deterministic export SHOULD reproduce the released representation; exact source and release bytes MUST be preserved. |
+| **Manifest, report, metadata, or provenance record** | Governing schema/specification; generator version; complete ordered inputs; normalization rules; validation result; signer or attestation. | Exact reproduction is required except for explicitly isolated signature, timestamp, encryption, or transport envelopes whose payload identity remains verifiable. |
+| **Lore context package** | Restricted source records; selection and minimization decisions; contract version; purpose; recipient; disclosure approval; expiry; package identity and digest; deletion or preservation evidence. | The authorized payload and deterministic transformations MUST be reproducible in the restricted environment. Randomized encryption envelopes may differ but MUST verify to the same approved payload identity. |
+| **Software, build, or packaged technical artifact** | Source commit; dependency lock; compiler/runtime and toolchain; build workflow and environment; commands and configuration; test and security results; package identity and digest. | Deterministic build and packaging SHOULD be exact; any gap MUST be declared and the exact released bytes preserved and auditable. |
+| **Published release** | Permanent release ID and revision; all output identities; complete public dependency graph; exact specifications and source revisions; build/run identity; validations; canon scope; rights notices; human approvals; private-context attestation when applicable. | Exact release assembly and manifest generation are required. Every released byte MUST be preserved and verifiable even when a nondeterministic source cannot be regenerated. |
+
+### 7.4 Nondeterministic generation
+
+Before using a nondeterministic mechanism, the workflow MUST declare the
+expected reproducibility boundary. It MUST capture all exposed controls and
+identifiers that materially affect the result, including model/provider name,
+model or endpoint version where available, request or run identity, prompt and
+specification versions, parameters, seed, tool state, time, and environment.
+
+The workflow MUST preserve the exact returned candidate before edits, assign it
+a stable identifier and digest, and record selection, rejection, and every
+subsequent transformation. Manual edits MUST be represented as transformations
+with an accountable actor; they MUST NOT be folded into a claim that the model
+produced the final work unchanged.
+
+A seed is evidence, not a guarantee. Provider opacity, mutable hosted models,
+uncontrolled infrastructure, hidden safety transformations, race conditions,
+and time-dependent sources MUST be recorded as limitations. If a material
+identifier or control is unavailable, the record MUST say so and preserve the
+best available request, response, and environment evidence in the appropriate
+protected store.
+
+A rerun is a new generation event and MUST receive a new artifact and run
+identity. It MUST NOT overwrite the selected candidate or be presented as proof
+that the original output was reproduced. If the preserved output or evidence is
+insufficient for meaningful audit, the artifact MUST NOT be promoted to canon
+or published.
+
+### 7.5 Immutable release record
+
+Before the A4 publication gate, the publisher MUST verify a proposed immutable
+release record containing at minimum:
+
+1. permanent release identifier, revision, authority, publication time, and
+   declared canon scope;
+2. provenance contract/schema name and immutable version;
+3. every released artifact's stable URI or storage reference, media type, byte
+   size, cryptographic digest, and rights notice;
+4. exact public inputs, source commits, specifications, prompt/instruction
+   versions, contracts, dependencies, toolchain, and build environment;
+5. workflow and run identity, ordered material transformations, verification
+   procedure, validation results, and available attestations;
+6. model/provider/tool identifiers and material parameters for generated
+   inputs, with unavailable fields and nondeterministic limitations declared;
+7. accountable canon editor, publisher, other required approvers, approval
+   scope, approved artifact identities, and decision times;
+8. reproducibility classification, instructions, controlled boundary, preserved
+   intermediates, and known gaps; and
+9. whether private context influenced the release and, if so, only a random,
+   non-derivable opaque attestation identifier in the public record.
+
+Publishing makes the record append-only. A correction, withdrawal, retcon, or
+replacement MUST create a linked new event; it MUST NOT rewrite the evidence of
+what was released. The public record and artifacts MUST permit readers to verify
+public identity and lineage without access to private systems. Authorized
+reviewers MUST be able to follow the opaque private attestation to the paired
+restricted record.
+
+### 7.6 Audit records and verification
+
+Audit records MUST be append-only or equivalently tamper-evident, time-ordered,
+attributable, integrity-verifiable, and stored under the authority and
+sensitivity appropriate to their contents. Corrections MUST preserve the prior
+entry and identify who corrected it, why, and when.
+
+An audit MUST be able to:
+
+- verify artifact sizes, digests, signatures or attestations, immutable source
+  references, and the ordered lineage graph;
+- confirm that authorities, delegations, approvals, and content states matched
+  the action taken;
+- distinguish generated, authored, selected, transformed, and approved work;
+- identify missing evidence, unverifiable claims, nondeterministic boundaries,
+  failed checks, overrides, exceptions, and unresolved risk;
+- trace an input, tool, model, approval, or defect forward to affected outputs;
+  and
+- perform the same checks in the restricted record without revealing protected
+  content to a public reviewer.
+
+Provenance completeness and integrity MUST be checked before canon promotion
+and publication. The producing agent's self-report MAY contribute evidence but
+MUST NOT be the sole verification of its own consequential actions. A missing,
+corrupt, contradictory, or sensitivity-violating record blocks the affected
+promotion or release until resolved.
+
+### 7.7 Sensitive evidence and retention
+
+Provenance records MUST NOT contain secret values, credentials, authentication
+tokens, private keys, unnecessary personal data, or protected content merely to
+make a record self-contained. They SHOULD record a non-secret configuration or
+secret-version reference only when necessary, and only in a store whose access
+does not broaden the underlying secret or data exposure.
+
+Private Lore content, restricted prompts, private source identifiers,
+content-derived private hashes, provider request identifiers, personal data,
+and sensitive security evidence MUST remain in a paired restricted record when
+needed for audit. The public record MUST contain only reader-safe evidence and a
+random, non-derivable opaque link. Redaction MUST be explicit, must state the
+withholding authority, and MUST preserve a complete authorized audit path.
+
+Each provenance class MUST have a documented owner, purpose, access policy,
+retention period or event, preservation obligations, and deletion method:
+
+- official release records, released bytes, approvals, and evidence necessary
+  to verify identity and public lineage MUST be preserved for as long as the
+  Studio represents the release as official; withdrawal or deprecation MUST
+  preserve the historical release record;
+- restricted evidence needed to audit canon, rights, disclosure, security, or
+  an official release MUST be preserved under least privilege for the required
+  audit, legal, contractual, and incident-response period, then reviewed for
+  minimization or deletion;
+- rejected candidates, transient prompts, caches, and intermediate data MUST
+  use the shortest documented period compatible with review, recovery,
+  security, rights, and audit needs; indefinite retention is not the default;
+  and
+- deletion, legal hold, migration, or preservation MUST itself create an audit
+  event without exposing the deleted protected content.
+
+When retention and minimization requirements conflict, the accountable human
+MUST preserve the minimum evidence that proves identity, authority, decision,
+and outcome, store sensitive supporting material separately, and document the
+resolution under Section 8.
+
+## 8. Resolving conflicts
 
 Principles are intended to constrain one another, not to provide slogans that
 justify bypassing one another. A claimed benefit under one principle does not
@@ -700,12 +915,17 @@ immediate safety or security incident MAY take the narrowest protective action,
 but MUST preserve evidence, name an accountable Studio owner, and enter review
 as soon as the immediate risk is controlled.
 
-## 8. Definitions
+## 9. Definitions
 
 - **Accountable human:** A named person with authority to approve, stop, explain,
   and accept responsibility for a decision and its consequences.
 - **Approval gate:** A boundary that an agent cannot cross until an authorized
   human supplies an explicit, informed, scoped, and recorded approval.
+- **Auditability:** The ability of an authorized reviewer to verify what
+  happened, why, under whose authority, with which evidence and controls, and
+  with what result, without requiring exact regeneration.
+- **Audit record:** Integrity-verifiable, attributable, time-ordered evidence of
+  actions, decisions, validations, and outcomes.
 - **AI-assisted work:** Work in which a model materially generates, transforms,
   selects, evaluates, or directs content, code, metadata, or decisions.
 - **Authority:** The recognized source entitled to establish truth, rules, or
@@ -738,12 +958,15 @@ as soon as the immediate risk is controlled.
 - **Mechanism:** A prompt, model, agent, workflow, validator, manifest, context
   package, service, or code path used to perform work; a mechanism is not policy
   merely because it is executable.
+- **Nondeterministic generation:** Production in which the same recorded request
+  and apparent environment are not guaranteed to produce byte-identical output.
 - **Principle:** A durable constitutional rule and rationale used to judge
   decisions across changing implementations.
 - **Proposal:** A non-authoritative candidate idea, fact, change, or resolution
   submitted for consideration.
-- **Provenance:** Evidence connecting an artifact or decision to its sources,
-  rights, tools, versions, transformations, approvals, and exact output.
+- **Provenance:** The integrity-verifiable lineage connecting an artifact or
+  decision to its authorities, sources, rights, tools, versions,
+  transformations, approvals, and exact output.
 - **Release:** An intentionally approved artifact or collection made available
   to its intended audience under a stable identity and recorded terms.
 - **Published artifact:** The exact, immutable evidence of material released to
@@ -751,13 +974,19 @@ as soon as the immediate risk is controlled.
 - **Reserved human decision:** A judgment that an authorized human must
   personally make and record, even when an agent supplies analysis or performs
   subsequent mechanical execution.
+- **Reproducibility:** The ability of an authorized party to follow a recorded
+  procedure with pinned inputs and controlled conditions to produce
+  byte-identical output.
 - **Retcon:** An intentional human decision that contradicts, replaces, narrows,
   or reinterprets previously active canon while preserving its history and
   provenance.
 - **Specification:** A stable, implementation-neutral contract owned by Codex
   after its required acceptance process.
+- **Traceability:** The ability to follow lineage backward from an artifact to
+  its inputs and decisions and forward from an input or decision to affected
+  outputs.
 
-## 9. Authority, storage, and references
+## 10. Authority, storage, and references
 
 The authoritative Constitution is the root file
 [`CONSTITUTION.md`](CONSTITUTION.md) in the public
@@ -776,20 +1005,19 @@ and release governance SHOULD state the Constitution version or commit they were
 reviewed against. They MAY link the human-readable root file for convenience,
 but compliance records MUST retain the immutable reference.
 
-## 10. Constitutional roadmap
+## 11. Constitutional roadmap
 
-This version establishes the shared frame, human/AI authority model, and
-canon/Lore governance. The remaining Epic #3 work will elaborate it without
-moving implementation detail into the Constitution:
+This version establishes the shared frame plus human/AI authority, canon/Lore
+governance, and provenance/audit requirements. The remaining Epic #3 work will
+elaborate it without moving implementation detail into the Constitution:
 
-- issue #43: provenance, reproducibility, and audit requirements;
 - issue #44: security, privacy, and intellectual-property principles;
 - issue #45: quality, validation, and release governance;
 - issue #46: portability, interoperability, and vendor neutrality;
 - issue #47: amendment and exception process; and
 - issue #48: Constitution v1.0 publication and compliance checklist.
 
-## 11. Conformance statement
+## 12. Conformance statement
 
 A proposal, mechanism, or release MUST NOT claim constitutional conformance
 unless its accountable owner can identify the applicable constitutional rules,
@@ -801,3 +1029,8 @@ A creative proposal, canon decision, or release MUST additionally identify its
 content state, applicable Universe snapshot, Lore handling and disclosure
 authority, continuity findings, and any correction, deprecation, or retcon on
 which it depends.
+
+A generated artifact or release MUST additionally identify its provenance
+record, exact output identity, reproducibility classification and boundary,
+audit status, retention authority, and any unavailable, withheld, or unresolved
+evidence.

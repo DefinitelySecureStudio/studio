@@ -21,9 +21,9 @@ the form `vMAJOR.MINOR.PATCH`, with optional prerelease suffixes such as
 `v1.4.0-rc.1`.
 
 Repositories with multiple independently versioned artifacts prefix the tag
-with the durable artifact name, for example `manifest/v1.2.0`. The version's
-compatibility meaning and cross-repository pinning rules are decided in issue
-#33; this document defines naming and release hygiene only.
+with the durable artifact name, for example `manifest/v1.2.0`. Compatibility,
+content-addressed pinning, and provenance follow the
+[cross-repository dependency strategy](../dependency-strategy/README.md).
 
 Creative publications retain their permanent `DS-NNNN` episode identifier.
 That identifier is not a software version. Any corrected rendition or metadata

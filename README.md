@@ -8,6 +8,13 @@ The Studio is home to *Definitely Secure*, an ongoing workplace comic about conf
 
 **Serious craft. Questionable systems.**
 
+## Governance
+
+The [Definitely Secure Studio Constitution](CONSTITUTION.md) is the highest
+internal authority for human and AI-assisted creative and technical decisions.
+It defines the principles and hierarchy that ADRs, specifications, repository
+policies, mechanisms, and releases must follow.
+
 ## Brand system
 
 The [Definitely Secure Brand Guide v1.0](brand/BRAND_GUIDE.md) is the authoritative starting point for Studio and comic presentation.

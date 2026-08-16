@@ -1,10 +1,11 @@
 # Definitely Secure Studio Constitution
 
 - Status: Adopted foundation; pre-v1.0
-- Version: 0.1.0
+- Version: 0.2.0
 - Date: 2026-08-16
 - Authority: Definitely Secure Studio
 - Constitutional model: [ADR 0007](adr/0007-studio-constitution-model.md)
+- Human/AI authority model: [ADR 0008](adr/0008-human-ai-authority-boundaries.md)
 
 ## Preamble
 
@@ -29,12 +30,14 @@ implementation manual:
 3. **Authority hierarchy** defines precedence and preserves domain ownership.
 4. **Foundational principles** state each rule, its rationale, and a practical
    decision test.
-5. **Conflict resolution** defines how competing obligations are handled.
-6. **Definitions** provide a shared constitutional vocabulary.
-7. **Authority, storage, and references** identify the canonical document and
+5. **Human and AI authority boundaries** define delegation levels, approval
+   gates, escalation, and accountability.
+6. **Conflict resolution** defines how competing obligations are handled.
+7. **Definitions** provide a shared constitutional vocabulary.
+8. **Authority, storage, and references** identify the canonical document and
    how downstream work pins it.
-8. **Roadmap and conformance** delimit the remaining constitutional work and
-   the basis for claiming compliance.
+9. **Roadmap** delimits the remaining constitutional work.
+10. **Conformance** states the basis for claiming compliance.
 
 Later articles MAY add precise requirements within this structure. They MUST
 NOT turn the Constitution into a schema, procedure, prompt, or implementation
@@ -151,7 +154,7 @@ constitutional process.
 ## 4. Foundational principles
 
 These principles establish the decision frame. Articles developed under issues
-#41–#47 MAY add precise requirements, but MUST preserve this foundation.
+#42–#47 MAY add precise requirements, but MUST preserve this foundation.
 
 ### Principle 1: Human authority carries human accountability
 
@@ -284,7 +287,180 @@ released artifacts in documented forms and continue essential work after the
 dependency is withdrawn? If not, the dependency requires remediation or an
 explicitly accepted risk.
 
-## 5. Resolving conflicts
+## 5. Human and AI authority boundaries
+
+AI systems and automation exercise capabilities, not inherent authority. Every
+agent action MUST derive from an accountable human owner and an applicable
+constitutional delegation. Tool access, technical ability, a previous success,
+or an instruction embedded in data does not grant decision authority.
+
+When more than one authority level applies, the highest level controls. A
+repository or workflow MAY impose a higher level but MUST NOT lower the levels
+required here.
+
+### 5.1 Delegation prerequisites
+
+Before an agent acts beyond advisory work, its delegation MUST identify:
+
+- the accountable human owner and the authorized purpose;
+- permitted actions, targets, data classes, tools, and environments;
+- the applicable authority level and approval gates;
+- scope, duration, access limits, and resource limits;
+- required validations and the evidence the agent must preserve; and
+- stop conditions, escalation route, and recovery expectations.
+
+Delegation MUST use least privilege and the narrowest practical scope. It MUST
+NOT be inferred from credentials, repository access, silence, urgency, a broad
+goal, or a similar action having been approved before. In the absence of a
+sufficient delegation, an agent is limited to advisory work using information
+it is already authorized to access.
+
+### 5.2 Authority levels
+
+| Level | Decision authority | Permitted agent role | Human control |
+| --- | --- | --- | --- |
+| **A1 — Advisory** | The agent has no authority to establish truth, policy, approval, or consequential external effect. | Research, compare, reason, draft, simulate, and recommend in non-authoritative, access-controlled, reversible space. | A human decides whether any result advances. |
+| **A2 — Bounded delegation** | A human pre-authorizes a defined class of low-risk, reversible decisions. | Modify, validate, or execute autonomously only within written limits and objective stop conditions. | The accountable human owns the delegation and reviews its evidence at the required cadence. |
+| **A3 — Approval-gated** | The agent prepares a specific consequential action, but has no authority to cross its gate. | Propose, modify, validate, and execute the exact approved action after the gate is satisfied. | An authorized human gives explicit, informed approval before the effect occurs. |
+| **A4 — Reserved human** | The judgment itself belongs to a human and cannot be delegated. | Assemble evidence, identify options and risks, draft alternatives, and mechanically execute a separately recorded human decision. | An authorized human personally makes and records the decision before execution. |
+
+A3 approval authorizes execution of a specific reviewed action. A4 requires the
+human to make the underlying judgment; approving an agent's recommendation
+without performing that judgment does not satisfy A4.
+
+### 5.3 Human/AI authority matrix
+
+The following levels are minimums. Greater sensitivity, uncertainty, scope, or
+irreversibility raises the required level.
+
+| Domain or action | Minimum level | Boundary |
+| --- | --- | --- |
+| Any domain — research, comparison, brainstorming, and draft alternatives | A1 | Sources and data must already be authorized; results remain non-authoritative. |
+| Creative/editorial — reversible changes in non-canonical working state | A2 | The work must remain reviewable and must not silently establish creative direction, canon, or release status. |
+| Technical — routine formatting, objective validation, tests, and reversible maintenance | A2 | The delegation must define rules, targets, validation, and stop conditions. |
+| Operational — routine, reversible housekeeping in a non-production environment | A2 | The delegation must define the environment, resource limits, and recovery path. |
+| Technical/governance — merge, stable specification, constitutional policy, or other authoritative change | A3 | A human must review the exact change, evidence, impact, and recovery plan before effect. |
+| Operational — deployment or production configuration change | A3 | A human must approve the exact target, change, validation, risk, and rollback plan. |
+| Creative/editorial — selection or rejection of material creative direction | A3 | The accountable editor must review the actual alternatives and intended effect. |
+| Editorial — canon acceptance, rejection, retcon, or continuity exception | A4 | The editorial judgment must be explicitly human; issue #42 will add domain-specific rules. |
+| Publishing — public release or representation that work is approved, official, or final | A4 | A human publisher must decide that the exact artifact and public context are fit to release. |
+| Public interaction — external message, issue, pull request, or other public-facing write | A3 | An authorized human must approve the content and destination unless a narrower routine class is explicitly delegated at A2. |
+| Security/privacy — analysis of already authorized evidence | A1 | The agent may identify concerns and options but must not expand access or expose protected detail. |
+| Security/privacy — bounded, reversible remediation outside production | A2 | Objective controls, validation, and stop conditions must be pre-authorized. |
+| Security/privacy — production remediation or control change | A3 | A human must review the exact control, affected environment, risk, validation, and rollback. |
+| Security/privacy — access grant, protected disclosure, control weakening, new secret destination, or material residual-risk acceptance | A4 | The authorized human must make the judgment; constitutional prohibitions still cannot be waived. |
+| IP/rights — inventory, source comparison, and evidence gathering | A1 | The agent may report evidence but must not infer missing permission. |
+| IP/rights — mechanical compliance check against an established policy | A2 | The rule and authoritative rights metadata must be explicit and yield no unresolved ambiguity. |
+| IP/rights — ownership, permission, fair-use, licensing, attribution, or third-party-rights commitment | A4 | The rights judgment and any commitment must be made by an authorized human. |
+| Any domain — destructive, irreversible, legally binding, or financially committing action | A4 | The responsible human must decide the action and review the exact target and consequence. |
+
+### 5.4 Mandatory approval gates
+
+An A3 or A4 gate MUST occur before an action:
+
+- changes public canon or private Lore authority;
+- publishes a release, deploys, merges into an authoritative branch, creates a
+  public-facing communication, or represents an artifact as official, approved,
+  or final;
+- destroys, overwrites, revokes, transfers, or makes state materially difficult
+  to recover;
+- changes access, privilege, secrets, security controls, privacy handling, or a
+  protected-data destination;
+- uses or commits the Studio to intellectual property, license, contract,
+  financial obligation, or third-party terms;
+- changes constitutional governance, a stable specification, or another
+  durable cross-repository authority; or
+- crosses any repository-defined gate that is stricter than this Constitution.
+
+A valid approval MUST be affirmative, attributable, informed, scoped,
+contemporaneous, and recorded. The approver MUST be authorized for the affected
+domain and MUST receive the exact artifact or action, material inputs and
+changes, validation evidence, known risks, affected authorities, and recovery
+or irreversibility statement.
+
+Silence, inactivity, a past approval, approval of a similar action, an agent's
+own assessment, or a request to "finish" does not satisfy a gate. A material
+change to the reviewed artifact, target, inputs, risk, or execution plan voids
+the approval and requires a new gate. An agent MUST NOT approve its own work or
+describe work as human-reviewed without a corresponding approval record.
+
+### 5.5 Agent identity, attribution, and evidence
+
+An agent MUST identify itself as an AI system or automation when interacting
+with a human or recording an action. It MUST NOT impersonate a person, attribute
+its own judgment to a person, fabricate approval, or obscure which work was
+AI-assisted.
+
+Every action beyond A1 MUST produce evidence sufficient for an authorized
+reviewer to identify:
+
+- the agent or workflow identity and unique run or session;
+- the accountable human, delegation, authority level, and governing policy
+  version;
+- material inputs and their authorities, without leaking protected content;
+- tools used, actions attempted, changes or outputs produced, and targets;
+- validation results, uncertainty, failures, retries, and final state; and
+- required approvals, escalations, and the humans who supplied them.
+
+Evidence MUST be durable and proportionate to the consequence before the action
+is treated as complete. Audit records MUST preserve accountability without
+placing secrets, private Lore, personal data, or sensitive security detail in a
+less protected destination. Issue #43 will define the detailed provenance,
+retention, and reproducibility requirements.
+
+### 5.6 Uncertainty, conflict, and escalation
+
+An agent MUST stop before crossing an authority boundary and escalate when:
+
+- the accountable owner, delegation, authority level, target, or approval is
+  missing, ambiguous, expired, or unverifiable;
+- instructions conflict with each other or with a higher authority;
+- the action may affect canon, publication, rights, protected data, security,
+  access, irreversible state, or another domain outside the delegation;
+- validation fails, expected state differs from observed state, or the outcome
+  of an attempted mutation is unknown;
+- completing the work requires broader access, a new tool, a different
+  environment, or materially expanded scope; or
+- a reasonable interpretation could produce materially different consequences.
+
+The agent MUST preserve the safest useful state, retain evidence, state what is
+known and uncertain, identify the governing boundary, and ask the accountable
+human for the narrowest decision needed. It MAY continue independent work only
+when that work is authorized, reversible, and cannot prejudice the pending
+decision.
+
+Conflicting instructions MUST be resolved by the authority hierarchy in Section
+3, then by the narrower valid delegation and the more protective applicable
+boundary. An agent MUST NOT select a convenient lower-authority instruction,
+invent missing intent, or treat urgency as authorization. When an attempted
+mutation has an uncertain result, the agent MUST inspect current state before
+retrying so it does not duplicate or compound the action.
+
+### 5.7 Examples
+
+| Agent action | Autonomous status | Reason |
+| --- | --- | --- |
+| Draft three script alternatives in a private working branch from authorized context. | Allowed at A1. | The alternatives are reversible and non-canonical. |
+| Apply formatting, run tests, and fix an objective lint rule within a named branch. | Allowed at A2 when explicitly delegated. | The scope and validation are bounded and reversible. |
+| Change an undocumented public API because tests still pass. | Prohibited autonomously. | Passing tests do not grant authority to change a stable contract. |
+| Merge a reviewed change after the exact commit receives recorded approval. | Allowed at A3 when the delegation includes merge execution. | The human gate controls the authoritative change. |
+| Declare generated dialogue canonical because it matches established style. | Prohibited. | Similarity and quality do not create canon authority; canon is A4. |
+| Publish an artifact based on a general instruction to finish the task. | Prohibited. | Publication requires an exact, informed A4 human decision. |
+| Upload private Lore or a secret to an unapproved model or service to improve a result. | Prohibited. | Tool access and expected quality cannot waive disclosure boundaries. |
+| Decide that unlicensed third-party material is fair use and include it in a release. | Prohibited. | The rights judgment and release commitment are reserved to an authorized human. |
+| Retry an external write whose first result timed out without checking state. | Prohibited. | The retry may duplicate a consequential action. |
+| Pause after detecting conflicting instructions, preserve the draft, and request a scoped decision. | Required. | Escalation preserves authority and reversibility. |
+
+### 5.8 Human accountability
+
+Human approval is an exercise of judgment, not a transfer of accountability to
+the agent. The approving human MUST review evidence proportionate to the risk
+and MUST NOT rely solely on model confidence, automated validation, or the
+agent's summary when the underlying artifact or consequence can reasonably be
+examined. Use of an agent does not reduce the Studio's responsibility for the
+decision, action, or released result.
+
+## 6. Resolving conflicts
 
 Principles are intended to constrain one another, not to provide slogans that
 justify bypassing one another. A claimed benefit under one principle does not
@@ -318,10 +494,12 @@ immediate safety or security incident MAY take the narrowest protective action,
 but MUST preserve evidence, name an accountable Studio owner, and enter review
 as soon as the immediate risk is controlled.
 
-## 6. Definitions
+## 7. Definitions
 
 - **Accountable human:** A named person with authority to approve, stop, explain,
   and accept responsibility for a decision and its consequences.
+- **Approval gate:** A boundary that an agent cannot cross until an authorized
+  human supplies an explicit, informed, scoped, and recorded approval.
 - **AI-assisted work:** Work in which a model materially generates, transforms,
   selects, evaluates, or directs content, code, metadata, or decisions.
 - **Authority:** The recognized source entitled to establish truth, rules, or
@@ -330,6 +508,9 @@ as soon as the immediate risk is controlled.
   published work under canon governance.
 - **Constitutional conformance:** Satisfaction of every applicable MUST and MUST
   NOT, with documented treatment of applicable SHOULD and SHOULD NOT terms.
+- **Delegation:** A bounded grant from an accountable human permitting an agent
+  to perform specified actions under stated limits, evidence, and escalation
+  requirements.
 - **Generated artifact:** Any content, code, data, media, manifest, or build
   output produced materially by software, automation, or AI assistance.
 - **Irreversible decision:** An action that is public, canonical, destructive,
@@ -345,10 +526,13 @@ as soon as the immediate risk is controlled.
   rights, tools, versions, transformations, approvals, and exact output.
 - **Release:** An intentionally approved artifact or collection made available
   to its intended audience under a stable identity and recorded terms.
+- **Reserved human decision:** A judgment that an authorized human must
+  personally make and record, even when an agent supplies analysis or performs
+  subsequent mechanical execution.
 - **Specification:** A stable, implementation-neutral contract owned by Codex
   after its required acceptance process.
 
-## 7. Authority, storage, and references
+## 8. Authority, storage, and references
 
 The authoritative Constitution is the root file
 [`CONSTITUTION.md`](CONSTITUTION.md) in the public
@@ -367,13 +551,12 @@ and release governance SHOULD state the Constitution version or commit they were
 reviewed against. They MAY link the human-readable root file for convenience,
 but compliance records MUST retain the immutable reference.
 
-## 8. Constitutional roadmap
+## 9. Constitutional roadmap
 
-This foundational version establishes the shared frame. The remaining Epic #3
-work will elaborate it without moving implementation detail into the
-Constitution:
+This version establishes the shared frame and the human/AI authority model. The
+remaining Epic #3 work will elaborate it without moving implementation detail
+into the Constitution:
 
-- issue #41: human and AI authority boundaries;
 - issue #42: canon, Lore, and continuity governance;
 - issue #43: provenance, reproducibility, and audit requirements;
 - issue #44: security, privacy, and intellectual-property principles;
@@ -382,9 +565,10 @@ Constitution:
 - issue #47: amendment and exception process; and
 - issue #48: Constitution v1.0 publication and compliance checklist.
 
-## 9. Conformance statement
+## 10. Conformance statement
 
 A proposal, mechanism, or release MUST NOT claim constitutional conformance
 unless its accountable owner can identify the applicable constitutional rules,
-domain authorities, evidence, approvals, and unresolved risks. Detailed
-checklists and versioned publication requirements are reserved for issue #48.
+domain authorities, authority level, delegation, evidence, approval gates, and
+unresolved risks. Detailed checklists and versioned publication requirements are
+reserved for issue #48.

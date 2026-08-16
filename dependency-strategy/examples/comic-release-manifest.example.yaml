@@ -1,0 +1,52 @@
+# Non-normative reader-safe example. Placeholder digests and commits are not
+# valid release values. Codex owns the future production schema.
+schema: ds.release-provenance/v1
+release:
+  id: DS-0042
+  revision: 1
+  published_at: "2026-08-15T18:00:00Z"
+manifest_contract:
+  name: release-provenance
+  version: 1.0.0
+  repository: https://github.com/DefinitelySecureStudio/codex
+  tag: contract/release-provenance/v1.0.0
+  commit: "1111111111111111111111111111111111111111"
+  artifact:
+    uri: https://example.invalid/release-provenance-1.0.0.tar.gz
+    media_type: application/gzip
+    size: 12345
+    digest: sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+inputs:
+  canon:
+    version: 1.7.0
+    repository: https://github.com/DefinitelySecureStudio/universe
+    tag: canon-v1.7.0
+    commit: "2222222222222222222222222222222222222222"
+    artifact:
+      uri: https://example.invalid/canon-1.7.0.tar.gz
+      media_type: application/gzip
+      size: 23456
+      digest: sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+  platform:
+    version: 0.8.2
+    repository: https://github.com/DefinitelySecureStudio/platform
+    tag: v0.8.2
+    commit: "3333333333333333333333333333333333333333"
+    artifact:
+      uri: ghcr.io/definitelysecurestudio/platform@sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+      media_type: application/vnd.oci.image.manifest.v1+json
+      size: 34567
+      digest: sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+private_context:
+  used: true
+  attestation_id: lctx-att-018f4a3e-7d2b-7c51-9a61-8f3e8a04d222
+build:
+  workflow: https://github.com/DefinitelySecureStudio/platform/actions/runs/123456789
+  generated_at: "2026-08-15T17:42:00Z"
+  attestation: https://example.invalid/attestations/123456789
+outputs:
+  - path: comics/DS-0042/strip.webp
+    media_type: image/webp
+    size: 45678
+    digest: sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+    rights: Copyright 2026 Definitely Secure Studio. All rights reserved.

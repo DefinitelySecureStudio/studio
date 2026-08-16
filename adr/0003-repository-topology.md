@@ -51,8 +51,9 @@ remain independently usable without access to the private repository.
 Cross-repository dependencies follow the direction documented in
 [`ARCHITECTURE.md`](../ARCHITECTURE.md). Circular build dependencies are
 prohibited. Cross-repository artifacts record source revision and contract
-version; issue #33 will select the precise versioning and distribution
-mechanisms.
+version. The precise versioning, distribution, compatibility, and provenance
+mechanisms are defined by
+[ADR 0006](0006-cross-repository-dependencies-and-versioning.md).
 
 Repository names use lowercase ASCII kebab-case, omit a redundant organization
 prefix, and name one durable responsibility. New repositories require a distinct
@@ -98,8 +99,8 @@ avoid binding repositories to a current language, team, or deployment model.
   private production context.
 - Lore-to-canon promotion is an editorial step instead of automatic sync.
 - Large creative masters need a separate private storage and backup policy.
-- Version distribution and compatibility require a follow-up decision in issue
-  #33.
+- Versioned artifact packaging, digest verification, and provenance add release
+  work governed by ADR 0006.
 
 ## Rejected alternatives
 
@@ -139,6 +140,6 @@ The complete matrix, diagram, content-location rules, dependency map, and naming
 convention live in [`ARCHITECTURE.md`](../ARCHITECTURE.md).
 
 Issues #26–#30 create the five remaining repositories using these boundaries.
-Issue #31 decides licensing without changing visibility. Issue #32 establishes
-organization-wide templates and defaults. Issue #33 finalizes dependency
+Issue #31 decided licensing without changing visibility. Issue #32 established
+organization-wide templates and defaults. ADR 0006 finalizes dependency
 versioning, compatibility, and release provenance.

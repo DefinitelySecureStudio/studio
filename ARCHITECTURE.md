@@ -41,9 +41,11 @@ Solid arrows show a movement of contracts, content, or artifacts. Dotted arrows
 show governance rather than a build dependency. An arrow does not authorize the
 consumer to copy or take ownership of the source material.
 
-This is an ownership-level map. Exact tags, packages, artifact formats,
-compatibility guarantees, and pinning rules are deferred to
-[issue #33](https://github.com/DefinitelySecureStudio/studio/issues/33).
+This is an ownership-level map. Exact tags, packages, artifact references,
+compatibility guarantees, pinning rules, and public/private provenance are
+defined by
+[ADR 0006](adr/0006-cross-repository-dependencies-and-versioning.md) and the
+[cross-repository dependency strategy](dependency-strategy/README.md).
 
 ## Repository responsibility matrix
 
@@ -102,11 +104,16 @@ the [repository licensing policy](licensing/POLICY.md).
    `lore` produces the smallest approved context export. `platform` consumes the
    export as an input and must not persist it in source, logs, fixtures, or build
    artifacts.
-7. **Generated artifacts identify provenance.** Until issue #33 establishes the
-   final mechanism, every cross-repository artifact should record its source
-   repository, immutable revision, schema/spec version, and generation time.
+7. **Generated artifacts identify provenance.** Every cross-repository artifact
+   records the complete stable reference tuple defined in the
+   [dependency strategy](dependency-strategy/README.md#stable-reference-tuple).
+   Public records use an opaque attestation ID instead of private Lore details.
 
-## Initial dependency rules
+## Dependency and promotion rules
+
+The following directions are the ownership-level summary. The authoritative
+artifact, pinning, compatibility, and release-order rules live in the
+[cross-repository dependency strategy](dependency-strategy/README.md).
 
 Allowed v1 dependency and promotion directions are:
 

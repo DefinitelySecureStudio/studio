@@ -1,7 +1,7 @@
 # Definitely Secure Studio Constitution
 
 - Status: Adopted foundation; pre-v1.0
-- Version: 0.6.0
+- Version: 0.7.0
 - Date: 2026-08-16
 - Authority: Definitely Secure Studio
 - Constitutional model: [ADR 0007](adr/0007-studio-constitution-model.md)
@@ -10,6 +10,7 @@
 - Provenance and audit model: [ADR 0010](adr/0010-provenance-reproducibility-audit.md)
 - Security, privacy, and rights model: [ADR 0011](adr/0011-security-privacy-rights.md)
 - Quality and release model: [ADR 0012](adr/0012-quality-validation-release-governance.md)
+- Portability and vendor-neutrality model: [ADR 0013](adr/0013-portability-interoperability-vendor-neutrality.md)
 
 ## Preamble
 
@@ -44,12 +45,14 @@ implementation manual:
    provider boundaries, third-party material, and incident response.
 9. **Quality, validation, and release governance** defines candidate states,
    minimum gates, severity, human review, and bounded waivers.
-10. **Conflict resolution** defines how competing obligations are handled.
-11. **Definitions** provide a shared constitutional vocabulary.
-12. **Authority, storage, and references** identify the canonical document and
+10. **Portability, interoperability, and vendor neutrality** defines durable
+    representations, Studio-owned contracts, migration, and provider dependencies.
+11. **Conflict resolution** defines how competing obligations are handled.
+12. **Definitions** provide a shared constitutional vocabulary.
+13. **Authority, storage, and references** identify the canonical document and
    how downstream work pins it.
-13. **Roadmap** delimits the remaining constitutional work.
-14. **Conformance** states the basis for claiming compliance.
+14. **Roadmap** delimits the remaining constitutional work.
+15. **Conformance** states the basis for claiming compliance.
 
 Later articles MAY add precise requirements within this structure. They MUST
 NOT turn the Constitution into a schema, procedure, prompt, or implementation
@@ -165,8 +168,8 @@ constitutional process.
 
 ## 4. Foundational principles
 
-These principles establish the decision frame. Articles developed under issues
-#46–#47 MAY add precise requirements, but MUST preserve this foundation.
+These principles establish the decision frame. The article developed under
+issue #47 MAY add precise requirements, but MUST preserve this foundation.
 
 ### Principle 1: Human authority carries human accountability
 
@@ -885,7 +888,7 @@ retention period or event, preservation obligations, and deletion method:
 When retention and minimization requirements conflict, the accountable human
 MUST preserve the minimum evidence that proves identity, authority, decision,
 and outcome, store sensitive supporting material separately, and document the
-resolution under Section 10.
+resolution under Section 11.
 
 ## 8. Security, privacy, confidential information, and rights
 
@@ -1135,7 +1138,7 @@ The accountable response owner MUST:
    review date, and lessons that must change systems or policy.
 
 Agents MAY take only pre-authorized, narrow, reversible containment. When delay
-would materially increase immediate harm, the emergency rule in Section 10
+would materially increase immediate harm, the emergency rule in Section 11
 permits the narrowest protective action with evidence and prompt human review.
 Investigation MUST NOT broaden access, reproduce harmful content unnecessarily,
 contact a suspected rights holder as the Studio, or disclose the incident
@@ -1330,7 +1333,200 @@ owner review and a recorded disposition. Correction, withdrawal, deprecation,
 or replacement MUST be an append-only event and MUST NOT silently rewrite the
 historical release.
 
-## 10. Resolving conflicts
+## 10. Portability, interoperability, and vendor neutrality
+
+The Studio MUST retain practical control of its creative work, governing truth,
+technical contracts, production evidence, and ability to continue essential
+operations when a tool, model, provider, account, format, price, policy, or
+integration changes or disappears. Vendor neutrality does not prohibit using a
+provider's distinctive capabilities. It prohibits allowing convenience or
+lock-in to become ownership, authority, or an unreviewed single point of failure.
+
+A portable representation preserves the meaning, identity, relationships,
+rights, sensitivity, and evidence needed for an authorized independent tool or
+human to use the data for its declared purpose. Exporting a screenshot, opaque
+archive, flattened rendition, or provider-generated summary is not portability
+when the authoritative structure or material information cannot be recovered.
+
+### 10.1 Authority and control of durable Studio data
+
+Every class of durable Studio data MUST have one Studio-recognized authoritative
+home and at least one documented portable representation. The authoritative
+record MUST remain addressable by Studio-controlled stable identifiers and MUST
+NOT exist solely in an AI model, hosted assistant, provider dashboard, private
+account, proprietary index, chat history, or undocumented application database.
+
+An external service MAY store or process an authorized copy, but that copy does
+not acquire authority. Provider object IDs and URLs MAY be recorded as mappings
+or provenance; they MUST NOT be the only durable identifiers for Studio facts,
+decisions, contracts, sources, or released artifacts. Canon remains controlled
+by Universe, private Lore by Lore, stable technical contracts by Codex,
+production implementations by Platform, and Studio governance by Studio even
+when another system presents or transforms them.
+
+The Studio MUST be able to export its authorized data without surrendering
+ownership, confidentiality, integrity, provenance, or rights controls. A full
+provider export is not automatically an authorized public export; Section 8
+classification, minimization, disclosure, retention, and deletion rules remain
+in force throughout migration.
+
+### 10.2 Durable representation requirements
+
+A durable representation SHOULD use open, documented, machine-readable,
+widely implementable formats. It MUST have a published or Studio-owned syntax
+and semantics sufficient to parse without the originating provider; explicit
+encoding and media type; stable identities and relationships; versioned schema
+or format references where structured; integrity verification; and documented
+handling of optional, unknown, unavailable, redacted, and provider-specific
+fields.
+
+Human-readable views SHOULD accompany structured records when they materially
+improve independent review. The Studio MUST preserve exact original bytes when
+conversion would lose creative, evidentiary, rights, or technical information,
+and MUST also maintain a documented access or preservation rendition when the
+original requires a proprietary application. A portable representation need
+not reproduce a provider's user interface or hidden implementation, but it MUST
+preserve the Studio-owned information and behavior claimed by its contract.
+
+| Durable data class | Minimum portable representation |
+| --- | --- |
+| **Constitution, governance, ADRs, policies, and stable specifications** | Versioned, human-readable text plus stable references and history; structured contracts include machine-readable schemas and conformance fixtures. |
+| **Public canon and private Lore** | Versioned structured records and snapshots preserving identity, status, continuity relationships, decisions, and provenance. Lore exports remain encrypted or access-controlled and purpose-scoped; public and private truth MUST NOT be collapsed. |
+| **Prompts, instructions, and agent behavior** | Provider-independent intent, inputs, expected outputs, constraints, tool contracts, acceptance criteria, and version history in documented text or structured configuration; provider-specific rendering remains a mapped derivative. |
+| **Context packages** | Versioned Codex contract, exact authorized payload or lossless representation, purpose, consumer, sensitivity, expiry, source references, digest, and restricted audit link. Embeddings or provider indexes alone are insufficient. |
+| **Manifests, metadata, and provenance** | Versioned, machine-readable records preserving identifiers, types, ordered relationships, lineage, approvals, rights, sensitivity, validation, digests, and explicit absent-value semantics. |
+| **Creative sources and media** | Exact source and released bytes, edit and transformation lineage, required dependencies such as fonts or linked assets, rights metadata, and a documented preservation or access rendition when practical. |
+| **Software, workflows, and infrastructure** | Source, Studio-owned interfaces, dependency locks, build and environment declarations, configuration without secrets, tests, migration behavior, and exact released artifacts. |
+| **Decisions, reviews, and audit events** | Attributable, time-ordered, integrity-verifiable records with scope, authority, rationale, evidence references, outcome, and later corrections preserved. |
+
+Retention of a portable representation MUST follow Section 7 and Section 8. A
+conversion MUST NOT silently discard precision, order, identity, status,
+comments with decision value, editability, accessibility, rights terms, audit
+links, or security classifications. Loss MUST be identified before migration
+and accepted by the accountable domain owner when acceptance is constitutionally
+permitted.
+
+### 10.3 Studio-owned contracts and provider adapters
+
+Where practical, a material provider integration MUST sit behind a stable,
+implementation-neutral Studio contract owned by Codex. The contract defines
+Studio semantics, identities, capabilities, error behavior, security and data
+boundaries, and import/export expectations without treating one provider's API
+or response shape as the domain model.
+
+Platform owns production adapters and MUST isolate provider credentials,
+transport, object mappings, retries, limits, and provider-specific behavior from
+the authoritative Studio record. It MUST preserve the exact provider and model
+details required by provenance while mapping durable Studio meaning through the
+stable contract. Consumers SHOULD negotiate declared capabilities rather than
+infer a provider from an identifier or endpoint.
+
+A provider schema MAY inform an adapter but MUST NOT be copied into Codex as a
+nominally neutral contract without review. A Studio contract MUST have fixtures
+or conformance tests sufficient to distinguish portable required behavior from
+optional provider extensions. Provider replacement need not produce identical
+nondeterministic creative output; it MUST preserve contract semantics,
+authorities, evidence, and the ability to evaluate a new candidate under the
+same acceptance process.
+
+### 10.4 Export, restore, and migration verification
+
+For every material external dependency, the accountable owner MUST maintain an
+exit record identifying:
+
+- owner, purpose, data classes, authority boundaries, provider and applicable
+  contract versions, rights, confidentiality, and retention obligations;
+- available export interfaces, formats, completeness limits, rate or cost
+  constraints, encryption and access requirements, and provider termination or
+  deletion behavior;
+- Studio-controlled backups or exports, their location, freshness, integrity,
+  schema, restore procedure, and responsible operators;
+- the replaceable boundary, required capabilities, alternative implementation
+  or continuity mode, expected data or feature loss, migration order, and
+  rollback path; and
+- review cadence, triggers for exit, accepted residual risk, and the A4 human
+  responsible for continuation or termination.
+
+Material exports MUST be exercised on a risk-based cadence and after a material
+provider or contract change. Verification MUST parse the export independently,
+check identity and integrity, account for expected records, restore a
+representative protected copy or run a reference importer, and compare semantic
+meaning and relationships rather than file count alone. Secrets MUST NOT be
+embedded merely to make an export self-contained.
+
+A migration MUST preserve provenance from old identifiers to new identifiers,
+record transformations and loss, validate security and rights boundaries,
+obtain the domain owner's semantic acceptance, and keep the prior record until
+retention and rollback obligations are satisfied. Disconnection MUST include
+credential revocation, authorized provider deletion or retention disposition,
+and evidence of the resulting state.
+
+### 10.5 Provider-specific capabilities and dependency decisions
+
+A provider-specific capability MAY be used when it offers a material creative,
+quality, safety, security, accessibility, operational, or economic benefit that
+a reasonably available portable approach cannot supply at proportionate cost.
+Its use MUST remain compatible with every higher authority and MUST NOT make an
+external provider the exclusive authority or sole recoverable home for canon,
+Lore, governance, specifications, approvals, provenance, or released assets.
+
+Before consequential use, the accountable owner MUST record the capability and
+provider, intended scope, benefit and alternatives considered, lock-in and
+concentration risk, affected data and rights, portable baseline, isolated
+extension boundary, degradation or continuity behavior, export and exit plan,
+replacement cost, review or expiry date, and A4 approval. A missing equivalent
+provider MAY justify a documented dependency; it does not justify an
+undocumented one.
+
+Provider extensions MUST be explicitly namespaced or capability-gated, MUST
+fail clearly when unavailable, and SHOULD degrade to the portable baseline when
+doing so remains safe and honest. They MUST NOT silently alter portable core
+semantics or force unrelated consumers to adopt the same provider. Repeated or
+indefinite renewal requires fresh evidence and review; a dependency decision is
+not a constitutional exception and cannot waive security, privacy, rights,
+canon, quality, provenance, or human-approval requirements.
+
+### 10.6 Repository responsibilities
+
+| Authority | Portability responsibility |
+| --- | --- |
+| **Studio** | Own constitutional rules, organization decisions, dependency-risk acceptance, and durable public governance history. |
+| **Codex** | Own implementation-neutral schemas, interfaces, capability vocabulary, portable bundle contracts, versioning, fixtures, and reference validation or import behavior. Codex MUST NOT contain private story data. |
+| **Lab** | Explore providers and formats with synthetic or approved public data, measure portability and loss, and preserve promotion lineage. A Lab prototype or provider SDK MUST NOT become a production dependency by direct import. |
+| **Platform** | Implement and operate adapters, import/export paths, conformance checks, provider mappings, migration tooling, and production continuity controls without taking authority over creative inputs. |
+| **Universe** | Preserve reader-safe canon, publication history, and public snapshots in portable Codex-governed representations. |
+| **Lore** | Preserve private planning truth and restricted provenance, and create only minimized, authorized, expiring context exports under portable Codex contracts. Portability MUST NOT weaken confidentiality. |
+| **Artifact owners and stores** | Preserve exact masters and releases, editable sources where required, rights and dependency metadata, integrity, backups, and documented access or preservation renditions. |
+
+Promotion from Lab to Codex or Platform is a reviewed adoption with recorded
+lineage, not a runtime dependency. Codex contract change precedes coordinated
+Platform adapter change. Platform output returns to Universe only as a proposed,
+validated artifact and manifest; processing never transfers canon authority.
+
+### 10.7 Portability release and conformance gate
+
+Before releasing a material contract, integration, workflow, migration, or
+artifact whose continued use depends on an external provider, the accountable
+reviewer MUST verify:
+
+- the authoritative Studio home and portable representation for each durable
+  data class;
+- export identity, completeness, integrity, sensitivity, rights, provenance,
+  and independent parse or restore evidence;
+- isolation of provider-specific behavior behind the applicable contract and
+  explicit treatment of unsupported capabilities and semantic loss;
+- current exit ownership, continuation or fallback behavior, migration and
+  rollback procedure, and provider deletion or retention obligations; and
+- every provider-specific dependency decision, review date, accepted residual
+  risk, and required A4 approval.
+
+Missing portability evidence is classified under Section 9 by its consequence.
+A dependency that makes protected authoritative data unrecoverable, prevents
+essential audit, or gives an external provider exclusive authority is a Blocker.
+A release tag, provider export button, API promise, local cache, subscription,
+or theoretical alternative MUST NOT be treated as proof of portability.
+
+## 11. Resolving conflicts
 
 Principles are intended to constrain one another, not to provide slogans that
 justify bypassing one another. A claimed benefit under one principle does not
@@ -1364,7 +1560,7 @@ immediate safety or security incident MAY take the narrowest protective action,
 but MUST preserve evidence, name an accountable Studio owner, and enter review
 as soon as the immediate risk is controlled.
 
-## 11. Definitions
+## 12. Definitions
 
 - **Accountable human:** A named person with authority to approve, stop, explain,
   and accept responsibility for a decision and its consequences.
@@ -1403,8 +1599,14 @@ as soon as the immediate risk is controlled.
   deprecated scope.
 - **Draft:** Assembled, non-authoritative creative work that has not received an
   applicable canon decision.
+- **Durable Studio data:** Information or artifacts whose loss, inaccessibility,
+  or semantic degradation would materially impair authority, continuity,
+  creative control, operation, release, rights, audit, or historical evidence.
 - **Generated artifact:** Any content, code, data, media, manifest, or build
   output produced materially by software, automation, or AI assistance.
+- **Interoperability:** The ability of independently implemented systems to
+  exchange and preserve declared meaning through a documented contract rather
+  than shared hidden assumptions.
 - **Irreversible decision:** An action that is public, canonical, destructive,
   legally or commercially committed, security-sensitive, or costly to undo.
 - **Incident:** A suspected or confirmed event that threatens security,
@@ -1421,6 +1623,9 @@ as soon as the immediate risk is controlled.
 - **Personal data:** Information relating to an identified or reasonably
   identifiable person, including data that becomes identifying when combined or
   inferred.
+- **Portable representation:** A documented, independently parseable form that
+  preserves the identities, meaning, relationships, rights, sensitivity, and
+  evidence required for its declared use outside the originating provider.
 - **Principle:** A durable constitutional rule and rationale used to judge
   decisions across changing implementations.
 - **Proposal:** A non-authoritative candidate idea, fact, change, or resolution
@@ -1457,11 +1662,14 @@ as soon as the immediate risk is controlled.
 - **Third-party material:** Content, code, data, media, model, service output,
   identity attribute, or other material not created and wholly owned by the
   Studio for the intended use.
+- **Vendor neutrality:** The preservation of Studio authority, recoverability,
+  and meaningful provider choice; it does not require avoiding all proprietary
+  capabilities or treating unlike providers as identical.
 - **Validator:** A versioned human or automated mechanism that evaluates a
   candidate against stated criteria and produces evidence within declared
   limits; a validator does not possess publication authority by itself.
 
-## 12. Authority, storage, and references
+## 13. Authority, storage, and references
 
 The authoritative Constitution is the root file
 [`CONSTITUTION.md`](CONSTITUTION.md) in the public
@@ -1480,18 +1688,17 @@ and release governance SHOULD state the Constitution version or commit they were
 reviewed against. They MAY link the human-readable root file for convenience,
 but compliance records MUST retain the immutable reference.
 
-## 13. Constitutional roadmap
+## 14. Constitutional roadmap
 
 This version establishes the shared frame plus human/AI authority, canon/Lore,
-provenance/audit, security/privacy/rights, and quality/release requirements. The
-remaining Epic #3 work will elaborate it without moving implementation detail
-into the Constitution:
+provenance/audit, security/privacy/rights, quality/release, and portability
+requirements. The remaining Epic #3 work will elaborate it without moving
+implementation detail into the Constitution:
 
-- issue #46: portability, interoperability, and vendor neutrality;
 - issue #47: amendment and exception process; and
 - issue #48: Constitution v1.0 publication and compliance checklist.
 
-## 14. Conformance statement
+## 15. Conformance statement
 
 A proposal, mechanism, or release MUST NOT claim constitutional conformance
 unless its accountable owner can identify the applicable constitutional rules,
@@ -1521,3 +1728,10 @@ editorial and domain approvals, unresolved findings and severity, any valid
 single-release waiver, and rollback, withdrawal, or correction path. A
 successful generation, build, render, or validation result alone MUST NOT be
 represented as constitutional release approval.
+
+A durable data system, provider integration, migration, contract, or dependent
+release MUST additionally identify its authoritative Studio home, portable
+representation and contract, export and restore evidence, provider-specific
+extensions, semantic or data loss, exit owner and continuity path, and any
+current A4 dependency decision. Provider access or an opaque export alone MUST
+NOT be represented as constitutional portability.

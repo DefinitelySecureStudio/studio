@@ -1,5 +1,12 @@
 # Release provenance and references
 
+This policy implements the constitutional requirements in
+[Section 7 of the Studio Constitution](../CONSTITUTION.md#7-provenance-reproducibility-and-audit)
+and the model recorded in
+[ADR 0010](../adr/0010-provenance-reproducibility-audit.md). Where this policy is
+more specific, it applies within its release-provenance domain without reducing
+the constitutional minimums.
+
 ## Public release manifest
 
 Every published comic or production release has a reader-safe manifest owned by

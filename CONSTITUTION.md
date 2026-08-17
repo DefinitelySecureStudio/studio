@@ -1,7 +1,7 @@
 # Definitely Secure Studio Constitution
 
 - Status: Adopted foundation; pre-v1.0
-- Version: 0.7.0
+- Version: 0.8.0
 - Date: 2026-08-16
 - Authority: Definitely Secure Studio
 - Constitutional model: [ADR 0007](adr/0007-studio-constitution-model.md)
@@ -11,6 +11,9 @@
 - Security, privacy, and rights model: [ADR 0011](adr/0011-security-privacy-rights.md)
 - Quality and release model: [ADR 0012](adr/0012-quality-validation-release-governance.md)
 - Portability and vendor-neutrality model: [ADR 0013](adr/0013-portability-interoperability-vendor-neutrality.md)
+- Amendment and exception model: [ADR 0014](adr/0014-constitutional-amendment-exception-process.md)
+- Version history: [Constitution changelog](CONSTITUTION_CHANGELOG.md)
+- Exception history: [Constitution exception register](CONSTITUTION_EXCEPTIONS.md)
 
 ## Preamble
 
@@ -48,11 +51,13 @@ implementation manual:
 10. **Portability, interoperability, and vendor neutrality** defines durable
     representations, Studio-owned contracts, migration, and provider dependencies.
 11. **Conflict resolution** defines how competing obligations are handled.
-12. **Definitions** provide a shared constitutional vocabulary.
-13. **Authority, storage, and references** identify the canonical document and
+12. **Amendment, versioning, and exceptions** defines constitutional change
+    authority, review, history, downstream adoption, and temporary departures.
+13. **Definitions** provide a shared constitutional vocabulary.
+14. **Authority, storage, and references** identify the canonical document and
    how downstream work pins it.
-14. **Roadmap** delimits the remaining constitutional work.
-15. **Conformance** states the basis for claiming compliance.
+15. **Roadmap** delimits the remaining constitutional work.
+16. **Conformance** states the basis for claiming compliance.
 
 Later articles MAY add precise requirements within this structure. They MUST
 NOT turn the Constitution into a schema, procedure, prompt, or implementation
@@ -168,8 +173,8 @@ constitutional process.
 
 ## 4. Foundational principles
 
-These principles establish the decision frame. The article developed under
-issue #47 MAY add precise requirements, but MUST preserve this foundation.
+These principles establish the decision frame. Issue #48 MAY add versioned
+publication and compliance requirements, but MUST preserve this foundation.
 
 ### Principle 1: Human authority carries human accountability
 
@@ -1313,9 +1318,9 @@ the narrowest viable change; retain exact identity, focused validation,
 provenance, and an accountable A4 approval; record every deferred gate and the
 reason; include rollback or withdrawal; and assign prompt, time-bounded
 completion and retrospective review. Schedule, cost, marketing, convenience, or
-generation effort does not create an emergency. Until issue #47 establishes the
-permanent amendment and exception process, no release waiver creates a standing
-constitutional exception.
+generation effort does not create an emergency. A release waiver remains
+governed by this section and MUST NOT be represented as a constitutional
+exception under Section 12.
 
 ### 9.8 Approval, publication, and correction
 
@@ -1554,13 +1559,266 @@ pause. The conflict indicates a defect or missing distinction in governance and
 MUST be escalated for constitutional review; a prompt, code path, deadline, or
 output cannot resolve it by choosing silently.
 
-Until the amendment and exception process is adopted under issue #47, no actor
-may create a standing constitutional exception. A time-limited response to an
-immediate safety or security incident MAY take the narrowest protective action,
-but MUST preserve evidence, name an accountable Studio owner, and enter review
-as soon as the immediate risk is controlled.
+An unresolved constitutional conflict MAY be resolved only by an amendment or
+eligible temporary exception under Section 12. Work MUST remain paused unless a
+more specific constitutional emergency rule permits the narrowest protective
+action. Emergency action MUST preserve evidence, name an accountable Studio
+owner, and enter review as soon as the immediate risk is controlled; urgency
+does not silently amend the Constitution.
 
-## 12. Definitions
+## 12. Amendment, versioning, and exceptions
+
+The Constitution MAY evolve only through an intentional, human-approved,
+traceable process that preserves its historical meaning and the ability to audit
+which version governed an action. A prompt, precedent, deadline, output, ADR,
+repository policy, waiver, exception, or implementation change cannot amend the
+Constitution by implication.
+
+Definitely Secure Studio is the constitutional authority. It exercises that
+authority through named A4 constitutional stewards who can approve, reject,
+delay, or withdraw a proposed constitutional change and remain accountable for
+its consequences. An AI agent MAY draft, compare, analyze impact, or perform an
+approved mechanical publication step; it MUST NOT propose on its own behalf,
+approve, or make an amendment or exception effective.
+
+### 12.1 What constitutes an amendment
+
+A **constitutional amendment** changes the normative meaning, authority,
+applicability, guarantees, obligations, prohibitions, reserved decisions,
+definitions, amendment process, or conformance claim of this document. Adding,
+removing, weakening, strengthening, or materially reinterpreting a MUST, MUST
+NOT, SHOULD, SHOULD NOT, authority boundary, approval gate, or exception rule is
+an amendment regardless of the label attached to the change.
+
+The following do not amend the Constitution when they remain conforming:
+
+- an ADR that records a durable decision within constitutional bounds;
+- an RFC or Codex specification that defines a stable technical contract;
+- a repository policy, checklist, prompt, schema, validator, workflow, or code
+  change that implements a higher rule;
+- a canon, Lore, editorial, release, security, privacy, rights, or provider
+  decision made by its existing authority; or
+- a correction to spelling, formatting, links, metadata, or wording that does
+  not alter normative or reasonably relied-on meaning.
+
+If reasonable reviewers disagree whether meaning or conformance changes, the
+proposal MUST use the more consequential amendment classification until the
+constitutional steward records why a lower classification is safe. An ADR MAY
+explain an amendment but cannot make it effective without the exact
+constitutional text, version, changelog, review, approval, and merge required by
+this article.
+
+### 12.2 Amendment proposal record
+
+Every amendment MUST begin with a public proposal record unless Section 8
+requires sensitive supporting evidence to remain restricted. The record MUST
+identify:
+
+1. the exact base Constitution version and immutable revision;
+2. proposed text or reviewable diff, rationale, problem, intended outcome,
+   alternatives, and consequences of no change;
+3. proposed semantic version and whether the change is breaking, additive, or
+   editorial, with an explanation rather than a label alone;
+4. affected principles, articles, definitions, authorities, human decisions,
+   external obligations, security/privacy/rights boundaries, and prior
+   amendments or exceptions;
+5. a downstream inventory covering known repositories, ADRs, RFCs,
+   specifications, policies, contracts, schemas, prompts, agents, validators,
+   workflows, data, releases, training, and delegations;
+6. per-consumer impact, owner, migration or remediation, compatibility and
+   deprecation plan, validation, communication, deadline, rollback or correction
+   path, and unresolved risk;
+7. proposed approval set, review period, effective point, transition behavior,
+   and whether old-version operation remains permitted; and
+8. issue, pull request, ADR when required, evidence, discussion, approvals,
+   dissent, and later implementation records needed for a complete audit trail.
+
+The public record MUST contain a reader-safe explanation of material effects and
+withhold only what security, privacy, Lore, rights, or legal duties require. A
+paired restricted record MUST preserve any withheld evidence and its authorized
+review. Concealing material impact or affected consumers is not confidentiality.
+
+### 12.3 Review, approval, and effective point
+
+A Major or Minor amendment MUST have a Studio ADR and a protected pull request
+containing the exact proposed Constitution, version, changelog, and related
+records. A Patch MAY use a pull request with recorded rationale when it does not
+change meaning. Every amendment requires:
+
+- review by the constitutional steward and every known domain owner materially
+  affected by the change;
+- explicit A4 concurrence from each owner whose reserved authority is moved,
+  narrowed, or exposed to new risk;
+- qualified security, privacy, rights, Lore, editorial, accessibility, or
+  technical review when the proposal affects that boundary;
+- an independent approving reviewer when another qualified human is available,
+  with any unavoidable self-approval identified in the record;
+- resolution or explicit A4 disposition of material objections and known
+  unknowns; and
+- final approval by a named A4 constitutional steward for the exact commit.
+
+No vote count, agent consensus, validator result, repository permission, or
+passage of time substitutes for the required human authority. An amendment is
+adopted when its approved commit is merged into protected `main`. It becomes
+effective at merge unless the amendment records a later unambiguous date,
+version event, or migration condition. A future effective point MUST identify
+which version governs the transition and MUST NOT permit an unsafe ambiguity.
+
+An amendment MUST NOT retroactively authorize a prior violation, erase an
+incident or exception, rewrite the meaning of a historical version, or remove
+the evidence used to make the decision. Before v1.0, the merged commit is the
+immutable version reference. Beginning with v1.0, each effective version MUST
+also receive an immutable signed or annotated `constitution/vMAJOR.MINOR.PATCH`
+tag and matching release record; tags MUST NOT be moved or reused.
+
+### 12.4 Constitution semantic versioning
+
+The Constitution uses `MAJOR.MINOR.PATCH`:
+
+| Change class | Version effect | Constitutional meaning |
+| --- | --- | --- |
+| **Major** | Increment `MAJOR`; reset `MINOR` and `PATCH`. | A previously conforming unchanged actor, system, policy, or workflow may become nonconforming; a relied-on guarantee is removed or weakened; authority or a reserved decision changes; or the meaning of an existing normative rule changes incompatibly. |
+| **Minor** | Increment `MINOR`; reset `PATCH`. | A backward-compatible principle, rule, definition, evidence expectation, or governance capability is added without invalidating existing conforming behavior or weakening a relied-on guarantee. |
+| **Patch** | Increment `PATCH`. | A correction or clarification changes no normative requirement, authority, conformance outcome, or reasonably relied-on meaning. |
+
+Adding a MUST is Major when unchanged conforming consumers would fail it;
+calling a weakening a clarification does not make it Patch. A security, privacy,
+rights, Lore, or human-authority correction MAY require urgent adoption but is
+still classified by compatibility, not urgency.
+
+Before v1.0, every Minor increment MAY contain breaking development changes.
+The proposal and changelog MUST still label actual compatibility and downstream
+impact. Version 1.0.0 establishes the first stable constitutional compatibility
+baseline; pre-v1 status MUST NOT be used to omit review, history, or migration.
+
+Exactly one Constitution version identifies one immutable text. Two different
+texts MUST NOT claim the same version, and one amendment MUST NOT silently
+bundle unrelated normative changes merely to avoid multiple reviews.
+
+### 12.5 Changelog and historical traceability
+
+[`CONSTITUTION_CHANGELOG.md`](CONSTITUTION_CHANGELOG.md) is the authoritative
+version index. Every amendment MUST update it in the same pull request with:
+
+- version, adoption and effective dates, immutable commit and tag when required,
+  issue, pull request, ADR, classification, and status;
+- concise normative summary, rationale, affected articles and authorities,
+  compatibility and downstream impact, migration or transition, and exception
+  effects; and
+- links to the proposal, review, approvals, dissent, impact inventory, and any
+  restricted-record attestation that can safely be public.
+
+The repository MUST preserve every historical Constitution text, changelog
+entry, proposal, approval, amendment ADR, and effective or superseding event.
+Corrections append a new entry and version; they MUST NOT rewrite a prior entry
+to make history appear different. The current file MAY improve navigational
+links to an old record only when the old immutable text and meaning remain
+verifiable.
+
+### 12.6 Breaking changes and downstream adoption
+
+A Major amendment MUST NOT merge without an impact inventory and an A4-approved
+transition plan for every known materially affected consumer. The plan MUST:
+
+1. classify each consumer as unaffected, already conforming, change required,
+   deprecated, retired, or blocked, and name an accountable owner;
+2. identify exact old and new constitutional references, affected requirements,
+   compatibility boundary, data or creative meaning changes, and validation;
+3. provide ordered updates for ADRs, RFCs, specifications, policies, contracts,
+   schemas, repositories, agents, prompts, workflows, delegations, training,
+   releases, and audit controls as applicable;
+4. state the notification channel, adoption deadline, migration assistance,
+   rollback or safe-stop behavior, and treatment of work created during the
+   transition; and
+5. record each consumer's acknowledgment, adoption revision, validation result,
+   residual risk, exception if any, and completion or block status.
+
+Downstream references MUST remain pinned and MUST NOT silently float to a new
+Constitution version. The Studio MUST notify affected owners through durable,
+traceable records and coordinated changes, not only an ephemeral message.
+A consumer MUST NOT claim conformance to the new version until its required
+changes and validation are complete. If the new rule is immediately effective
+and no safe transition is authorized, affected work MUST pause.
+
+A Minor amendment still requires impact review and notification proportional to
+its reach. A Patch requires confirmation that no downstream conformance or
+meaning changes. Discovery of an omitted consumer or unexpected incompatibility
+MUST reopen impact review and may require correction, delayed effectiveness,
+temporary exception, or a new amendment.
+
+### 12.7 Temporary constitutional exceptions
+
+A **temporary constitutional exception** permits a bounded, time-limited
+departure from one explicitly named eligible internal requirement. It does not
+change the Constitution, interpretation, version, authority hierarchy, or
+historical conformance of work outside its exact scope. It MUST NOT be used when
+a release waiver, continuity decision, provider-dependency decision, narrower
+conforming design, delayed action, or amendment is the proper mechanism.
+
+No exception may override applicable law, contract, consent, or third-party
+rights; transfer an A4 reserved human decision to an agent; authorize an
+uncontrolled secret, personal data, confidential information, or Lore
+disclosure; permit use or publication of materially questionable rights; erase
+provenance, audit, incident, or approval history; authorize deception about
+canon, authorship, ownership, safety, or conformance; or retroactively legalize
+completed conduct. A constitutional MUST or MUST NOT is exception-eligible only
+when the rule or this article permits bounded risk acceptance without defeating
+the rule's purpose.
+
+An exception request MUST record:
+
+- the exact Constitution version, article and requirement, affected system,
+  action, data, artifacts, people, audience, destination, repository, and time;
+- necessity, evidence, alternatives tried, consequence of denial, why amendment
+  or ordinary waiver is inappropriate, and the narrowest requested departure;
+- security, privacy, Lore, rights, creative, quality, operational, and
+  downstream risk, including uncertainty and affected external obligations;
+- compensating controls, monitoring, stop conditions, rollback, remediation,
+  notification, and evidence-retention plan;
+- accountable owner, qualified affected-domain reviewers, A4 constitutional
+  steward, approval times, start, and an expiry no later than 90 days; and
+- public disclosure or a reader-safe summary with a random, non-derivable link
+  to a complete restricted record when disclosure itself would cause harm.
+
+Approval requires the A4 constitutional steward and every A4 domain owner whose
+boundary or reserved authority is affected. An exception is active only after
+those humans approve the exact record and it is entered in
+[`CONSTITUTION_EXCEPTIONS.md`](CONSTITUTION_EXCEPTIONS.md). Immediate protective
+action already authorized by a constitutional emergency rule MAY precede the
+record, but cannot expand beyond that rule or continue as an exception without
+prompt approval.
+
+An exception expires automatically at its recorded time. Dependent work MUST
+then stop, return to conformance, or operate under a newly approved amendment or
+exception. Renewal is a new decision with current evidence, impact, approvals,
+and a new maximum 90-day term; it MUST NOT be automatic or presumed from
+continued operation. A second consecutive request for substantially the same
+departure MUST also open an amendment or permanent-conformance plan. Repeated
+renewal does not create precedent, and expired or denied exceptions remain in
+the historical register.
+
+### 12.8 Exception monitoring, closure, and audit
+
+The exception owner MUST monitor the named risks and controls, preserve evidence,
+report a breached stop condition immediately, and request revocation when the
+necessity ends. An A4 constitutional steward or affected domain owner MUST revoke
+or narrow an exception when its facts, scope, controls, law, rights, risk, or
+candidate change materially.
+
+Closure MUST record actual use, affected outputs and downstream systems,
+incidents or unexpected effects, control performance, residual obligations,
+remediation and validation, revocation or expiry time, and whether an amendment,
+policy, training, or system change follows. Exception use MUST be visible in the
+provenance and conformance record of every affected consequential artifact or
+decision without exposing protected details.
+
+The constitutional steward MUST review the active register at least monthly and
+the complete exception history at least annually for repeated patterns,
+concentration, overdue remediation, and attempted normalization. A recurring
+need is evidence of a defective implementation or a potential amendment; it is
+not evidence that the exception has become policy.
+
+## 13. Definitions
 
 - **Accountable human:** A named person with authority to approve, stop, explain,
   and accept responsibility for a decision and its consequences.
@@ -1575,6 +1833,9 @@ as soon as the immediate risk is controlled.
   selects, evaluates, or directs content, code, metadata, or decisions.
 - **Authority:** The recognized source entitled to establish truth, rules, or
   maintained behavior within a defined domain.
+- **Breaking constitutional change:** An amendment that can make previously
+  conforming unchanged behavior nonconforming, weaken a relied-on guarantee,
+  move reserved authority, or incompatibly change normative meaning.
 - **Canon:** Material whose public story-truth status was explicitly decided by
   an authorized canon editor and recorded in Universe. Active canon governs
   current continuity; deprecated canon records former status.
@@ -1588,6 +1849,12 @@ as soon as the immediate risk is controlled.
   security, privacy, or rights.
 - **Constitutional conformance:** Satisfaction of every applicable MUST and MUST
   NOT, with documented treatment of applicable SHOULD and SHOULD NOT terms.
+- **Constitutional exception:** A recorded A4 authorization for one bounded,
+  eligible, time-limited departure under Section 12; it is not an amendment,
+  waiver, precedent, or transfer of authority.
+- **Constitutional steward:** A named A4 human authorized by Definitely Secure
+  Studio to approve, stop, publish, correct, and account for constitutional
+  amendments and exceptions.
 - **Delegation:** A bounded grant from an accountable human permitting an agent
   to perform specified actions under stated limits, evidence, and escalation
   requirements.
@@ -1669,7 +1936,7 @@ as soon as the immediate risk is controlled.
   candidate against stated criteria and produces evidence within declared
   limits; a validator does not possess publication authority by itself.
 
-## 13. Authority, storage, and references
+## 14. Authority, storage, and references
 
 The authoritative Constitution is the root file
 [`CONSTITUTION.md`](CONSTITUTION.md) in the public
@@ -1688,17 +1955,23 @@ and release governance SHOULD state the Constitution version or commit they were
 reviewed against. They MAY link the human-readable root file for convenience,
 but compliance records MUST retain the immutable reference.
 
-## 14. Constitutional roadmap
+The authoritative version index is
+[`CONSTITUTION_CHANGELOG.md`](CONSTITUTION_CHANGELOG.md). The authoritative
+public exception index is
+[`CONSTITUTION_EXCEPTIONS.md`](CONSTITUTION_EXCEPTIONS.md), paired with restricted
+records where required. A mirror or summary of either file is non-authoritative.
+
+## 15. Constitutional roadmap
 
 This version establishes the shared frame plus human/AI authority, canon/Lore,
-provenance/audit, security/privacy/rights, quality/release, and portability
-requirements. The remaining Epic #3 work will elaborate it without moving
-implementation detail into the Constitution:
+provenance/audit, security/privacy/rights, quality/release, portability, and
+constitutional change-control requirements. The remaining Epic #3 work will
+publish the stable version without moving implementation detail into the
+Constitution:
 
-- issue #47: amendment and exception process; and
 - issue #48: Constitution v1.0 publication and compliance checklist.
 
-## 15. Conformance statement
+## 16. Conformance statement
 
 A proposal, mechanism, or release MUST NOT claim constitutional conformance
 unless its accountable owner can identify the applicable constitutional rules,
@@ -1735,3 +2008,10 @@ representation and contract, export and restore evidence, provider-specific
 extensions, semantic or data loss, exit owner and continuity path, and any
 current A4 dependency decision. Provider access or an opaque export alone MUST
 NOT be represented as constitutional portability.
+
+An amendment, downstream adoption, or temporary constitutional exception MUST
+additionally identify its exact Constitution version and revision, authority,
+classification, rationale, review and approvals, effective or expiry point,
+changelog or exception-register entry, affected consumers, migration or
+compensating controls, validation, unresolved risk, and complete public or
+paired restricted audit path.

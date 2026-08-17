@@ -2,7 +2,10 @@
 
 This document is the operational source of truth for Definitely Secure Studio
 repository licensing. [ADR 0004](../adr/0004-repository-licensing-and-ip-boundaries.md)
-records the decision.
+records the repository model. It implements the rights requirements in
+[Section 8 of the Studio Constitution](../CONSTITUTION.md#8-security-privacy-confidential-information-and-rights)
+and [ADR 0011](../adr/0011-security-privacy-rights.md) without reducing their
+minimums.
 
 ## Repository matrix
 

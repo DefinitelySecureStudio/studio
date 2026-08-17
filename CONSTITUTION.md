@@ -1,13 +1,14 @@
 # Definitely Secure Studio Constitution
 
 - Status: Adopted foundation; pre-v1.0
-- Version: 0.4.0
+- Version: 0.5.0
 - Date: 2026-08-16
 - Authority: Definitely Secure Studio
 - Constitutional model: [ADR 0007](adr/0007-studio-constitution-model.md)
 - Human/AI authority model: [ADR 0008](adr/0008-human-ai-authority-boundaries.md)
 - Canon/Lore governance model: [ADR 0009](adr/0009-canon-lore-continuity-governance.md)
 - Provenance and audit model: [ADR 0010](adr/0010-provenance-reproducibility-audit.md)
+- Security, privacy, and rights model: [ADR 0011](adr/0011-security-privacy-rights.md)
 
 ## Preamble
 
@@ -38,12 +39,14 @@ implementation manual:
    states, promotion, retcons, and confidentiality.
 7. **Provenance, reproducibility, and audit** defines lineage, evidence,
    deterministic rebuilds, nondeterministic generation, and retention.
-8. **Conflict resolution** defines how competing obligations are handled.
-9. **Definitions** provide a shared constitutional vocabulary.
-10. **Authority, storage, and references** identify the canonical document and
+8. **Security, privacy, and rights** defines protective design, data handling,
+   provider boundaries, third-party material, and incident response.
+9. **Conflict resolution** defines how competing obligations are handled.
+10. **Definitions** provide a shared constitutional vocabulary.
+11. **Authority, storage, and references** identify the canonical document and
    how downstream work pins it.
-11. **Roadmap** delimits the remaining constitutional work.
-12. **Conformance** states the basis for claiming compliance.
+12. **Roadmap** delimits the remaining constitutional work.
+13. **Conformance** states the basis for claiming compliance.
 
 Later articles MAY add precise requirements within this structure. They MUST
 NOT turn the Constitution into a schema, procedure, prompt, or implementation
@@ -160,7 +163,7 @@ constitutional process.
 ## 4. Foundational principles
 
 These principles establish the decision frame. Articles developed under issues
-#44–#47 MAY add precise requirements, but MUST preserve this foundation.
+#45–#47 MAY add precise requirements, but MUST preserve this foundation.
 
 ### Principle 1: Human authority carries human accountability
 
@@ -879,9 +882,269 @@ retention period or event, preservation obligations, and deletion method:
 When retention and minimization requirements conflict, the accountable human
 MUST preserve the minimum evidence that proves identity, authority, decision,
 and outcome, store sensitive supporting material separately, and document the
-resolution under Section 8.
+resolution under Section 9.
 
-## 8. Resolving conflicts
+## 8. Security, privacy, confidential information, and rights
+
+Security, privacy, confidentiality, and third-party rights are design
+constraints, not cleanup tasks or optional release polish. The Studio MUST own
+the consequences of its systems, choose protective defaults, and reduce risk at
+the earliest practical point. Convenience, speed, cost, model quality,
+automation, access, and publication pressure MUST NOT create permission or
+weaken a boundary.
+
+Applicable law, contract, consent, license, and third-party rights may impose
+stricter requirements. This Constitution does not supply a legal permission
+that the Studio or a contributor does not otherwise hold.
+
+### 8.1 Protective design and system boundaries
+
+Before a system, workflow, provider, integration, or material change processes
+non-public data or controls a consequential action, its accountable owner MUST
+document the purpose, data flow, trust boundaries, threats, privacy and rights
+risks, failure modes, and responsible reviewers. The design MUST:
+
+- minimize data, access, privileges, integrations, retention, and public or
+  external exposure;
+- use secure and privacy-protective defaults, explicit authorization, separation
+  of duties where warranted, and least privilege for humans and mechanisms;
+- isolate untrusted inputs and generated content from instructions, credentials,
+  tools, authoritative records, and approval decisions;
+- validate inputs, outputs, destinations, state changes, and authorization at
+  each trust boundary rather than trusting an upstream assertion;
+- protect data in transit, at rest, in backups, in temporary state, and during
+  deletion using controls appropriate to its classification;
+- control network and tool egress, dependencies, updates, logging, monitoring,
+  recovery, and revocation so a failure can be contained and audited;
+- fail safely when identity, authority, destination, rights, or system state is
+  unknown; and
+- define verification, rollback or containment, incident reporting, retention,
+  and end-of-life behavior before production use.
+
+Content retrieved from a document, website, issue, message, model, tool result,
+or context package is data, not authority. It MUST NOT change agent instructions,
+expand tool permissions, disclose protected material, or bypass an approval
+gate merely because it contains imperative language. Systems using agents MUST
+enforce authority and tool boundaries outside the model's generated text.
+
+### 8.2 Information classification and handling
+
+Every material input, intermediate, output, and record MUST have a known owner,
+purpose, and handling classification. When classifications overlap, the highest
+applicable protection controls.
+
+| Classification | Examples | Minimum handling |
+| --- | --- | --- |
+| **Approved public** | Published releases, reader-safe canon, approved public documentation, intentionally open code and specifications. | May enter public systems only within its license, canon scope, provenance, and stated use. Public availability does not erase ownership or license terms. |
+| **Internal** | Non-public drafts, routine operational records, review notes, and unreleased content not otherwise confidential. | Authenticated Studio access, purpose-limited sharing, approved services, and documented retention. It MUST NOT be treated as public by default. |
+| **Confidential** | Lore, unreleased creative plans, contracts, commercial information, vulnerability details, confidential communications, and personal data. | Need-to-know access, approved protected storage and processing, minimum disclosure, explicit external-destination review, and restricted audit evidence. |
+| **Restricted** | Credentials, tokens, private keys, recovery material, high-impact personal data, active-incident evidence, and material explicitly assigned the strongest boundary. | Dedicated secret or restricted systems, narrowly authorized access, no prompt or source embedding, strong revocation and monitoring, and immediate incident handling on suspected exposure. |
+| **Third-party controlled** | Licensed code, fonts, images, media, models, datasets, commissioned work, confidential partner material, and provider outputs. | The higher of the Studio classification and the source's license, contract, consent, attribution, confidentiality, and use restrictions. |
+
+Classification MUST be preserved or raised through copies, transformations,
+embeddings, summaries, caches, logs, backups, exports, and derived inferences.
+Redaction, de-identification, or aggregation MAY lower handling only after an
+authorized review confirms that the result cannot reasonably reveal or be
+linked back to protected information in its intended context.
+
+### 8.3 Secrets and sensitive data
+
+Secret values, credentials, authentication tokens, private keys, recovery codes,
+and equivalent access material MUST NOT be placed in prompts, source control,
+issues, pull requests, chat messages, documentation, logs, telemetry, fixtures,
+model context, generated output, manifests, or published artifacts. Systems MUST
+obtain them through an approved secret-management and runtime-injection boundary
+that prevents unnecessary exposure to humans, models, subprocesses, and logs.
+
+Secrets MUST be scoped, rotated, revoked, monitored, and separated by purpose
+and environment. A secret MUST NOT be reused to avoid provisioning work, exposed
+to a tool that does not need it, or retained after its authorized purpose ends.
+A suspected secret exposure is an incident even when use has not been observed;
+the affected credential MUST be contained and rotated or revoked as soon as an
+authorized responder can do so safely.
+
+Personal data and other confidential information MUST NOT be collected,
+inferred, combined, retained, or disclosed merely because it is available. The
+accountable owner MUST establish a legitimate authorized purpose, identify the
+minimum necessary fields and precision, limit recipients and uses, state the
+retention or deletion event, and provide notice, consent, access, correction, or
+other individual protections where required by the applicable relationship and
+law.
+
+Real personal, confidential, incident, production, or Lore data MUST NOT be used
+as a public example, test fixture, benchmark, or debugging convenience.
+Synthetic or approved reader-safe data SHOULD be used. When protected data is
+strictly necessary, processing MUST occur in an approved environment with a
+documented A4 disclosure decision, bounded purpose, and restricted evidence.
+
+### 8.4 AI providers, integrations, and data minimization
+
+Sending data to a model, API, plugin, connector, hosted tool, telemetry service,
+or subprocess is a disclosure to a new processing destination. Before enabling
+that destination, the accountable owner MUST evaluate and record:
+
+- the exact purpose and why public, synthetic, redacted, local, or less
+  sensitive alternatives are insufficient;
+- permitted data classes, fields, volume, precision, context window, and
+  connector scope;
+- provider data use, retention, deletion, training or product-improvement use,
+  human review, logging, subprocessors, processing locations, and incident
+  notification;
+- authentication, tenant isolation, encryption, access control, export,
+  portability, deletion verification, and contract termination;
+- ownership, output, confidentiality, indemnity, acceptable-use, and other
+  terms relevant to the intended inputs and outputs; and
+- the owner, approval level, monitoring, review date, revocation path, and
+  evidence of the configuration actually in use.
+
+Workflows MUST send the minimum necessary authorized data and MUST use the most
+protective available training, retention, logging, and human-review settings.
+Broad repository, mailbox, drive, calendar, or account access MUST NOT replace
+purpose-scoped retrieval. Background access and connectors MUST expire or be
+reviewed; removing a user interface integration is not proof that provider-held
+data was deleted.
+
+Confidential, restricted, personal, Lore, or third-party-controlled material
+MUST NOT enter a provider's training, fine-tuning, evaluation, product
+improvement, or human-review process unless an A4 owner has documented the
+necessity, rights, privacy and security assessment, applicable consent, contract,
+retention, and deletion conditions. A consumer account or default public service
+MUST NOT receive such material merely because it is convenient.
+
+Prompts, outputs, embeddings, safety-filter records, provider request IDs, and
+usage metadata inherit the sensitivity of the information they contain or can
+reveal. Provider assurances and interface labels MUST be verified against the
+applicable contract and observed configuration; they are not substitutes for a
+Studio handling decision.
+
+### 8.5 Intellectual property and third-party material
+
+Before third-party material is used beyond a quarantined rights review, the
+Studio MUST know and record:
+
+- the material's identity, provenance, source, owner or author, version or
+  immutable revision, and acquisition date;
+- the actual license, contract, permission, consent, or other rights basis—not
+  merely a package label, marketplace description, or provider summary;
+- whether the intended access, processing, modification, generation,
+  adaptation, training, display, performance, publication, redistribution,
+  sublicensing, and commercial use are permitted;
+- territory, duration, media, audience, attribution, notice, source-disclosure,
+  modification-marking, trademark, patent, confidentiality, privacy, publicity,
+  and termination conditions as applicable;
+- compatibility with the destination repository, artifact, license, and
+  distribution model; and
+- the accountable A4 human rights decision and any required qualified legal
+  review when permission, ownership, authorship, fair use, or compatibility is
+  uncertain or materially consequential.
+
+A public URL, purchased copy, subscription, API response, model output, search
+result, package download, lack of a notice, or technical ability to copy does
+not grant rights. An AI system MUST NOT infer permission, ownership, public
+domain status, fair use, or license compatibility from accessibility or
+similarity. Unknown, unverifiable, conflicting, or questionable provenance
+blocks use outside rights review and blocks publication or redistribution.
+
+Rights and obligations travel with material through copying, format conversion,
+translation, generation, editing, combination, embedding, packaging, and
+publication. Required copyright, license, attribution, modification, source,
+trademark, and other notices MUST remain attached or be reproduced in the
+required location. A Studio license applies only to material the Studio has the
+authority to license and MUST NOT overwrite third-party terms.
+
+### 8.6 Material-specific rights checks
+
+| Material class | Required rights evidence before publication or redistribution |
+| --- | --- |
+| **Code, packages, snippets, specifications, and templates** | Source and exact version; license and patent terms; compatibility; source or notice duties; modification markings; dependency and security review. |
+| **Fonts** | Font license; copyright and Reserved Font Name terms; embedding, web, application, document, modification, and redistribution permissions; required license copy. |
+| **Images, illustrations, audio, video, 3D assets, and stock media** | Owner and source; exact media/channel/commercial/derivative scope; attribution; model, property, location, music, and performer releases where applicable. |
+| **Datasets and model inputs** | Collection and source rights; consent and privacy basis; dataset terms; training, evaluation, transformation, and redistribution rights; prohibited or withdrawn records. |
+| **Models, weights, APIs, and provider outputs** | Model and service terms; weight or API license; acceptable-use limits; input and output terms; redistribution and commercial rights; provider opacity and provenance risk. |
+| **AI-assisted or generated material** | Generation provenance; exact selected output; authorized input rights; provider terms; human authorship and edits; similarity, trademark, likeness, voice, and release review; scope of any ownership claim. |
+| **Names, brands, characters, likenesses, and voices** | Trademark, publicity, privacy, endorsement, character, performer, and contractual permissions appropriate to the use and audience. |
+| **Commissioned, contributed, or collaborative work** | Written authorship and ownership record; assignment or license; work-made-for-hire status where legally valid; contributor authority; credit; compensation and reuse terms. |
+
+The Studio MUST document material human creative contribution and MUST NOT
+represent purely generated material as exclusively human-authored or claim
+ownership broader than applicable law and agreements support. AI assistance does
+not cure an unauthorized input, remove third-party rights from an output, or
+make a provider warranty sufficient on its own.
+
+Using a person's name, likeness, voice, private information, or other identity
+attribute to create a replica, endorsement, or misleading representation
+requires an A4 human rights/privacy decision and the permissions required for
+the actual use. Material selected to imitate an identifiable living creator or
+to evade a rights boundary MUST NOT be published without documented rights and
+editorial review.
+
+### 8.7 Security, privacy, and rights release gate
+
+Before canon promotion, public review, publication, or redistribution, the
+accountable reviewer MUST verify for the exact candidate and destination:
+
+- classification, authorized purpose, recipients, minimization, retention, and
+  deletion obligations;
+- absence of secrets and unapproved personal, confidential, restricted, Lore,
+  incident, or vulnerability information, including indirect and metadata
+  leakage;
+- system, dependency, access, provider, model, prompt, logging, and integration
+  risks and the status of required validation or remediation;
+- a complete third-party inventory with known provenance, compatible rights,
+  required notices, and human authorship or ownership scope;
+- the exact approved bytes and provenance record, with public and restricted
+  evidence separated; and
+- all required A3 execution approvals and A4 security, privacy, disclosure,
+  rights, canon, and publication decisions.
+
+A disclaimer, attribution, takedown plan, provider assurance, later cleanup, or
+ability to rotate a secret MUST NOT substitute for satisfying the gate. A known
+unmitigated boundary violation or materially questionable provenance blocks the
+affected promotion, review, publication, or redistribution.
+
+### 8.8 Incidents and questionable provenance
+
+A suspected credential exposure, unauthorized access, private Lore or personal
+data disclosure, confidentiality breach, vulnerability, malicious instruction,
+integrity failure, provider misuse, rights complaint, license conflict, unknown
+source, or substantial-similarity concern MUST enter the private incident or
+rights-escalation path. The reporter MUST NOT place sensitive evidence or the
+questionable material in a public issue or discussion.
+
+The accountable response owner MUST:
+
+1. stop affected processing, promotion, publication, redistribution, and further
+   disclosure while preserving the safest useful state;
+2. contain access and distribution, quarantine affected material, and rotate or
+   revoke exposed authority where authorized, without destroying evidence;
+3. establish a private coordination channel and notify the appropriate security,
+   privacy, Lore, rights, editorial, and repository owners with minimum
+   necessary detail;
+4. preserve an integrity-verifiable restricted timeline, affected identities,
+   artifacts, systems, recipients, decisions, and containment evidence;
+5. determine scope, exposure, ongoing risk, downstream dependencies, rights,
+   contracts, and applicable notification, takedown, preservation, or legal
+   obligations;
+6. remediate or replace the cause and affected material, validate the result,
+   and obtain authorized human decisions for disclosure, notification, release,
+   or resumption; and
+7. record the resolution, residual risk, affected releases, follow-up owners,
+   review date, and lessons that must change systems or policy.
+
+Agents MAY take only pre-authorized, narrow, reversible containment. When delay
+would materially increase immediate harm, the emergency rule in Section 9
+permits the narrowest protective action with evidence and prompt human review.
+Investigation MUST NOT broaden access, reproduce harmful content unnecessarily,
+contact a suspected rights holder as the Studio, or disclose the incident
+without the responsible human's authority.
+
+Questionable material remains quarantined until an authorized rights owner
+verifies a sufficient basis for the intended use or directs documented removal
+or replacement. Deletion, redaction, credential rotation, license purchase, or
+provider removal does not erase the incident and MUST NOT replace the audit and
+downstream-impact review.
+
+## 9. Resolving conflicts
 
 Principles are intended to constrain one another, not to provide slogans that
 justify bypassing one another. A claimed benefit under one principle does not
@@ -915,7 +1178,7 @@ immediate safety or security incident MAY take the narrowest protective action,
 but MUST preserve evidence, name an accountable Studio owner, and enter review
 as soon as the immediate risk is controlled.
 
-## 9. Definitions
+## 10. Definitions
 
 - **Accountable human:** A named person with authority to approve, stop, explain,
   and accept responsibility for a decision and its consequences.
@@ -938,11 +1201,17 @@ as soon as the immediate risk is controlled.
 - **Content state:** The explicit governance status that determines whether
   creative material is a proposal, draft, Lore, active canon, or deprecated
   canon; publication is recorded as a separate release state.
+- **Confidential information:** Non-public material whose unauthorized access,
+  use, or disclosure could harm a person, the Studio, a partner, creative intent,
+  security, privacy, or rights.
 - **Constitutional conformance:** Satisfaction of every applicable MUST and MUST
   NOT, with documented treatment of applicable SHOULD and SHOULD NOT terms.
 - **Delegation:** A bounded grant from an accountable human permitting an agent
   to perform specified actions under stated limits, evidence, and escalation
   requirements.
+- **Data minimization:** Limiting collection, inference, access, precision,
+  processing, disclosure, retention, and replication to what an authorized
+  purpose actually requires.
 - **Deprecated canon:** Formerly active canon retained as a historical record of
   prior canon status but no longer controlling new continuity within its stated
   deprecated scope.
@@ -952,6 +1221,9 @@ as soon as the immediate risk is controlled.
   output produced materially by software, automation, or AI assistance.
 - **Irreversible decision:** An action that is public, canonical, destructive,
   legally or commercially committed, security-sensitive, or costly to undo.
+- **Incident:** A suspected or confirmed event that threatens security,
+  privacy, confidentiality, integrity, availability, creative boundaries, or
+  third-party rights and requires coordinated containment and review.
 - **Lore:** Private planning material held in the restricted Lore authority,
   including explicitly labeled established facts, possibilities, alternatives,
   questions, retired plans, continuity, and unrevealed context.
@@ -960,6 +1232,9 @@ as soon as the immediate risk is controlled.
   merely because it is executable.
 - **Nondeterministic generation:** Production in which the same recorded request
   and apparent environment are not guaranteed to produce byte-identical output.
+- **Personal data:** Information relating to an identified or reasonably
+  identifiable person, including data that becomes identifying when combined or
+  inferred.
 - **Principle:** A durable constitutional rule and rationale used to judge
   decisions across changing implementations.
 - **Proposal:** A non-authoritative candidate idea, fact, change, or resolution
@@ -980,13 +1255,18 @@ as soon as the immediate risk is controlled.
 - **Retcon:** An intentional human decision that contradicts, replaces, narrows,
   or reinterprets previously active canon while preserving its history and
   provenance.
+- **Secret:** Authentication, signing, encryption, recovery, or equivalent
+  access material whose disclosure could confer authority or defeat a control.
 - **Specification:** A stable, implementation-neutral contract owned by Codex
   after its required acceptance process.
 - **Traceability:** The ability to follow lineage backward from an artifact to
   its inputs and decisions and forward from an input or decision to affected
   outputs.
+- **Third-party material:** Content, code, data, media, model, service output,
+  identity attribute, or other material not created and wholly owned by the
+  Studio for the intended use.
 
-## 10. Authority, storage, and references
+## 11. Authority, storage, and references
 
 The authoritative Constitution is the root file
 [`CONSTITUTION.md`](CONSTITUTION.md) in the public
@@ -1005,19 +1285,19 @@ and release governance SHOULD state the Constitution version or commit they were
 reviewed against. They MAY link the human-readable root file for convenience,
 but compliance records MUST retain the immutable reference.
 
-## 11. Constitutional roadmap
+## 12. Constitutional roadmap
 
 This version establishes the shared frame plus human/AI authority, canon/Lore
-governance, and provenance/audit requirements. The remaining Epic #3 work will
-elaborate it without moving implementation detail into the Constitution:
+governance, provenance/audit, and security/privacy/rights requirements. The
+remaining Epic #3 work will elaborate it without moving implementation detail
+into the Constitution:
 
-- issue #44: security, privacy, and intellectual-property principles;
 - issue #45: quality, validation, and release governance;
 - issue #46: portability, interoperability, and vendor neutrality;
 - issue #47: amendment and exception process; and
 - issue #48: Constitution v1.0 publication and compliance checklist.
 
-## 12. Conformance statement
+## 13. Conformance statement
 
 A proposal, mechanism, or release MUST NOT claim constitutional conformance
 unless its accountable owner can identify the applicable constitutional rules,
@@ -1034,3 +1314,9 @@ A generated artifact or release MUST additionally identify its provenance
 record, exact output identity, reproducibility classification and boundary,
 audit status, retention authority, and any unavailable, withheld, or unresolved
 evidence.
+
+A system, provider use, third-party material, canon decision, or release MUST
+additionally identify its information classification, authorized purpose,
+minimum necessary data and access, approved processing destinations, retention
+and deletion conditions, security/privacy/rights owners, applicable permissions
+and notices, release-gate result, and any incident or questionable provenance.

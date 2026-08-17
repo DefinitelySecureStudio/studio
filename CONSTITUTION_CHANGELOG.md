@@ -22,7 +22,7 @@ No unreleased constitutional changes.
 - Source revision: the exact merged commit targeted by `constitution/v1.0.0`
 - Tag: [`constitution/v1.0.0`](https://github.com/DefinitelySecureStudio/studio/releases/tag/constitution%2Fv1.0.0)
 - Release: [Constitution v1.0.0](https://github.com/DefinitelySecureStudio/studio/releases/tag/constitution%2Fv1.0.0)
-- Pull request: assigned when this branch is published and required before adoption
+- Pull request: [#73](https://github.com/DefinitelySecureStudio/studio/pull/73)
 - Issue: [#48](https://github.com/DefinitelySecureStudio/studio/issues/48)
 - Decision: [ADR 0015](adr/0015-constitution-v1-publication-conformance.md)
 - Impact and transition: [Constitution v1.0 downstream impact and adoption plan](CONSTITUTION_V1_IMPACT.md)

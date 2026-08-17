@@ -15,6 +15,11 @@ internal authority for human and AI-assisted creative and technical decisions.
 It defines the principles and hierarchy that ADRs, specifications, repository
 policies, mechanisms, and releases must follow.
 
+- [Constitution compliance checklist](CONSTITUTION_COMPLIANCE.md)
+- [Constitution version history](CONSTITUTION_CHANGELOG.md)
+- [Constitution exception register](CONSTITUTION_EXCEPTIONS.md)
+- [Repository reference standard](repository-standards/CONSTITUTION-REFERENCE.md)
+
 ## Brand system
 
 The [Definitely Secure Brand Guide v1.0](brand/BRAND_GUIDE.md) is the authoritative starting point for Studio and comic presentation.

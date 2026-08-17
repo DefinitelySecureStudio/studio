@@ -15,6 +15,15 @@ the accountable maintainer group. Link the Studio repository architecture.
 List what must not be committed here and name the authoritative destination for
 adjacent work. State the visibility and sensitive-content boundary explicitly.
 
+## Constitutional alignment
+
+Declare the exact Constitution version, immutable tag and commit, conformance
+status and assessed scope, accountable owner, evidence location, active
+exception identifiers, and next review trigger. Follow
+[`CONSTITUTION-REFERENCE.md`](../CONSTITUTION-REFERENCE.md) when applying this
+template; replace the relative link with the durable Studio URL in the created
+repository.
+
 ## Repository layout
 
 | Path | Purpose |

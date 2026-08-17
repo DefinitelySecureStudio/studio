@@ -15,6 +15,8 @@ accepted architecture decision that authorizes the repository.
 ## Files
 
 - [ ] README is completed from `templates/README.md` without placeholders.
+- [ ] The repository declares its exact Constitution version, immutable tag and
+      commit, conformance status and scope, owner, evidence, and review trigger.
 - [ ] The root `LICENSE` and `NOTICE` match the licensing matrix.
 - [ ] `CODEOWNERS` names real users or teams and covers sensitive paths.
 - [ ] `CHANGELOG.md`, `.gitignore`, and repository-specific documentation are
@@ -49,4 +51,5 @@ accepted architecture decision that authorizes the repository.
 - [ ] The creation pull request lists settings that cannot be represented in Git.
 - [ ] A maintainer verifies the default branch after merge.
 - [ ] The repository is added to `ARCHITECTURE.md` and the Studio portfolio index.
+- [ ] Applicable Constitution checklist profiles are completed with evidence.
 - [ ] Exceptions have an owner, rationale, compensating control, and review date.

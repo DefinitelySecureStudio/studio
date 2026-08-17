@@ -1,7 +1,7 @@
 # Definitely Secure Studio Constitution
 
 - Status: Adopted foundation; pre-v1.0
-- Version: 0.5.0
+- Version: 0.6.0
 - Date: 2026-08-16
 - Authority: Definitely Secure Studio
 - Constitutional model: [ADR 0007](adr/0007-studio-constitution-model.md)
@@ -9,6 +9,7 @@
 - Canon/Lore governance model: [ADR 0009](adr/0009-canon-lore-continuity-governance.md)
 - Provenance and audit model: [ADR 0010](adr/0010-provenance-reproducibility-audit.md)
 - Security, privacy, and rights model: [ADR 0011](adr/0011-security-privacy-rights.md)
+- Quality and release model: [ADR 0012](adr/0012-quality-validation-release-governance.md)
 
 ## Preamble
 
@@ -41,12 +42,14 @@ implementation manual:
    deterministic rebuilds, nondeterministic generation, and retention.
 8. **Security, privacy, and rights** defines protective design, data handling,
    provider boundaries, third-party material, and incident response.
-9. **Conflict resolution** defines how competing obligations are handled.
-10. **Definitions** provide a shared constitutional vocabulary.
-11. **Authority, storage, and references** identify the canonical document and
+9. **Quality, validation, and release governance** defines candidate states,
+   minimum gates, severity, human review, and bounded waivers.
+10. **Conflict resolution** defines how competing obligations are handled.
+11. **Definitions** provide a shared constitutional vocabulary.
+12. **Authority, storage, and references** identify the canonical document and
    how downstream work pins it.
-12. **Roadmap** delimits the remaining constitutional work.
-13. **Conformance** states the basis for claiming compliance.
+13. **Roadmap** delimits the remaining constitutional work.
+14. **Conformance** states the basis for claiming compliance.
 
 Later articles MAY add precise requirements within this structure. They MUST
 NOT turn the Constitution into a schema, procedure, prompt, or implementation
@@ -163,7 +166,7 @@ constitutional process.
 ## 4. Foundational principles
 
 These principles establish the decision frame. Articles developed under issues
-#45–#47 MAY add precise requirements, but MUST preserve this foundation.
+#46–#47 MAY add precise requirements, but MUST preserve this foundation.
 
 ### Principle 1: Human authority carries human accountability
 
@@ -882,7 +885,7 @@ retention period or event, preservation obligations, and deletion method:
 When retention and minimization requirements conflict, the accountable human
 MUST preserve the minimum evidence that proves identity, authority, decision,
 and outcome, store sensitive supporting material separately, and document the
-resolution under Section 9.
+resolution under Section 10.
 
 ## 8. Security, privacy, confidential information, and rights
 
@@ -1132,7 +1135,7 @@ The accountable response owner MUST:
    review date, and lessons that must change systems or policy.
 
 Agents MAY take only pre-authorized, narrow, reversible containment. When delay
-would materially increase immediate harm, the emergency rule in Section 9
+would materially increase immediate harm, the emergency rule in Section 10
 permits the narrowest protective action with evidence and prompt human review.
 Investigation MUST NOT broaden access, reproduce harmful content unnecessarily,
 contact a suspected rights holder as the Studio, or disclose the incident
@@ -1144,7 +1147,190 @@ or replacement. Deletion, redaction, credential rotation, license purchase, or
 provider removal does not erase the incident and MUST NOT replace the audit and
 downstream-impact review.
 
-## 9. Resolving conflicts
+## 9. Quality, validation, and release governance
+
+Generation, assembly, rendering, building, or validation success creates an
+output, not an approved release. Every artifact intended for an audience MUST
+pass criteria appropriate to its purpose and risk, satisfy the minimum gates in
+this article, and receive the required human decisions for its exact identity
+and destination. Automation MAY establish evidence; it MUST NOT convert its own
+success into publication authority.
+
+Quality means fitness for the artifact's declared purpose while preserving
+creative intent, continuity, accessibility, security, privacy, rights, and
+technical integrity. It is not reducible to polish, validator success, audience
+metrics, or similarity to prior output.
+
+### 9.1 Release states and candidate identity
+
+A release progresses through explicit states:
+
+1. A **draft output** is generated, authored, assembled, or built and remains
+   non-releasable.
+2. A **release candidate** binds a stable candidate identifier and digest to a
+   declared artifact scope, destination, audience, purpose, acceptance criteria,
+   authoritative inputs, and release owner.
+3. A **gate-complete candidate** has current evidence and a recorded disposition
+   for every applicable gate, with no unresolved blocking finding.
+4. An **approved release** is the exact gate-complete candidate authorized by
+   the required A4 humans for its named destination, timing, and audience.
+5. A **published release** is the approved identity actually made available and
+   bound to its immutable release and provenance records.
+6. A **superseded or withdrawn release** preserves the published history and
+   records the corrective, replacement, or withdrawal event.
+
+No state transition is implicit. A material change to bytes, composition,
+content, executable behavior, authoritative inputs, destination, audience, or
+release conditions creates a new candidate identity or revision. It invalidates
+every validation or approval whose claim no longer applies. A publisher MUST
+verify that the approved and published identities match exactly.
+
+### 9.2 Acceptance criteria and validation plan
+
+Before consequential validation begins, the accountable owner MUST record:
+
+- the artifact's intended audience, purpose, quality target, content and canon
+  scope, destination, and conditions of use;
+- independently reviewable acceptance criteria, including intended creative
+  effect and known acceptable variation where judgment is involved;
+- the exact candidate identity, authoritative inputs, applicable specifications,
+  policies, schemas, and Constitution version;
+- applicable gates, severity thresholds, validator versions, qualified human
+  reviewers, decision owners, and required separation of duties;
+- accessibility and compatibility targets, evidence retention, and handling of
+  private review material; and
+- withdrawal, rollback, correction, and post-release monitoring expectations.
+
+Criteria MUST be specific enough for a reviewer to explain why the candidate
+passes or fails. A producer, model, or workflow MUST NOT redefine the criteria
+after seeing its output merely to make that output pass. Creative criteria MAY
+permit intentional ambiguity, stylization, or variation, but the accountable
+editor MUST distinguish intent from an accidental defect.
+
+### 9.3 Minimum release gates
+
+Every release candidate MUST receive the following gates when applicable. A
+gate with a human requirement cannot be satisfied solely by an automated result.
+
+| Gate | Minimum evidence | Human requirement | Normal blocking condition |
+| --- | --- | --- | --- |
+| **Identity and scope** | Exact candidate digest; contents; destination; audience; purpose; criteria; governing versions. | Release owner confirms scope. | Unknown, mutable, mismatched, or incomplete candidate identity. |
+| **Creative and editorial quality** | Review against intent, composition, pacing, clarity, tone, and audience expectations. | Qualified editor reviews the actual artifact. | Material failure of creative intent, meaning, audience fitness, or editorial criteria. |
+| **Canon and continuity** | Applicable Universe snapshot; Lore-safe attestation; continuity findings and dispositions. | Authorized canon editor makes reserved decisions. | Unresolved contradiction, unauthorized canon claim, or Lore leakage. |
+| **Visual and media consistency** | Layout, character and environment continuity, colors, typography, legibility, crop, resolution, audio/video, and export checks as applicable. | Qualified visual or media review of rendered output. | Material inconsistency, illegibility, broken presentation, or unintended visual change. |
+| **Dialogue and text correctness** | Spelling, grammar, names, attribution, balloons/captions, reading order, localization, and semantic review. | Editor verifies meaning, voice, humor, context, and intentional deviations. | Meaning-changing error, wrong speaker or order, broken localization, or material voice failure. |
+| **Manifest, schema, and artifact integrity** | Schema validation; referential integrity; checksums; package completeness; deterministic assembly; required metadata. | Release owner reviews failures, suppressions, and coverage. | Invalid contract, missing artifact, broken reference, unverifiable bytes, or non-reproducible required assembly. |
+| **Technical behavior and compatibility** | Tests, supported-environment checks, performance and reliability evidence, and known limitations as applicable. | Domain owner accepts the demonstrated behavior. | Unsafe or unusable core behavior, data loss, or failure of a required supported target. |
+| **Provenance and audit** | Section 7 lineage, reproducibility classification, evidence integrity, retention, and approvals. | Independent verification for consequential artifacts. | Missing, corrupt, contradictory, or sensitivity-violating material evidence. |
+| **Security, privacy, confidentiality, and rights** | Section 8 release-gate evidence, third-party inventory, notices, and incident status. | Authorized domain owners make reserved risk, disclosure, and rights decisions. | Unmitigated boundary violation, questionable provenance, missing rights, or prohibited disclosure. |
+| **Accessibility and audience safety** | Applicable accessibility checks, content treatment, warnings, and foreseeable audience-impact review. | Qualified human reviews experience and contextual risk. | Required access is prevented or the candidate creates unaccepted material harm. |
+| **Packaging and release readiness** | Release notes, changes, known limitations, dependency and migration impact, support, rollback/withdrawal plan, and destination verification. | Publisher confirms operational readiness. | Missing required notice, unsafe migration, no viable recovery path, or destination mismatch. |
+| **Final approval** | Complete gate record bound to exact candidate; unresolved findings and waivers; named approvers and decision times. | Authorized A4 editor, publisher, and domain owners approve their scopes. | Any missing approval, stale evidence, unresolved blocker, or candidate mismatch. |
+
+A repository or artifact policy MAY add gates or make a conditional gate always
+applicable. It MUST NOT remove a gate that applies to the artifact. The release
+record MUST state why a gate was inapplicable; silence is not a passing result.
+
+### 9.4 Automated validation and mandatory human review
+
+An automated validator MAY conclusively establish only a bounded,
+machine-verifiable predicate when its inputs match the exact candidate, its
+version and configuration are recorded, its integrity is trusted, its coverage
+and limitations are known, and its result is current. Examples include schema
+conformance, checksum identity, link resolution, deterministic comparison, or a
+specified test outcome.
+
+Automation MUST NOT be the sole authority for creative intent, story meaning,
+character voice, humor, emotional effect, visual storytelling, intentional
+ambiguity, canon judgment, private disclosure, audience harm, rights or legal
+permission, residual-risk acceptance, or publication. Those judgments require
+a qualified accountable human reviewing the actual artifact and material
+evidence, not merely an agent's summary or score.
+
+The producer or generating agent MAY report checks and propose dispositions but
+MUST NOT be the sole verifier of its own consequential work. Human review does
+not erase an objective failure, and automated success does not satisfy a
+reserved human decision. Passing every automated check therefore establishes
+neither quality nor release approval.
+
+### 9.5 Finding severity and release effect
+
+Every finding MUST be classified by consequence rather than by the name or
+default severity supplied by a tool:
+
+| Severity | Meaning | Release effect |
+| --- | --- | --- |
+| **Blocker** | A violation or uncontrolled risk involving law, contract, constitutional requirements, authority, security, privacy, Lore, rights, safety, identity, evidence integrity, or essential behavior. | Release MUST stop until corrected. It is not eligible for a release waiver. |
+| **Major** | A material failure of declared creative, editorial, continuity, accessibility, compatibility, reliability, or release criteria that does not independently constitute a Blocker. | Normal release MUST stop. A narrowly eligible waiver requires Section 9.7. |
+| **Minor** | A bounded defect that does not alter meaning, canon, security, privacy, rights, safety, essential use, or the release's honest representation. | MAY proceed only after an accountable owner records disposition, user impact, and correction plan where needed. |
+| **Advisory** | An improvement opportunity or observation that is not a failure of an applicable requirement or acceptance criterion. | Non-blocking, but MUST remain visible to the responsible owner when material. |
+
+Uncertainty about a potentially prohibited disclosure, missing right, artifact
+identity, required approval, or material provenance is a Blocker until resolved.
+Related findings MUST be assessed together; multiple Minor findings that
+materially impair the experience become Major. A suppressed, flaky, disputed,
+or unavailable check is not a pass and requires an explicit evidence-based
+disposition.
+
+### 9.6 Validation evidence and freshness
+
+For each gate, the release record MUST identify the candidate, criterion and
+governing version, validator or human reviewer, relevant inputs and environment,
+decision time, outcome, findings and severity, limitations, disposition, and
+linked approval or waiver. Evidence MUST distinguish not-run, inapplicable,
+passed, failed, inconclusive, and waived outcomes.
+
+Evidence becomes stale when the candidate or a material input, criterion,
+validator, dependency, environment, provider, destination, audience, or risk
+assumption changes beyond the evidence's stated boundary. The owner MUST rerun
+or repeat affected validation and obtain renewed approval. Reusing unrelated or
+stale evidence, silently suppressing a result, or validating a representation
+other than the artifact to be released is prohibited.
+
+### 9.7 Release waivers and emergency releases
+
+A release waiver MAY accept one identified Major or Minor finding only when the
+underlying requirement permits risk acceptance and the candidate still conforms
+to every applicable MUST and MUST NOT. A waiver MUST NOT excuse law, contract,
+third-party rights, security or privacy boundary violations, Lore disclosure,
+missing authority or A4 approval, unknown candidate identity, corrupt audit
+evidence, invalid required provenance, or uncontrolled risk of material harm.
+
+Every waiver MUST record the exact candidate and finding, severity, rationale,
+residual risk, affected audience and destination, mitigating controls, qualified
+domain-owner concurrence, A4 publisher approval, responsible follow-up owner and
+issue, expiry or correction deadline, disclosure of the known limitation when
+safe, and withdrawal or rollback conditions. It applies to one release only,
+creates no precedent, cannot be copied forward, and becomes invalid when its
+facts or candidate change.
+
+An emergency release is permitted only to contain or reduce an immediate
+security, privacy, safety, availability, rights, or disclosure harm. It MUST be
+the narrowest viable change; retain exact identity, focused validation,
+provenance, and an accountable A4 approval; record every deferred gate and the
+reason; include rollback or withdrawal; and assign prompt, time-bounded
+completion and retrospective review. Schedule, cost, marketing, convenience, or
+generation effort does not create an emergency. Until issue #47 establishes the
+permanent amendment and exception process, no release waiver creates a standing
+constitutional exception.
+
+### 9.8 Approval, publication, and correction
+
+Before publication, the A4 publisher MUST verify the complete gate record, the
+authority and scope of each approval, the exact candidate identity and
+destination, notices and known limitations, and the ability to withdraw or
+correct safely. Publication MUST bind the released bytes to the immutable
+release and provenance records required by Section 7.
+
+The Studio MUST monitor releases according to their declared risk and support
+expectations. A post-release defect receives the same severity analysis as a
+candidate finding. A Blocker requires immediate containment and authorized
+withdrawal, disabling, or correction as appropriate; a Major requires prompt
+owner review and a recorded disposition. Correction, withdrawal, deprecation,
+or replacement MUST be an append-only event and MUST NOT silently rewrite the
+historical release.
+
+## 10. Resolving conflicts
 
 Principles are intended to constrain one another, not to provide slogans that
 justify bypassing one another. A claimed benefit under one principle does not
@@ -1178,7 +1364,7 @@ immediate safety or security incident MAY take the narrowest protective action,
 but MUST preserve evidence, name an accountable Studio owner, and enter review
 as soon as the immediate risk is controlled.
 
-## 10. Definitions
+## 11. Definitions
 
 - **Accountable human:** A named person with authority to approve, stop, explain,
   and accept responsibility for a decision and its consequences.
@@ -1244,6 +1430,12 @@ as soon as the immediate risk is controlled.
   transformations, approvals, and exact output.
 - **Release:** An intentionally approved artifact or collection made available
   to its intended audience under a stable identity and recorded terms.
+- **Release candidate:** An exact, identified artifact or collection proposed
+  for a declared audience and destination under recorded acceptance criteria;
+  candidate status does not imply approval.
+- **Release waiver:** A one-release, traceable A4 acceptance of a specifically
+  eligible Major or Minor finding; it is not a constitutional exception or
+  precedent.
 - **Published artifact:** The exact, immutable evidence of material released to
   an audience, with its canon scope recorded separately.
 - **Reserved human decision:** A judgment that an authorized human must
@@ -1265,8 +1457,11 @@ as soon as the immediate risk is controlled.
 - **Third-party material:** Content, code, data, media, model, service output,
   identity attribute, or other material not created and wholly owned by the
   Studio for the intended use.
+- **Validator:** A versioned human or automated mechanism that evaluates a
+  candidate against stated criteria and produces evidence within declared
+  limits; a validator does not possess publication authority by itself.
 
-## 11. Authority, storage, and references
+## 12. Authority, storage, and references
 
 The authoritative Constitution is the root file
 [`CONSTITUTION.md`](CONSTITUTION.md) in the public
@@ -1285,19 +1480,18 @@ and release governance SHOULD state the Constitution version or commit they were
 reviewed against. They MAY link the human-readable root file for convenience,
 but compliance records MUST retain the immutable reference.
 
-## 12. Constitutional roadmap
+## 13. Constitutional roadmap
 
-This version establishes the shared frame plus human/AI authority, canon/Lore
-governance, provenance/audit, and security/privacy/rights requirements. The
+This version establishes the shared frame plus human/AI authority, canon/Lore,
+provenance/audit, security/privacy/rights, and quality/release requirements. The
 remaining Epic #3 work will elaborate it without moving implementation detail
 into the Constitution:
 
-- issue #45: quality, validation, and release governance;
 - issue #46: portability, interoperability, and vendor neutrality;
 - issue #47: amendment and exception process; and
 - issue #48: Constitution v1.0 publication and compliance checklist.
 
-## 13. Conformance statement
+## 14. Conformance statement
 
 A proposal, mechanism, or release MUST NOT claim constitutional conformance
 unless its accountable owner can identify the applicable constitutional rules,
@@ -1320,3 +1514,10 @@ additionally identify its information classification, authorized purpose,
 minimum necessary data and access, approved processing destinations, retention
 and deletion conditions, security/privacy/rights owners, applicable permissions
 and notices, release-gate result, and any incident or questionable provenance.
+
+A release MUST additionally identify its exact candidate and destination,
+acceptance criteria, applicable gate outcomes and evidence freshness, human
+editorial and domain approvals, unresolved findings and severity, any valid
+single-release waiver, and rollback, withdrawal, or correction path. A
+successful generation, build, render, or validation result alone MUST NOT be
+represented as constitutional release approval.

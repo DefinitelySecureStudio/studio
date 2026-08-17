@@ -20,7 +20,7 @@ No unreleased constitutional changes.
 - Classification: Minor pre-v1 development amendment; introduces normative
   change control and may require downstream additions
 - Source revision: the first merged commit containing Constitution version 0.8.0
-- Pull request: assigned when this branch is published and required before adoption
+- Pull request: [#59](https://github.com/DefinitelySecureStudio/studio/pull/59)
 - Issue: [#47](https://github.com/DefinitelySecureStudio/studio/issues/47)
 - Decision: [ADR 0014](adr/0014-constitutional-amendment-exception-process.md)
 - Affected articles: constitutional structure, conflict resolution, definitions,

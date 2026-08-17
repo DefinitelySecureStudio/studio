@@ -35,6 +35,11 @@ Creative publications retain their permanent `DS-NNNN` episode identifier.
 That identifier is not a software version. Any corrected rendition or metadata
 snapshot records its own revision without changing the episode identity.
 
+Constitution releases use `constitution/vMAJOR.MINOR.PATCH` and a matching
+GitHub release under Article 12. The annotated or signed tag targets the exact
+approved merged commit, is never moved or reused, and is the recorded effective
+point when the amendment specifies tag publication.
+
 `lab` does not publish stable releases by default. `lore` does not publish
 public releases or tags. Studio governance and brand releases must document
 their repository-specific version form before the first tagged release.

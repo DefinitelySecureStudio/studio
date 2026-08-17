@@ -14,12 +14,41 @@ adds a new version and entry; historical text and entries are not rewritten.
 
 No unreleased constitutional changes.
 
+## 1.0.0 — 2026-08-16
+
+- Status: Stable baseline; effective when `constitution/v1.0.0` is published
+- Classification: Major; establishes the first stable constitutional
+  compatibility baseline
+- Source revision: the exact merged commit targeted by `constitution/v1.0.0`
+- Tag: [`constitution/v1.0.0`](https://github.com/DefinitelySecureStudio/studio/releases/tag/constitution%2Fv1.0.0)
+- Release: [Constitution v1.0.0](https://github.com/DefinitelySecureStudio/studio/releases/tag/constitution%2Fv1.0.0)
+- Pull request: [#73](https://github.com/DefinitelySecureStudio/studio/pull/73)
+- Issue: [#48](https://github.com/DefinitelySecureStudio/studio/issues/48)
+- Decision: [ADR 0015](adr/0015-constitution-v1-publication-conformance.md)
+- Impact and transition: [Constitution v1.0 downstream impact and adoption plan](CONSTITUTION_V1_IMPACT.md)
+- Affected articles: document status and version, constitutional structure,
+  foundational framing, amendment publication language, authority and references,
+  removal of the completed roadmap, and expanded Article 15
+
+Integrated every approved Epic #3 constitutional article into the first stable
+baseline. Added the practical compliance checklist, immutable repository-
+reference standard, five conformance statuses, specialized applicability
+profiles, assessment-record requirements, v1 impact inventory, adoption
+deadlines, and publication verification.
+
+Version 1.0.0 is a deliberate Major transition from the pre-v1 development
+series. It becomes effective only when the exact merged commit is published under
+the immutable annotated or signed tag and matching GitHub release. Existing
+repositories receive a bounded `Transition required` period under the
+[impact plan](CONSTITUTION_V1_IMPACT.md); the window is not a waiver and does not
+permit work that conflicts with v1.
+
 ## 0.8.0 — 2026-08-16
 
 - Status: Adopted foundation; pre-v1.0
 - Classification: Minor pre-v1 development amendment; introduces normative
   change control and may require downstream additions
-- Source revision: the first merged commit containing Constitution version 0.8.0
+- Source revision: [`6582c3b`](https://github.com/DefinitelySecureStudio/studio/commit/6582c3b5ed37195621170bc1314807c01bff86d1)
 - Pull request: [#59](https://github.com/DefinitelySecureStudio/studio/pull/59)
 - Issue: [#47](https://github.com/DefinitelySecureStudio/studio/issues/47)
 - Decision: [ADR 0014](adr/0014-constitutional-amendment-exception-process.md)

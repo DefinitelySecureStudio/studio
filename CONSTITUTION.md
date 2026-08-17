@@ -1,7 +1,7 @@
 # Definitely Secure Studio Constitution
 
-- Status: Adopted foundation; pre-v1.0
-- Version: 0.8.0
+- Status: Stable v1 baseline; effective on publication of `constitution/v1.0.0`
+- Version: 1.0.0
 - Date: 2026-08-16
 - Authority: Definitely Secure Studio
 - Constitutional model: [ADR 0007](adr/0007-studio-constitution-model.md)
@@ -12,8 +12,10 @@
 - Quality and release model: [ADR 0012](adr/0012-quality-validation-release-governance.md)
 - Portability and vendor-neutrality model: [ADR 0013](adr/0013-portability-interoperability-vendor-neutrality.md)
 - Amendment and exception model: [ADR 0014](adr/0014-constitutional-amendment-exception-process.md)
+- v1 publication and conformance model: [ADR 0015](adr/0015-constitution-v1-publication-conformance.md)
 - Version history: [Constitution changelog](CONSTITUTION_CHANGELOG.md)
 - Exception history: [Constitution exception register](CONSTITUTION_EXCEPTIONS.md)
+- Compliance checklist: [Constitution compliance checklist](CONSTITUTION_COMPLIANCE.md)
 
 ## Preamble
 
@@ -56,8 +58,8 @@ implementation manual:
 13. **Definitions** provide a shared constitutional vocabulary.
 14. **Authority, storage, and references** identify the canonical document and
    how downstream work pins it.
-15. **Roadmap** delimits the remaining constitutional work.
-16. **Conformance** states the basis for claiming compliance.
+15. **Conformance and adoption** defines valid claims, version declarations,
+    applicability profiles, evidence, and outcomes.
 
 Later articles MAY add precise requirements within this structure. They MUST
 NOT turn the Constitution into a schema, procedure, prompt, or implementation
@@ -173,8 +175,8 @@ constitutional process.
 
 ## 4. Foundational principles
 
-These principles establish the decision frame. Issue #48 MAY add versioned
-publication and compliance requirements, but MUST preserve this foundation.
+These principles establish the durable decision frame. Lower authorities MAY
+make them more specific within their domains but MUST preserve this foundation.
 
 ### Principle 1: Human authority carries human accountability
 
@@ -1666,10 +1668,11 @@ which version governs the transition and MUST NOT permit an unsafe ambiguity.
 
 An amendment MUST NOT retroactively authorize a prior violation, erase an
 incident or exception, rewrite the meaning of a historical version, or remove
-the evidence used to make the decision. Before v1.0, the merged commit is the
-immutable version reference. Beginning with v1.0, each effective version MUST
-also receive an immutable signed or annotated `constitution/vMAJOR.MINOR.PATCH`
-tag and matching release record; tags MUST NOT be moved or reused.
+the evidence used to make the decision. For versions before 1.0.0, the merged
+commit is the immutable version reference. For version 1.0.0 and every later
+effective version, the merged commit MUST also receive an immutable signed or
+annotated `constitution/vMAJOR.MINOR.PATCH` tag and matching release record;
+tags MUST NOT be moved or reused.
 
 ### 12.4 Constitution semantic versioning
 
@@ -1686,10 +1689,11 @@ calling a weakening a clarification does not make it Patch. A security, privacy,
 rights, Lore, or human-authority correction MAY require urgent adoption but is
 still classified by compatibility, not urgency.
 
-Before v1.0, every Minor increment MAY contain breaking development changes.
-The proposal and changelog MUST still label actual compatibility and downstream
+Every pre-1.0.0 Minor increment MAY contain breaking development changes. Its
+proposal and changelog MUST still label actual compatibility and downstream
 impact. Version 1.0.0 establishes the first stable constitutional compatibility
-baseline; pre-v1 status MUST NOT be used to omit review, history, or migration.
+baseline; historical pre-v1 status does not excuse omitted review, history, or
+migration.
 
 Exactly one Constitution version identifies one immutable text. Two different
 texts MUST NOT claim the same version, and one amendment MUST NOT silently
@@ -1944,11 +1948,11 @@ The authoritative Constitution is the root file
 repository. No mirror, generated copy, prompt excerpt, model context, wiki page,
 or downstream repository may become a competing authority.
 
-Before Constitution v1.0 is published, a durable external reference MUST pin the
-exact Studio commit containing this file. After versioned publication, references
-SHOULD use the immutable Constitution release tag and record its exact commit.
-`main` identifies the current accepted development state but is not an immutable
-historical reference.
+For Constitution 1.0.0 and later, a durable external reference MUST identify the
+exact semantic version, immutable `constitution/vMAJOR.MINOR.PATCH` release tag,
+and full Studio commit. A historical pre-1.0.0 reference MUST identify the exact
+commit. `main`, a branch, a version range, `latest`, a copied file, or a web page
+without the commit is not an immutable conformance reference.
 
 ADRs, RFCs, specifications, repository policies, material agent instructions,
 and release governance SHOULD state the Constitution version or commit they were
@@ -1961,23 +1965,43 @@ public exception index is
 [`CONSTITUTION_EXCEPTIONS.md`](CONSTITUTION_EXCEPTIONS.md), paired with restricted
 records where required. A mirror or summary of either file is non-authoritative.
 
-## 15. Constitutional roadmap
+## 15. Conformance and adoption
 
-This version establishes the shared frame plus human/AI authority, canon/Lore,
-provenance/audit, security/privacy/rights, quality/release, portability, and
-constitutional change-control requirements. The remaining Epic #3 work will
-publish the stable version without moving implementation detail into the
-Constitution:
+Conformance is an evidence-backed claim about a named subject, scope, version,
+and point in time. It is not a general endorsement, certification of unrelated
+work, or permanent status. A repository, policy, specification, system,
+workflow, agent, decision, artifact, or release MUST be assessed within its own
+authority and cannot inherit conformance merely because a dependency, tool,
+template, or parent organization was assessed.
 
-- issue #48: Constitution v1.0 publication and compliance checklist.
-
-## 16. Conformance statement
+### 15.1 Minimum conformance record
 
 A proposal, mechanism, or release MUST NOT claim constitutional conformance
 unless its accountable owner can identify the applicable constitutional rules,
 domain authorities, authority level, delegation, evidence, approval gates, and
-unresolved risks. Detailed checklists and versioned publication requirements are
-reserved for issue #48.
+unresolved risks. Every claim MUST record:
+
+- the assessed subject, stable identity or revision, scope, excluded scope,
+  purpose, environment, audience, and assessment time;
+- Constitution version, immutable release tag, full commit, and checklist
+  revision used;
+- accountable human owner, qualified reviewers, affected domain authorities,
+  and any required separation of duties;
+- applicable articles and checklist profiles, explicit rationale for each
+  inapplicable item, evidence locations, validation results, and evidence
+  freshness;
+- unresolved findings and severity, residual risk, release waiver,
+  constitutional exception, transition, incident, or blocked decision; and
+- status, approval scope and time, next review trigger or date, and an audit-safe
+  record of corrections.
+
+The operational minimum is
+[`CONSTITUTION_COMPLIANCE.md`](CONSTITUTION_COMPLIANCE.md). A lower-level
+checklist MAY add evidence or stricter gates but MUST NOT remove an applicable
+constitutional question. Checking a box without evidence or treating silence as
+inapplicable does not establish conformance.
+
+### 15.2 Applicability profiles
 
 A creative proposal, canon decision, or release MUST additionally identify its
 content state, applicable Universe snapshot, Lore handling and disclosure
@@ -2015,3 +2039,55 @@ classification, rationale, review and approvals, effective or expiry point,
 changelog or exception-register entry, affected consumers, migration or
 compensating controls, validation, unresolved risk, and complete public or
 paired restricted audit path.
+
+An ADR, RFC, or stable specification MUST additionally identify the authority
+that owns the decision or contract, alternatives and higher-rule constraints,
+affected consumers, compatibility and migration, validation, and why the chosen
+mechanism does not redefine authority or constitutional meaning.
+
+A repository or agent workflow MUST additionally identify its responsibility
+boundary, permitted and prohibited data, capability and authority limits,
+delegation and escalation, tool and provider boundaries, durable records,
+failure and recovery behavior, and the human approval required for every
+irreversible action.
+
+### 15.3 Conformance statuses and claims
+
+An assessment MUST use one of these statuses:
+
+| Status | Meaning |
+| --- | --- |
+| **Conforming** | Every applicable requirement is satisfied with current evidence and no unresolved blocking condition. |
+| **Authorized exception** | One exact eligible departure is covered by an active Section 12 exception; no broader conformance claim is permitted. |
+| **Transition required** | A version change has an approved migration plan, but required adoption or validation is incomplete. The subject is not yet conforming to the new version. |
+| **Nonconforming — blocked** | An applicable MUST, MUST NOT, authority boundary, required approval, or blocking gate is unsatisfied. Consequential use or release MUST stop. |
+| **Not assessed** | No complete current assessment exists. Absence of a finding MUST NOT be represented as conformance. |
+
+A release waiver under Section 9 changes the disposition of one eligible release
+finding but does not create constitutional conformance for an otherwise
+nonconforming subject. A temporary constitutional exception authorizes only its
+recorded scope and term. Expiry, material change, stale evidence, amendment,
+incident, or breached stop condition invalidates the affected claim until
+reassessment.
+
+### 15.4 Downstream declaration and adoption
+
+Every maintained Studio repository MUST publish a durable, reader-safe
+declaration naming the Constitution version, immutable tag, full commit,
+assessment status, covered scope, accountable owner, assessment revision and
+date, evidence location, active exception identifiers, and next review trigger.
+The declaration format and update rules are defined in the
+[repository reference standard](repository-standards/CONSTITUTION-REFERENCE.md).
+
+An ADR, RFC, specification, policy, agent instruction, workflow, manifest, and
+release record SHOULD repeat the exact constitutional reference when its meaning
+or approval depends on that version. A bare statement such as “constitutionally
+compliant,” an unpinned link, or compatibility with a version range is
+insufficient.
+
+A Major Constitution version requires full impact review and explicit adoption.
+A Minor version requires review of additions and affected assumptions. A Patch
+requires verification that the subject did not rely on corrected wording and
+that its pinned reference is updated when claiming the Patch. Adoption MUST
+preserve the prior assessment and MUST NOT silently change the version governing
+historical work.

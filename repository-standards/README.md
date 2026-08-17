@@ -26,6 +26,8 @@ using:
 - [`LABELS.md`](LABELS.md) and [`labels.yml`](labels.yml) for label definitions;
 - [`BRANCH-AND-REVIEW.md`](BRANCH-AND-REVIEW.md) for default-branch controls;
 - [`DEPENDENCIES.md`](DEPENDENCIES.md) for update automation;
+- [`CONSTITUTION-REFERENCE.md`](CONSTITUTION-REFERENCE.md) for immutable
+  constitutional references, conformance declarations, and re-review;
 - [`RELEASES.md`](RELEASES.md) for tags and releases;
 - [`METADATA.md`](METADATA.md) for descriptions, topics, and feature settings;
   and

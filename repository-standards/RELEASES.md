@@ -1,5 +1,11 @@
 # Release and tag conventions
 
+This standard implements the constitutional
+[quality, validation, and release governance](../CONSTITUTION.md#9-quality-validation-and-release-governance)
+model and [ADR 0012](../adr/0012-quality-validation-release-governance.md).
+Its tagging and packaging rules do not replace the applicable quality gates or
+human approvals.
+
 ## General rules
 
 - Create releases from the protected `main` branch or a documented protected

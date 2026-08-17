@@ -1,5 +1,9 @@
 # Third-party dependency and asset rules
 
+These rules implement the intake and evidence requirements in
+[Section 8 of the Studio Constitution](../CONSTITUTION.md#8-security-privacy-confidential-information-and-rights)
+and [ADR 0011](../adr/0011-security-privacy-rights.md).
+
 These rules apply to code, packages, snippets, fonts, images, audio, video,
 datasets, models, model outputs, templates, and other material not authored and
 owned by Definitely Secure Studio.

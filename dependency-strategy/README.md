@@ -5,6 +5,12 @@ This directory implements
 the organization-level policy for dependency direction, stable references,
 compatibility, and release provenance.
 
+The constitutional requirements for durable representations, Studio-owned
+contracts, provider adapters, export and restore verification, and exit records
+are defined by
+[Section 10 of the Constitution](../CONSTITUTION.md#10-portability-interoperability-and-vendor-neutrality)
+and [ADR 0013](../adr/0013-portability-interoperability-vendor-neutrality.md).
+
 ## Dependency and promotion graph
 
 ```mermaid

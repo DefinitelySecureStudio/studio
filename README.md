@@ -51,6 +51,10 @@ Allowed repository dependencies, immutable artifact references, compatibility
 rules, and public/private release provenance are defined in the
 [cross-repository dependency strategy](dependency-strategy/README.md).
 
+The cross-repository ownership model, lifecycle objects, context boundary,
+provider-adapter seam, provenance requirements, and v1 scope for the Prompt SDK
+are defined in the [Prompt SDK v1 architecture](prompt-sdk/ARCHITECTURE.md).
+
 Brand assets have their own terms. The Prompt Mark, wordmarks, and lockups are proprietary and all rights are reserved; repository access does not grant trademark, endorsement, merchandising, or adaptation rights. Bundled font files use the SIL Open Font License 1.1. Consult the license file beside each asset family before redistribution.
 
 Open-source projects from Definitely Secure Studio identify their applicable software license independently. A software license does not override the brand-asset terms.

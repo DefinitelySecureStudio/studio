@@ -1,5 +1,9 @@
 # ADR 0016: Prompt SDK architecture and responsibility boundaries
 
+Context approval terminology is clarified by proposed
+[ADR 0017](0017-context-builder-architecture.md): Builder coordinates/verifies
+approval evidence; trusted authorities and authorized humans retain the judgment.
+
 - Status: Accepted
 - Date: 2026-08-17
 - Decision owner: Definitely Secure Studio (`@andrewperis`)

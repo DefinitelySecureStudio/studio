@@ -320,16 +320,16 @@ owner has a durable source link; do not invent one.
    Correct living guides to the published v1 state. Label candidate-era snapshots
    as historical/unpublished evidence without rewriting their bytes. Check
    related living guides for the same stale status. The proposed correction is
-   Platform [draft PR #46](https://github.com/DefinitelySecureStudio/platform/pull/46),
-   currently at head `bfd3df002f76adbc13e6ae03bf827379d9f608d1`, with nine
-   documentation-only files. It preserves the API inventory and publication
-   proof, labels the candidate/October 9 records as historical, and keeps “no
-   npm publication” explicit. [CI run #38154237203](https://github.com/DefinitelySecureStudio/platform/actions/runs/38154237203)
+   Platform [draft PR #46](https://github.com/DefinitelySecureStudio/platform/pull/46).
+   Its nine documentation-only files preserve the API inventory and publication
+   proof, label the candidate/October 9 records as historical, and keep “no
+   npm publication” explicit. PR #46 remains draft/unmerged, with final wording
+   and independent review pending. [CI run #38154237203](https://github.com/DefinitelySecureStudio/platform/actions/runs/38154237203)
    passed `npm test`, Comic Manifest conformance/security, and Context Builder
-   conformance/reference flows on Node 22 and 24. Independent review was
-   reported as started, but no review submission is visible. The PR remains
-   draft/unmerged. This Studio PR records the blocker but makes no duplicate
-   Platform edits.
+   conformance/reference flows on Node 22 and 24 on the earlier PR head
+   `bfd3df002f76adbc13e6ae03bf827379d9f608d1`. That run does not verify a later
+   PR head; final-head checks and review remain required. This Studio PR records
+   the blocker but makes no duplicate Platform edits.
 6. **Forward-looking control:** until criteria 1 and 12 are accepted, keep Epic 6
    open and leave their completion statuses pending. For later review-sensitive
    changes, record the exact human reviewer/owner capacity and source revision

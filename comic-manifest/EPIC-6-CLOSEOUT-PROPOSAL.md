@@ -168,13 +168,15 @@ owner has a durable source link; do not invent one.
    artifact approvals are evidenced, while architecture approval and the
    constitutional/doc closeout remain open. Keep the verified release tuples
    and publication facts intact.
-3. **AI-review wording:** the October 6 instruction authorized AI review and
-   merge for Epic 6; it was not an Article 12.7 exception. Codex’s
+3. **AI-review wording:** append a clarification to Studio #99 and the relevant
+   Codex record that the October 6 instruction authorized AI review and merge
+   for Epic 6; it was not an Article 12.7 exception. Codex’s
    [release-preparation record at `12e437e`](https://github.com/DefinitelySecureStudio/codex/blob/12e437e30328a3bb9cd2d15e6307a70b4b7e0e2a/releases/comic-manifest-v1.md)
    calls it an “A3 AI-review exception.” If correcting that description, use a
    dated addendum or a new source commit, preserve the tagged release and its
-   source history, and say no formal exception was registered. Do not create a
-   new or backdated exception.
+   source history, and say no formal exception was registered. Keep the
+   owner’s original instruction as history. Do not create a new or backdated
+   exception.
 4. **Studio #6:** keep the Epic open. After owner review of this proposal,
    record each criterion with its evidence. Leave criteria 1 and 12 incomplete
    until the required maintainer/owner reviews and accepted constitutional
@@ -191,7 +193,7 @@ owner has a durable source link; do not invent one.
 | Feasibility review | Platform maintainer | Studio architecture `7b5065c` against Platform tag/revision `comic-manifest/v1.0.0` / `f0672d9`; review the stated host-owned trust and disclosure limits |
 | Architecture adoption | Studio accountable owner, @andrewperis | Accept or decline ADR 0018’s exact proposed boundary after the above reviews. Acceptance is only the cross-repository architecture decision. |
 | Affected-responsibility boundaries | Universe editorial owner; source/disclosure owner | Confirm that public identity/canon decisions and restricted-source/disclosure authority remain with those owners. No actual canon or source-access decision is requested here. |
-| Historical governance disposition and documentation closeout | Named Constitution steward and affected A4 owners | Decide the accurate record and forward-looking remediation for the October 6 instruction and the incorrect “A3 exception” description. Do not authorize an exception retroactively. |
+| Historical governance disposition and documentation closeout | Named Constitution steward and affected A4 owners | Decide the accurate record and forward-looking remediation for the October 6 instruction and the incorrect “A3 exception” description. The Constitution/exception register reviewed here does not identify a named steward, so the Studio owner must identify the authorized steward. Do not authorize an exception retroactively. |
 
 **Minimum architecture decision:** after the Codex and Platform maintainers review
 the exact revisions above, does the Studio owner accept ADR 0018’s proposed

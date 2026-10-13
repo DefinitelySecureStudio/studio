@@ -1,9 +1,11 @@
 # Comic Manifest v1 architecture
 
-Proposed in [ADR 0018](../adr/0018-comic-manifest-architecture.md) for
-[#88](https://github.com/DefinitelySecureStudio/studio/issues/88), the first task
-in [Epic #6](https://github.com/DefinitelySecureStudio/studio/issues/6).
-This document assigns architecture and acceptance boundaries. It is not a
+Accepted in [ADR 0018](../adr/0018-comic-manifest-architecture.md) on
+2026-10-13 for the synthetic/offline Comic Manifest v1 boundary, with the exact
+owner decision in the [dated acceptance record](EPIC-6-OWNER-ACCEPTANCE-2026-10-13.md).
+This document originated in [#88](https://github.com/DefinitelySecureStudio/studio/issues/88),
+the first task in [Epic #6](https://github.com/DefinitelySecureStudio/studio/issues/6),
+and assigns architecture and acceptance boundaries. It is not a
 schema, implemented API, approval record or creative canon. Serialization,
 field names and normative semantics belong to Codex in #89.
 
@@ -259,31 +261,55 @@ Platform consumer and verifies complete artifact tuples/downloaded bytes.
 
 ## Scoped constitutional assessment and review status
 
-- Subject: issue #88 architecture change against Studio base
-  `813696a80af724c0541bacaba8d3ffba7bee6578`; exact adopting revision to be recorded
-  in the owner review. Public design documentation only; no runtime/release claim.
-- Constitution: v1.0.0, tag `constitution/v1.0.0`, commit
-  `a9cc8a503aa30e17820edc62ac95f7cbe10e0564`.
-- Checklist: [CONSTITUTION_COMPLIANCE.md](../CONSTITUTION_COMPLIANCE.md) at base
-  `813696a80af724c0541bacaba8d3ffba7bee6578`.
-- Accountable owner: @andrewperis. Required affected reviewers: Codex contract
-  maintainer, Platform maintainer and Universe editorial owner; source/disclosure
-  owner for the private-evidence boundary. Their reviews are pending.
-- Assessment prepared: 2026-09-17. Status: **Not assessed** for final constitutional
-  conformance; design evidence below is proposed, not owner approval.
+- **Current architecture status:** accepted on 2026-10-13 at
+  `11:47:50.998442 UTC`, against exact Studio architecture revision
+  `7b5065cef76bea9580609caba356b0d8fe7cc17c`. See the
+  [dated decision record](EPIC-6-OWNER-ACCEPTANCE-2026-10-13.md).
+- **Approved review package:** the [Studio #146 proposal](EPIC-6-CLOSEOUT-PROPOSAL.md)
+  at PR head `a9935f8fcab04396b3ba5f8077620ca167291933`. That proposal remains
+  unchanged as the historical reviewed packet.
+- **Constitution:** v1.0.0, tag `constitution/v1.0.0`, commit
+  `a9cc8a503aa30e17820edc62ac95f7cbe10e0564`. The applicable checklist is
+  pinned to [Studio commit `3cd52a8f9c6307cd0ce2779fcef051131db097a7`](https://github.com/DefinitelySecureStudio/studio/blob/3cd52a8f9c6307cd0ce2779fcef051131db097a7/CONSTITUTION_COMPLIANCE.md).
+- **Capacities:** Andrew Peris (`@andrewperis`) confirmed for this decision the
+  Studio architecture-owner, Codex contract-maintainer/reviewer, Platform
+  maintainer/technical-reviewer, Universe editorial/publisher A4,
+  source/disclosure-owner A4, and Constitution-steward capacities.
+- **Assessment adoption:** the owner adopted the bounded Codex and Platform AI
+  advisory findings and the item-level constitutional dispositions recorded in
+  the approved proposal. The reports remain attributed to their AI reviewers.
+  The proposal’s overall status remains **Not assessed**, with its material
+  item-level **Fail** findings intact; this is not an overall `Conforming`
+  claim.
+- **Historical review finding:** the owner’s October 6 instruction authorized AI
+  code review and merge for Epic #6, but no formal Article 12.7 exception was
+  approved or registered. That review-record nonconformance remains historical.
+  This present-day acceptance does not legalize it retroactively. The inaccurate
+  Codex “A3 AI-review exception” description is addressed by the later dated
+  source addendum in [draft PR #17](https://github.com/DefinitelySecureStudio/codex/pull/17);
+  no released tag or byte is changed.
+- **Current Platform documentation:** PR #46 merged at
+  `4779be4d64bcc68aab5785c12779427cc48336eb`, correcting the publication-state
+  guides. The exact immutable Platform v1 release and publication proof remain
+  as cited in the accepted proposal.
 
-| Applicable profile | Proposed evidence | Remaining assessment |
-| --- | --- | --- |
-| Universal | Singular ownership; separate A4 gates; exact provenance; privacy/rights propagation; portable deterministic records | Qualified human review of all applicable checklist items |
-| ADR/specification | ADR context, alternatives and consequences; Codex gaps, compatibility and rollback | Codex semantics and exact-revision owner acceptance |
-| Repository/production system | Existing topology, immutable artifact interfaces, content-neutral public tooling | Platform feasibility review; runtime controls assessed in implementation tasks |
-| Automated workflow | Explicit effects, current authority, safe failures, no self-approval and synthetic negative cases | Tests and operational evidence in #90–#98 and Epic #7 |
+### Epic #6 criterion dispositions
 
-Creative/canon and release profiles are not assessed as executed activities:
-this task creates neither canon nor a production release. Their design obligations
-are captured in the gates and output sections for later candidate assessments.
-No amendment/exception is requested because no constitutional meaning or authority
-changes. Do not claim `Conforming` or close owner-review acceptance criteria from
-this proposal alone. Reassess before #89 acceptance and whenever authority,
-classification, contracts, identity, storage, evidence freshness or consumer
-boundaries change.
+- **Criterion 1 — Pass, present-day acceptance.** ADR 0018 is accepted for this
+  bounded design, and the immutable Codex and Platform v1 releases distinguish
+  the three records. This does not grant production trust, source access, canon,
+  rendering, orchestration or publication authority.
+- **Criterion 12 — Pass, documentation and assessment.** The API, CLI,
+  workflow, limitations, compatibility/deprecation, constitutional assessment
+  and Epic #101 handoff are documented in the approved proposal and current
+  Platform closeout. The accepted assessment explicitly retains its historical
+  findings and **Not assessed** overall status; the criterion requires honest
+  documentation, not whole-history conformance.
+
+No production workflow, private-source access, canon decision, comic output or
+release activity was exercised or newly authorized here. The decision changes no
+constitutional requirement and creates no exception. Keep Epic #6 open until
+the owner-authorized append-only issue/source corrections and proposed record
+changes have been independently verified and integrated. Reassess on contract,
+authority, classification, identity, storage, consumer or release-boundary
+changes.

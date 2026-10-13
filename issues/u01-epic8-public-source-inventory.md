@@ -1,8 +1,8 @@
 # U01 — Public source inventory and coverage proposal
 
-**Status:** Draft for editor review. This is not canon, an episode brief, or a U02/U03 record. Do not merge as a canon decision.
+**Status:** Andrew Peris accepted this starting coverage and seed for downstream drafting on 2026-10-13. This packet remains a proposal record, not canon, an episode brief, or a U02/U03 record; acceptance does not approve a merge, episode, or publication.
 
-**Proposed human editor:** Andrew Peris, for confirmation and explicit coverage acceptance.
+**Human editor:** Andrew Peris, confirmed by that explicit acceptance.
 
 **Snapshot date:** 2026-10-13 UTC.
 
@@ -10,12 +10,12 @@
 
 - **Target:** `DefinitelySecureStudio/studio`, based on `main` at [`9a3e9dec66f1aa46fefc39b6b7c6944e7cf755a8`](https://github.com/DefinitelySecureStudio/studio/commit/9a3e9dec66f1aa46fefc39b6b7c6944e7cf755a8).
 - **Exact output:** this one review packet, `issues/u01-epic8-public-source-inventory.md`. It inventories approved public sources and proposes the smallest content set for U01 review. It adds no canon records and changes no other files.
-- **Bounded path:** compare the pinned public Universe main tree and the listed public Studio brand/governance sources; derive only series-level coverage and one clearly labeled story seed from the approved comic identity. Ask the proposed editor to accept or revise the coverage before U02/U03.
+- **Bounded path:** compare the pinned public Universe main tree and the listed public Studio brand/governance sources; derive only series-level coverage and one clearly labeled story seed from the approved comic identity. The exact starting coverage and seed below were accepted for separate U02/U03 drafts; any later replacement remains Andrew's creative decision.
 - **Exact source set:** Universe `main` at [`66bf9b0d24329a134808b39e1d8898d9bd87722c`](https://github.com/DefinitelySecureStudio/universe/commit/66bf9b0d24329a134808b39e1d8898d9bd87722c): repository README; `bible/README.md`; `canon/README.md`; `characters/README.md` and `_template.md`; `locations/README.md`; `comics/README.md` and `_template.md`; `story-arcs/README.md`; `docs/canon-policy.md`; `CONTRIBUTING.md`; `.github/CODEOWNERS`. Studio `main` at [`9a3e9dec66f1aa46fefc39b6b7c6944e7cf755a8`](https://github.com/DefinitelySecureStudio/studio/commit/9a3e9dec66f1aa46fefc39b6b7c6944e7cf755a8): `README.md`; `ARCHITECTURE.md`; `brand/comic-identity.md`; `brand/APPROVAL.md`; and `repository-standards/BRANCH-AND-REVIEW.md`. Studio issues #9, #15, #114, #115, #116, and #117 are used only for approval provenance, scope, and gates.
-- **Finite evidence matrix:** (1) Universe tree at the pinned commit: verify which public canon and publication records exist; (2) Studio comic identity plus its approval record and issue #9: verify the approved series-level facts; (3) Studio architecture, Universe canon policy/contribution rules, and Universe CODEOWNERS: verify ownership and proposal-vs-canon boundaries; (4) Epic/U01/U02/U03/U04 issue text: verify size caps and human/dependency gates. The packet records the source links, the observed result, the exact proposed record slots, and unresolved decisions.
+- **Finite evidence matrix:** (1) Universe tree at the pinned commit: verify which public canon and publication records exist; (2) Studio comic identity plus its approval record and issue #9: verify the approved series-level facts; (3) Studio architecture, Universe canon policy/contribution rules, and Universe CODEOWNERS: verify ownership and proposal-vs-canon boundaries; (4) Epic/U01/U02/U03/U04 issue text: verify size caps and human/dependency gates. The packet records the source links, the observed result, the accepted starting record slots, and unresolved details.
 - **Exclusions:** no private or restricted sources, no Lore checkout or access, no unrelated personal context, no U02/U03 drafts or canon promotion, no U04 candidate assembly, no C01 episode brief, no art, spending, publishing, new issues, settings, or credentials changes.
 - **Estimate:** 0.5–1 focused person-day including source review, one packet, link/provenance check, and handoff; within the two-day cap.
-- **Acceptance evidence:** the reviewer can follow each pinned source link, see that the proposal stays within the 3-character/2-location/3-relationship cap, and record Andrew Peris's confirmation of the editor role and explicit acceptance or revision of the coverage. U01 must remain open until that human acceptance is explicit.
+- **Acceptance evidence:** Andrew Peris explicitly accepted this starting coverage and seed on 2026-10-13, saying to begin with them and review what is produced, with the option to choose different coverage and seed if the drafts do not work. The accepted set remains within the 3-character/2-location/3-relationship cap. This acceptance is limited to downstream drafts; it does not accept canon or publication. U01 remains open for parent review and handoff.
 
 ## Source inventory and status
 
@@ -24,7 +24,7 @@
 | Universe main tree | [`66bf9b0d…`](https://github.com/DefinitelySecureStudio/universe/tree/66bf9b0d24329a134808b39e1d8898d9bd87722c) | The public repository currently has bible, canon, character, location, comic, and story-arc indexes/templates and policy. The inspected tree has no character, location, relationship, story-arc, or published-comic record beyond those indexes/templates. | No approved in-universe source record was found in this pinned snapshot. This scoped absence does not establish that unpublished or private material does not exist, and it is not a negative canon claim. |
 | Universe canon policy | [`docs/canon-policy.md`](https://github.com/DefinitelySecureStudio/universe/blob/66bf9b0d24329a134808b39e1d8898d9bd87722c/docs/canon-policy.md), blob `963e0ff1ac018fc1f1e82f57b902adc28ed0b2bc` | Public canon is approved, non-superseded material in a tagged canon release; published comics are primary evidence; a PR, issue, draft, social discussion, or omission is not canon. | Governance, not story content. |
 | Universe contribution and record guidance | [`CONTRIBUTING.md`](https://github.com/DefinitelySecureStudio/universe/blob/66bf9b0d24329a134808b39e1d8898d9bd87722c/CONTRIBUTING.md), blob `3fd17661a18ead4bf076a4ad380e365e22948278`; [`characters/README.md`](https://github.com/DefinitelySecureStudio/universe/blob/66bf9b0d24329a134808b39e1d8898d9bd87722c/characters/README.md), blob `c030f4b0fedd0ec63af81ad8acaa310da7f049e4`; [`locations/README.md`](https://github.com/DefinitelySecureStudio/universe/blob/66bf9b0d24329a134808b39e1d8898d9bd87722c/locations/README.md), blob `cbe8258dc5f2f62f6a5d77cd425a8e138437e203` | Universe holds reader-safe approved canon; its record templates are proposal templates, and only already-public or explicitly cleared facts belong in accepted records. | Governance only. No template is treated as a canon fact. |
-| Universe ownership | [`.github/CODEOWNERS`](https://github.com/DefinitelySecureStudio/universe/blob/66bf9b0d24329a134808b39e1d8898d9bd87722c/.github/CODEOWNERS), blob `9c780913bcb3f154ef2635822a10f86dd3c9c6ba` | Andrew Peris is the code owner for all paths and explicitly owns canon review surfaces. | Supports the proposed human review gate; does not itself approve this proposal. |
+| Universe ownership | [`.github/CODEOWNERS`](https://github.com/DefinitelySecureStudio/universe/blob/66bf9b0d24329a134808b39e1d8898d9bd87722c/.github/CODEOWNERS), blob `9c780913bcb3f154ef2635822a10f86dd3c9c6ba` | Andrew Peris is the code owner for all paths and explicitly owns canon review surfaces. | Supports the human review authority; does not itself approve this content proposal. |
 | Studio comic identity | [`brand/comic-identity.md`](https://github.com/DefinitelySecureStudio/studio/blob/9a3e9dec66f1aa46fefc39b6b7c6944e7cf755a8/brand/comic-identity.md), blob `e32186869be99769a3ee4fe0fc1c28dcca150db1`; [approval record](https://github.com/DefinitelySecureStudio/studio/blob/9a3e9dec66f1aa46fefc39b6b7c6944e7cf755a8/brand/APPROVAL.md), blob `7955d7b2bb76ba92ce783fecbd42817bb0879f7f`; [Issue #9](https://github.com/DefinitelySecureStudio/studio/issues/9) | The component is marked Approved; the approval record cites Issue #9 and ADR 0002, and Issue #9 is closed as completed. It establishes the comic/series title *Definitely Secure*, fictional-company name Definitely Secure, series-level pitch, tone/reader promise, high-level workplace setting, and public episode/naming conventions. | Accepted Studio brand/identity source. It is not by itself an approved Universe character, location, relationship, episode, or canon record. |
 | Studio README | [`README.md`](https://github.com/DefinitelySecureStudio/studio/blob/9a3e9dec66f1aa46fefc39b6b7c6944e7cf755a8/README.md), blob `855aaccf11fb4fbecb20a10982399526eb6c5029` | Public studio description and tagline. | Context only; no separate canon approval is asserted. |
 | Studio ownership map | [`ARCHITECTURE.md`](https://github.com/DefinitelySecureStudio/studio/blob/9a3e9dec66f1aa46fefc39b6b7c6944e7cf755a8/ARCHITECTURE.md), blob `dff2f909058d145f46656f3a1c4255ba7bb82da3` | Studio owns governance/tracking; Universe owns public canon; Lore is a separate private authority. | Governance; no private source was accessed. |
@@ -32,9 +32,9 @@
 
 The approved comic-identity component is the only usable approved creative source found for this proposal. The consolidated `brand/BRAND_GUIDE.md` is not used as an approved source: the approval record says the unified guide is still pending. No public comic page was independently verified; the Studio identity's website reference was inaccessible to the available browser and is not evidence here. No GitHub release was listed for Universe at the time of inspection; this packet does not claim to have exhaustively verified git tags.
 
-## Proposed exact content set for editor decision
+## Accepted starting content set for downstream draft review
 
-All entries below are **new, unaccepted proposals** for U01 coverage only. The labels are temporary coverage handles, not names, stable canon IDs, or approved facts. They are not drafted records. The proposed set uses two characters, one location, and one relationship; no third character, second location, or additional relationship is proposed.
+Andrew accepted this exact starting set for downstream draft work. The creative content remains **proposal-only and non-canon**. The labels are temporary coverage handles, not names, stable canon IDs, or approved facts, and these are not drafted records. The set uses two characters, one location, and one relationship; no third character, second location, or additional relationship is proposed.
 
 | Coverage handle | Proposed minimum record | What remains undecided |
 | --- | --- | --- |
@@ -43,9 +43,9 @@ All entries below are **new, unaccepted proposals** for U01 coverage only. The l
 | L1 — Shared work setting | One shared workplace setting inside the fictional company Definitely Secure. | Site/room name, geography, physical vs. virtual form, design, equipment, and any layout. |
 | R1 — Coworkers coordinating a correction | C1 and C2 exchange observations and coordinate a truthful status update. | Reporting hierarchy, tenure, friendship, conflict history, and any relationship beyond coworkers. |
 
-If the editor wants named characters, a specific location, or a richer relationship for the seed, that is a human creative choice to make before U03. These placeholders do not establish the records' existence in canon.
+Named characters, a specific location, or a richer relationship remain human creative choices for the separate U03 draft and Andrew's review. These placeholders do not establish the records' existence in canon.
 
-## Coverage requested from U02 after acceptance
+## Coverage handoff to U02
 
 - **Premise:** the approved Studio pitch describes a workplace comic about confident systems, messy reality, and people trying to keep both running. The proposed seed below narrows that promise to one routine mismatch between a status report and observed work; the series pitch is accepted branding, while this episode situation is a proposal.
 - **Tone:** the approved comic identity calls for technically observant humor and character-driven stories accessible without specialist knowledge, centered on human experiences of work. Preserve the humor in the confidence/reality gap; do not turn this into a technical explainer or an incident postmortem.
@@ -54,15 +54,15 @@ If the editor wants named characters, a specific location, or a richer relations
 
 ## One provisional story seed
 
-**Recommendation for discussion, not a final human decision:** during an ordinary status check at Definitely Secure, a report shows work as complete while one coworker can see it is still unresolved. Two coworkers compare the report with what they can observe and agree on a truthful next update. The comic's humor comes from the gap between confident language and operational reality, with no technical knowledge required.
+**Accepted as the starting seed for downstream drafting, not as a final episode decision:** during an ordinary status check at Definitely Secure, a report shows work as complete while one coworker can see it is still unresolved. Two coworkers compare the report with what they can observe and agree on a truthful next update. The comic's humor comes from the gap between confident language and operational reality, with no technical knowledge required.
 
-This is a newly generated story idea grounded only in the approved public comic identity. It is not a sourced event, accepted canon, episode brief, or release plan. It has no title, `DS-NNNN` assignment, defined system, named character, detailed cause, or downstream consequence. The editor may reject or replace it.
+This is a newly generated story idea grounded only in the approved public comic identity. Andrew accepted it to see what drafts produce and may later retain or replace it. It is not a sourced event, canon, episode brief, or release plan. It has no title, `DS-NNNN` assignment, defined system, named character, detailed cause, or downstream consequence.
 
 ## Gaps and deferred topics
 
 | Gap or deferred topic | Why it stays open in U01 |
 | --- | --- |
-| Whether the editor and this exact record set are accepted | Andrew Peris is proposed as editor; explicit human confirmation/coverage acceptance is required. |
+| Outcome of reviewing the U02/U03 drafts | Andrew accepted this starting set and seed; he may retain, revise, or replace them after reviewing the drafts. |
 | Character names, identity, appearance, history, jobs, and voice | No approved Universe character source exists in the inspected main snapshot. |
 | Exact location and company organization | The brand source establishes only the fictional company/workplace at a high level. |
 | Relationship depth and any reporting structure | No approved relationship source exists; R1 is only the minimum collaboration needed by the proposed seed. |
@@ -73,7 +73,7 @@ This is a newly generated story idea grounded only in the approved public comic 
 
 ## Gates and handoff
 
-1. Keep this PR in draft and U01 open. Andrew Peris must confirm the proposed editor role and explicitly accept or revise the coverage before U01 is complete.
-2. U01 coverage acceptance is a content-scope gate, not execution authorization. U02 and U03 may proceed in parallel only after coverage is explicitly accepted and each task has separate execution authorization plus its applicable owner/access prerequisites. U02 may draft premise/tone/rules/conventions; U03 may draft only the accepted bounded records. U04 waits for both. This packet contains neither draft.
+1. Andrew Peris confirmed the editor role and accepted this starting coverage and seed on 2026-10-13. Keep U01 open for parent review and handoff; this acceptance does not approve canon, a merge, an episode, or publication.
+2. U02 and U03 remain separate bounded draft tasks and may proceed in parallel after this coverage acceptance under their own task-specific authorization and applicable owner/access prerequisites. The parent is launching those tasks. U02 may draft premise/tone/rules/conventions; U03 may draft only the accepted bounded records. U04 waits for both. This packet contains neither draft.
 3. U04 must assemble and review every record for creative coherence and record explicit human content decisions. Formal first-comic C01 remains blocked on U04's human content decision; this seed does not start or approve an episode brief.
 4. No merge, canon promotion, issue closure, art work, or publication is authorized by this packet.

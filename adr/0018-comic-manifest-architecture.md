@@ -1,13 +1,13 @@
 # ADR 0018: Comic Manifest architecture and authority boundaries
 
-- Status: Proposed; acceptance requires owner-approved merge and coordinated Codex/Platform review
+- Status: Accepted on 2026-10-13 at 11:47:50.998442 UTC; see [owner acceptance record](../comic-manifest/EPIC-6-OWNER-ACCEPTANCE-2026-10-13.md)
 - Date: 2026-09-17
 - Decision owner: @andrewperis; Universe editors retain publication/canon authority; source owners retain access/disclosure authority
 - Issue: [#88](https://github.com/DefinitelySecureStudio/studio/issues/88)
 - Epic: [#6](https://github.com/DefinitelySecureStudio/studio/issues/6)
 - Constitution: v1.0.0, tag `constitution/v1.0.0`, commit `a9cc8a503aa30e17820edc62ac95f7cbe10e0564`
 - Profiles: universal; ADR/specification; repository/production system; automated workflow
-- Evidence: [architecture, acceptance slice and scoped assessment](../comic-manifest/ARCHITECTURE.md); adopting PR and affected-owner reviews
+- Evidence: [architecture, acceptance slice and scoped assessment](../comic-manifest/ARCHITECTURE.md); [approved closeout proposal](../comic-manifest/EPIC-6-CLOSEOUT-PROPOSAL.md); [dated owner acceptance](../comic-manifest/EPIC-6-OWNER-ACCEPTANCE-2026-10-13.md)
 - Supplements: [ADR 0002](0002-comic-naming-and-publication-architecture.md), [ADR 0006](0006-cross-repository-dependencies-and-versioning.md), [ADR 0016](0016-prompt-sdk-architecture.md), [ADR 0017](0017-context-builder-architecture.md)
 
 ## Context
@@ -68,9 +68,20 @@ An offline synthetic slice exercises the complete record boundary without real
 canon, private sources, providers or orchestration. Focused tests accompany each
 implementation; the final suite consolidates them.
 
-Owner acceptance approves this architecture only. Record Codex contract review
-and Platform feasibility review against the exact proposed revision before
-marking this ADR accepted or #88 owner-reviewed. Production trust onboarding,
-real-source access, creative decisions and publication remain separately scoped.
-Reassess on contract, authority, classification, identity, storage, consumer or
-release-boundary changes. No constitutional amendment or exception is proposed.
+On 2026-10-13 at `11:47:50.998442 UTC`, @andrewperis accepted this architecture
+at Studio revision `7b5065cef76bea9580609caba356b0d8fe7cc17c` and adopted the bounded
+Codex contract-fit and Platform feasibility findings in the approved closeout
+proposal at head `a9935f8fcab04396b3ba5f8077620ca167291933`. He confirmed he held
+the listed Studio owner, Codex and Platform maintainer/reviewer, affected A4, and
+constitutional-steward capacities. The reports remain attributed to their AI
+authors; the owner adopted their limited findings in his confirmed capacities.
+See the [dated acceptance record](../comic-manifest/EPIC-6-OWNER-ACCEPTANCE-2026-10-13.md).
+
+This is present-day acceptance of the architecture only. The previously proposed
+status and the historical review-record findings are preserved in the approved
+proposal. The acceptance does not retroactively legalize past conduct, create an
+Article 12.7 exception, or turn the overall historical assessment into
+`Conforming`. Production trust onboarding, real-source access, creative decisions
+and publication remain separately scoped. Reassess on contract, authority,
+classification, identity, storage, consumer or release-boundary changes. No
+constitutional amendment or policy weakening is proposed.

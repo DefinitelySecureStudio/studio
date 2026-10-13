@@ -284,10 +284,11 @@ Platform consumer and verifies complete artifact tuples/downloaded bytes.
 - **Historical review finding:** the owner’s October 6 instruction authorized AI
   code review and merge for Epic #6, but no formal Article 12.7 exception was
   approved or registered. That review-record nonconformance remains historical.
-  This present-day acceptance does not legalize it retroactively. The inaccurate
-  Codex “A3 AI-review exception” description is addressed by the later dated
-  source addendum in [draft PR #17](https://github.com/DefinitelySecureStudio/codex/pull/17);
-  no released tag or byte is changed.
+  This present-day acceptance does not legalize it retroactively. Codex’s inaccurate “A3 AI-review exception” description was corrected in
+  the dated source addendum reviewed at PR #17 head
+  `6b0abdc2708b8cc6ff671f31e9b8d3a235eb04ba` and merged as commit
+  [`279d30319a0aff14366dc5846a18200bd1fd0ae9`](https://github.com/DefinitelySecureStudio/codex/commit/279d30319a0aff14366dc5846a18200bd1fd0ae9);
+  no released tag or byte was changed.
 - **Current Platform documentation:** PR #46 merged at
   `4779be4d64bcc68aab5785c12779427cc48336eb`, correcting the publication-state
   guides. The exact immutable Platform v1 release and publication proof remain
@@ -308,8 +309,8 @@ Platform consumer and verifies complete artifact tuples/downloaded bytes.
 
 No production workflow, private-source access, canon decision, comic output or
 release activity was exercised or newly authorized here. The decision changes no
-constitutional requirement and creates no exception. Keep Epic #6 open until
-the owner-authorized append-only issue/source corrections and proposed record
-changes have been independently verified and integrated. Reassess on contract,
-authority, classification, identity, storage, consumer or release-boundary
-changes.
+constitutional requirement and creates no exception. The #88/#99 corrections
+are appended and the Codex source correction is merged; keep Epic #6 open pending
+independent verification and integration of this Studio record. Reassess on
+contract, authority, classification, identity, storage, consumer or
+release-boundary changes.

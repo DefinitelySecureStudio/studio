@@ -1,6 +1,7 @@
 # Epic 6 Comic Manifest v1 — present-day acceptance and record correction
 
-**Decision time:** 2026-10-13T11:47:50.998442Z  
+**Decision time:** 2026-10-13T11:47:50.998442Z
+
 **Status:** Accepted within the scope below. Epic #6 remains open.
 
 ## Exact reviewed package

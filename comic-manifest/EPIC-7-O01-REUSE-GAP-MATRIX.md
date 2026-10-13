@@ -73,6 +73,26 @@ GitHub release metadata for all six refs above confirms `immutable: true`, `draf
 
 No runtime tests were re-executed for this docs-only discovery. The test files above are exact released-source evidence, not a claim that O01 ran them. Published CI/test outcomes are linked separately.
 
+## Epic 6 exact gates for the synthetic boundary
+
+Epic 6 is closed. Its current [13-criterion closeout map](https://github.com/DefinitelySecureStudio/studio/blob/eeff10b98069cd30e7acbcfc79529c0ad55fb34d/comic-manifest/EPIC-6-CLOSEOUT-PROPOSAL.md) supports the synthetic contract/library boundary through these gates:
+
+1. Accepted three-record architecture and versioned contract/implementation evidence.
+2. Strict parsing and semantic validation fail closed with safe diagnostics.
+3. Episode/panel identity, ordering, references, revisions and publication naming validate.
+4. Dependency and asset references use exact immutable identities; no implicit retrieval or authority renewal.
+5. Context Builder / Prompt SDK handoff binds exact package, prompt, slots and current use scope.
+6. Rendition, accessibility, credit and rights requirements are explicit and validated without rendering.
+7. Approval is bound to exact content/artifacts; edits, expiry and revocation do not preserve permission.
+8. Build-result verification matches the exact input Manifest and declared output identities.
+9. Reader-safe proposals exclude private identifiers, paths, hashes and content-derived evidence; private influence uses explicit opaque attestation.
+10. Synthetic flow passes Manifest → offline mock result → verified artifacts → separately approved reader-safe proposal.
+11. CLI, reviewed fixtures, reusable conformance and offline CI work without paid providers or real private content.
+12. API/review workflow, limits, compatibility/deprecation, Epic 7 handoff and bounded constitutional assessment are documented.
+13. Immutable Codex/Platform v1 artifacts are published and exact tags/downloaded bytes are verified.
+
+The [present-day owner acceptance](https://github.com/DefinitelySecureStudio/studio/blob/eeff10b98069cd30e7acbcfc79529c0ad55fb34d/comic-manifest/EPIC-6-OWNER-ACCEPTANCE-2026-10-13.md) accepts the exact architecture revision for the synthetic/offline boundary. The earlier #99 checkbox claiming all preceding work was owner-reviewed was later qualified as historically inaccurate; the later acceptance does not backdate that review. These Epic 6 gates do not establish production trust, private-source use, rendering, orchestration, canon or publication authority.
+
 ## Acceptance gates: synthetic development versus production
 
 | Use | Required gates and current evidence |

@@ -62,8 +62,9 @@ none of those capabilities.
   proposal and the corrected current Platform documentation at commit
   `4779be4`. This criterion asks for documentation and assessment; it does not
   require a whole-history constitutional-conformance claim. The Codex
-  source-wording correction is a separate dated addendum in [draft PR #17](https://github.com/DefinitelySecureStudio/codex/pull/17),
-  awaiting independent verification before merge.
+  source-wording correction is in the dated addendum from [PR #17](https://github.com/DefinitelySecureStudio/codex/pull/17),
+  reviewed at head `6b0abdc2708b8cc6ff671f31e9b8d3a235eb04ba` and merged as
+  Codex commit [`279d30319a0aff14366dc5846a18200bd1fd0ae9`](https://github.com/DefinitelySecureStudio/codex/commit/279d30319a0aff14366dc5846a18200bd1fd0ae9).
 
 These are criterion dispositions, not a direction to close Epic #6. The Epic
 remains open.
@@ -88,18 +89,20 @@ conformance.
 
 ## Authorized append-only corrections and control
 
-1. Append a correction to [Studio #88](https://github.com/DefinitelySecureStudio/studio/issues/88):
+1. A dated clarification was appended to [Studio #88](https://github.com/DefinitelySecureStudio/studio/issues/88#issuecomment-6145187723):
    it was closed while the owner-review checkbox was unchecked and ADR 0018 was
    Proposed; the owner accepted the exact architecture on 2026-10-13 as
-   recorded here. Preserve the old issue body and checklist.
-2. Append a correction to [Studio #99](https://github.com/DefinitelySecureStudio/studio/issues/99):
+   recorded here. The original issue body and checklist remain unchanged.
+2. A dated qualification was appended to [Studio #99](https://github.com/DefinitelySecureStudio/studio/issues/99#issuecomment-6145190132):
    the “all preceding tasks complete and owner-reviewed” checkbox was not an
-   accurate historical statement at its 2026-10-11 close. Record the later
-   2026-10-13 acceptance and the current scope without changing past timestamps
-   or release tuples.
-3. Preserve the original October 6 instruction and the tagged Codex release.
-   Correct the “A3 exception” description only through the later dated Codex
-   source addendum; do not create a new or backdated exception.
+   accurate historical statement at its 2026-10-11 close. The comment records
+   the later 2026-10-13 acceptance without changing past timestamps or release
+   tuples.
+3. The original October 6 instruction and tagged Codex release are preserved.
+   The “A3 exception” wording was corrected in the later dated Codex source
+   addendum, merged at commit
+   [`279d30319a0aff14366dc5846a18200bd1fd0ae9`](https://github.com/DefinitelySecureStudio/codex/commit/279d30319a0aff14366dc5846a18200bd1fd0ae9).
+   No exception was created or backdated.
 4. For later review-sensitive changes, record the authorized human reviewer’s
    capacity and exact source revision before marking the work “owner-reviewed.”
    Do not infer review or constitutional status from issue closure, release

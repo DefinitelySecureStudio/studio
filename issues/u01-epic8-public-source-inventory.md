@@ -74,6 +74,6 @@ This is a newly generated story idea grounded only in the approved public comic 
 ## Gates and handoff
 
 1. Keep this PR in draft and U01 open. Andrew Peris must confirm the proposed editor role and explicitly accept or revise the coverage before U01 is complete.
-2. Start U02 and U03 only after that acceptance. U02 may turn the accepted coverage into premise/tone/rules/conventions; U03 may then create only the accepted bounded records. This packet contains neither draft.
+2. U01 coverage acceptance is a content-scope gate, not execution authorization. U02 and U03 may proceed in parallel only after coverage is explicitly accepted and each task has separate execution authorization plus its applicable owner/access prerequisites. U02 may draft premise/tone/rules/conventions; U03 may draft only the accepted bounded records. U04 waits for both. This packet contains neither draft.
 3. U04 must assemble and review every record for creative coherence and record explicit human content decisions. Formal first-comic C01 remains blocked on U04's human content decision; this seed does not start or approve an episode brief.
 4. No merge, canon promotion, issue closure, art work, or publication is authorized by this packet.

@@ -19,6 +19,7 @@ policies, mechanisms, and releases must follow.
 - [Constitution version history](CONSTITUTION_CHANGELOG.md)
 - [Constitution exception register](CONSTITUTION_EXCEPTIONS.md)
 - [Repository reference standard](repository-standards/CONSTITUTION-REFERENCE.md)
+- [Scoped constitutional alignment declaration](CONSTITUTION_CONFORMANCE.md)
 
 ## Brand system
 
@@ -59,7 +60,7 @@ The proposed [Context Builder v1 architecture](context-builder/ARCHITECTURE.md)
 defines authorized source preparation, deterministic assembly and the separate
 package-use approval boundary for Epic #5.
 
-The proposed [Comic Manifest v1 architecture](comic-manifest/ARCHITECTURE.md)
+The accepted [Comic Manifest v1 architecture](comic-manifest/ARCHITECTURE.md)
 separates production intent, build results and reader-safe public release records,
 including exact approval boundaries and the Epic #7 consumer handoff.
 

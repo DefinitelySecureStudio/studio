@@ -268,6 +268,9 @@ Platform consumer and verifies complete artifact tuples/downloaded bytes.
 - **Approved review package:** the [Studio #146 proposal](EPIC-6-CLOSEOUT-PROPOSAL.md)
   at PR head `a9935f8fcab04396b3ba5f8077620ca167291933`. That proposal remains
   unchanged as the historical reviewed packet.
+- **Scoped constitutional record:** [root declaration](../CONSTITUTION_CONFORMANCE.md)
+  and [dated correction ledger](EPIC-6-CLOSEOUT-REVIEW-CORRECTION-2026-10-13.md)
+  pin the Oct 13 baseline and preserve the approved proposal unchanged.
 - **Constitution:** v1.0.0, tag `constitution/v1.0.0`, commit
   `a9cc8a503aa30e17820edc62ac95f7cbe10e0564`. The applicable checklist is
   pinned to [Studio commit `3cd52a8f9c6307cd0ce2779fcef051131db097a7`](https://github.com/DefinitelySecureStudio/studio/blob/3cd52a8f9c6307cd0ce2779fcef051131db097a7/CONSTITUTION_COMPLIANCE.md).
@@ -278,9 +281,13 @@ Platform consumer and verifies complete artifact tuples/downloaded bytes.
 - **Assessment adoption:** the owner adopted the bounded Codex and Platform AI
   advisory findings and the item-level constitutional dispositions recorded in
   the approved proposal. The reports remain attributed to their AI reviewers.
-  The proposal’s overall status remains **Not assessed**, with its material
-  item-level **Fail** findings intact; this is not an overall `Conforming`
-  claim.
+  That approved proposal remains unchanged as a historical packet. Its overall
+  `Not assessed` label and `Pass` dispositions for the severity check and
+  Repository 5 were inaccurate in light of the identified blockers. The dated
+  [Epic #6 correction ledger](EPIC-6-CLOSEOUT-REVIEW-CORRECTION-2026-10-13.md)
+  assigns severities, corrects the assessed-baseline disposition, and distinguishes
+  present-day acceptance from historical findings; no whole-history `Conforming`
+  claim is made.
 - **Historical review finding:** the owner’s October 6 instruction authorized AI
   code review and merge for Epic #6, but no formal Article 12.7 exception was
   approved or registered. That review-record nonconformance remains historical.
@@ -300,12 +307,15 @@ Platform consumer and verifies complete artifact tuples/downloaded bytes.
   bounded design, and the immutable Codex and Platform v1 releases distinguish
   the three records. This does not grant production trust, source access, canon,
   rendering, orchestration or publication authority.
-- **Criterion 12 — Pass, documentation and assessment.** The API, CLI,
-  workflow, limitations, compatibility/deprecation, constitutional assessment
-  and Epic #101 handoff are documented in the approved proposal and current
-  Platform closeout. The accepted assessment explicitly retains its historical
-  findings and **Not assessed** overall status; the criterion requires honest
-  documentation, not whole-history conformance.
+- **Criterion 12 — Pending this Studio correction.** The API, CLI, workflow,
+  limitations, compatibility/deprecation and Epic #101 handoff are documented
+  in the approved proposal and Platform closeout. At the assessed Studio main
+  baseline, however, the mandatory root declaration was absent and the
+  assessment severity/status dispositions were inaccurate. This Studio
+  correction supplies the declaration and dated ledger. Platform PR [#47](https://github.com/DefinitelySecureStudio/platform/pull/47)
+  merged at `bd864fa195ab323d987cc1e33f431a5d9ed10f3f` and resolved the separate
+  future-version guide issue. Criterion 12 remains incomplete until this Studio
+  correction is merged and verified. The approved proposal remains unchanged.
 
 No production workflow, private-source access, canon decision, comic output or
 release activity was exercised or newly authorized here. The decision changes no

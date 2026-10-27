@@ -147,7 +147,7 @@ The host preflight is now merged on main. Its host deadline still bounds waiting
 
 O01 makes no creative, canon, private-source, art, rights, disclosure or publication decision. Before C08/C09, the accountable human owners must select an authorized production path, approve the exact content/assets/output profile and rights, appoint the creative/art and assembly owners, and authorize the applicable current source-use, disclosure, canon and publication decisions. AI contract analysis and fixture tests are advisory evidence; they are not human review or approval.
 
-Before any production handoff, the accountable owners must resolve applicable human acceptance and production-authority gates separately; this evidence refresh does not change them. The Context Builder living-guide discrepancy remains a separate Platform documentation follow-up. The Manifest inventory provenance question is resolved by Platform PR #46/#47 and Epic 6’s final correction ledger; no follow-up is needed for that item and no released bytes should change. O01 creates no follow-up issue or implementation.
+Before any production handoff, the accountable owners must resolve applicable human acceptance and production-authority gates separately; this evidence refresh does not change them. The Context Builder living-guide discrepancy is resolved by Platform PR #51, as recorded above; no release bytes or adoption gates changed. The Manifest inventory provenance question is resolved by Platform PR #46/#47 and Epic 6’s final correction ledger; no follow-up is needed for that item and no released bytes should change. O01 creates no follow-up issue or implementation.
 
 ## Verification boundary
 
